@@ -1,8 +1,8 @@
 {
   "about": {
-    "name": "Mike  Waitindi",
-    "title": "Full-stack Developer | ICT Officer | Network Administrator | Web 3 Ethuasist ",
-    "description": "A visionary IT Profesional with a rich tapestry of expertise in full-stack development, ICT oversight, and network mastery. As a fervent Web 3 advocate, Mike weaves cutting-edge innovation into every project, crafting transformative digital experiences that propel organizations into the future.",
+    "name": "ICT Professional",
+    "title": "System Developer & IT Support Specialist",
+    "description": "ICT professional with expertise in system development, app development, database management, IT infrastructure support, and user training. I have a problem-solving mindset, collaborative spirit, and passion for using ICT to improve public service delivery, drive organizational efficiency, and empower users with smart, sustainable tech solutions.",
     "profilePicture": "assets/profile_picture.jpg"
   },
   "skills": {
@@ -11,24 +11,14 @@
       "Database Management",
       "IT Infrastructure Support",
       "Technical Troubleshooting",
-      "System Development",
-      "Web Development",
-      "Mobile App Development",
-      "Cloud Computing",
-      "Network Administration",
-      "Cybersecurity"
+      "System Development"
     ],
     "soft": [
       "Communication",
       "Teamwork",
       "Problem-solving",
       "Time Management",
-      "Self-discipline",
-      "Leadership",
-      "Project Management",
-      "Critical Thinking",
-      "Adaptability",
-      "Customer Service"
+      "Self-discipline"
     ],
     "languages": [
       "English",
