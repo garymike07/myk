@@ -531,9 +531,49 @@ class PortfolioApp {
         return icons[iconName] || '';
     }
 
+    // Function to update time and greeting
+    updateTimeAndGreeting() {
+        const now = new Date();
+        const hours = now.getHours();
+        const minutes = now.getMinutes().toString().padStart(2, '0');
+        const seconds = now.getSeconds().toString().padStart(2, '0');
+        const timeString = `${hours}:${minutes}:${seconds}`;
+
+        let greeting;
+        if (hours < 12) {
+            greeting = "Good Morning!";
+        } else if (hours < 18) {
+            greeting = "Good Afternoon!";
+        } else {
+            greeting = "Good Evening!";
+        }
+
+        const timeDisplayElement = document.getElementById('time-display');
+        if (timeDisplayElement) {
+            timeDisplayElement.textContent = timeString;
+        }
+
+        const greetingElement = document.getElementById('greeting');
+        if (greetingElement) {
+            greetingElement.textContent = greeting;
+        }
+    }
+
+    startTimeUpdates() {
+        // Call updateTimeAndGreeting initially and then every second
+        this.updateTimeAndGreeting();
+        setInterval(() => this.updateTimeAndGreeting(), 1000);
+    }
+
 }
 
 // Initialize the app when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new PortfolioApp();
+    const app = new PortfolioApp();
+    // Start time updates after app initialization
+    setTimeout(() => {
+        app.startTimeUpdates();
+    }, 1000);
 });
+
+

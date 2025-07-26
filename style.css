@@ -988,3 +988,42 @@ section::before {
     100% { transform: translate(-100px, -100px); }
 }
 
+
+
+/* Time display styles */
+#time-display {
+    font-size: 5rem; /* Large size */
+    font-weight: bold;
+    color: #8be9fd; /* Cool blue color */
+    text-shadow: 0 0 10px rgba(139, 0, 255, 0.7), 0 0 20px rgba(139, 0, 255, 0.5), 0 0 30px rgba(139, 0, 255, 0.3); /* Visible shadow with cool colors */
+    transition: all 0.5s ease-in-out;
+}
+
+#time-display:hover {
+    color: #ff79c6; /* Another cool color on hover */
+    text-shadow: 0 0 15px rgba(255, 121, 198, 0.9), 0 0 25px rgba(255, 121, 198, 0.7), 0 0 35px rgba(255, 121, 198, 0.5);
+    transform: scale(1.05);
+}
+
+/* Enhanced shadow and animation for site components */
+.card, .project-card, .skill-item, .social-link, .dashboard, .file-upload, .comment, .btn-primary, .btn-secondary {
+    box-shadow: 0 10px 20px rgba(0, 183, 235, 0.2), 0 0 30px rgba(139, 0, 255, 0.2); /* Initial cool shadow */
+    transition: all 0.4s ease-in-out;
+}
+
+.card:hover, .project-card:hover, .skill-item:hover, .social-link:hover, .dashboard:hover, .file-upload:hover, .comment:hover, .btn-primary:hover, .btn-secondary:hover {
+    box-shadow: 0 15px 30px rgba(0, 183, 235, 0.4), 0 0 40px rgba(139, 0, 255, 0.4); /* Enhanced shadow on hover */
+    transform: translateY(-5px) scale(1.02);
+}
+
+/* Animation for glowing elements */
+.glow-effect {
+    animation: glowing 2s infinite alternate;
+}
+
+@keyframes glowing {
+    0% { box-shadow: 0 0 5px rgba(0, 183, 235, 0.5), 0 0 10px rgba(139, 0, 255, 0.5); }
+    100% { box-shadow: 0 0 20px rgba(0, 183, 235, 0.8), 0 0 30px rgba(139, 0, 255, 0.8); }
+}
+
+
