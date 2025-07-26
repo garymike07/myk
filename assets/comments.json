@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "id": 1,
+      "name": "Sarah Johnson",
+      "email": "sarah.johnson@email.com",
+      "message": "Impressive portfolio! Your work on the e-government portal is exactly what our organization needs. Would love to discuss potential collaboration.",
+      "date": "2024-01-18",
+      "approved": true,
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Michael Chen",
+      "email": "m.chen@techcorp.com",
+      "message": "Great technical skills demonstrated in your projects. The mobile learning app concept is innovative and well-executed.",
+      "date": "2024-01-16",
+      "approved": true,
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Dr. Emily Rodriguez",
+      "email": "e.rodriguez@university.edu",
+      "message": "Your approach to digital transformation is comprehensive and practical. Looking forward to seeing more of your work in the education sector.",
+      "date": "2024-01-14",
+      "approved": true,
+      "rating": 4
+    },
+    {
+      "id": 4,
+      "name": "David Thompson",
+      "email": "david.t@startup.io",
+      "message": "Excellent database management solutions. Your expertise would be valuable for our growing startup. Let's connect!",
+      "date": "2024-01-12",
+      "approved": true,
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "name": "Lisa Park",
+      "email": "lisa.park@gov.org",
+      "message": "The IT support dashboard you developed has streamlined our operations significantly. Professional and reliable service.",
+      "date": "2024-01-10",
+      "approved": true,
+      "rating": 5
+    }
+  ],
+  "pending": [
+    {
+      "id": 6,
+      "name": "Alex Wilson",
+      "email": "alex.w@company.com",
+      "message": "Interested in your services for our upcoming project. Can we schedule a consultation?",
+      "date": "2024-01-20",
+      "approved": false,
+      "rating": null
+    }
+  ],
+  "settings": {
+    "moderationEnabled": true,
+    "autoApprove": false,
+    "maxCommentLength": 500,
+    "allowRatings": true
+  }
+}
+

@@ -1,0 +1,219 @@
+{
+  "about": {
+    "name": "Mike  Waitindi",
+    "title": "Full-stack Developer | ICT Officer | Network Administrator | Web 3 Ethuasist ",
+    "description": "A visionary IT Profesional with a rich tapestry of expertise in full-stack development, ICT oversight, and network mastery. As a fervent Web 3 advocate, Mike weaves cutting-edge innovation into every project, crafting transformative digital experiences that propel organizations into the future.",
+    "profilePicture": "assets/profile_picture.jpg"
+  },
+  "skills": {
+    "technical": [
+      "App Development",
+      "Database Management",
+      "IT Infrastructure Support",
+      "Technical Troubleshooting",
+      "System Development",
+      "Web Development",
+      "Mobile App Development",
+      "Cloud Computing",
+      "Network Administration",
+      "Cybersecurity"
+    ],
+    "soft": [
+      "Communication",
+      "Teamwork",
+      "Problem-solving",
+      "Time Management",
+      "Self-discipline",
+      "Leadership",
+      "Project Management",
+      "Critical Thinking",
+      "Adaptability",
+      "Customer Service"
+    ],
+    "languages": [
+      "English",
+      "Kiswahili"
+    ]
+  },
+  "experience": [
+    {
+      "role": "ICT Officer Council of Legal Education",
+      "date": "January 2024 - Present",
+      "description": "Currently serving as an ICT Officer the Council of Legal Education, gaining hands-on experience in information technology support and system administration within the legal education sector."
+    },
+    {
+      "role": "ICT Attache - Gatundu Law Courts",
+      "date": "January 2023 - April 2023",
+      "description": "Helped troubleshoot technical issues reported by staff, resolving them quickly and effectively. Assisted with the maintenance and management of the court\"s computer systems and networks. Also assisted with website maintenance and updates."
+    },
+    {
+      "role": "IEBC ICT Officer - Independent Electoral and Boundaries Commission",
+      "date": "August 2022",
+      "description": "Served as ICT Officer during the August 2022 polls, overseeing maintenance and troubleshooting of KEIMS kit and setting up network infrastructure in the tallying centre for Gatundu South constituency."
+    },
+    {
+      "role": "Junior Software Developer - Freelancer",
+      "date": "July 2021 - February 2022",
+      "description": "Worked as a freelance junior software developer, primarily focusing on website development for clients on a contract basis, delivering custom web solutions and applications."
+    }
+  ],
+  "projects": [
+    {
+      "title": "CV and Cover Letter Maker",
+      "thumbnail": "assets/projects/cv-cover-letter-maker-thumbnail.jpg",
+      "description": "An application to help users create professional CVs and cover letters.",
+      "url": "https://app.base44.com/apps/6883c58b1ab5568cdde23e63/editor/preview/CVMaker"
+    },
+    {
+      "title": "Blog Generator",
+      "thumbnail": "assets/projects/blog-generator-thumbnail.jpg",
+      "description": "A tool to generate blog content quickly and efficiently."
+    },
+    {
+      "title": "Budget Planner",
+      "thumbnail": "assets/projects/budget-planner-thumbnail.jpg",
+      "description": "A system to help users plan and manage their budgets."
+    },
+    {
+      "title": "Pharmacy Management System",
+      "thumbnail": "assets/projects/pharmacy-management-system-thumbnail.jpg",
+      "description": "A comprehensive system for managing pharmacy operations."
+    },
+    {
+      "title": "School Management System",
+      "thumbnail": "assets/projects/school-management-system-thumbnail.jpg",
+      "description": "An integrated system for managing school administration and academic activities."
+    }
+  ],
+  "competencyVideo": {
+    "url": "../assets/videos/competency-placeholder.mp4",
+    "title": "ICT Competency Showcase",
+    "description": "A brief demonstration of my technical skills in system development, database management, and IT support solutions."
+  },
+  "socialLinks": [
+    {
+      "platform": "LinkedIn",
+      "url": "https://www.linkedin.com/in/mr-mike-654bb2344",
+      "icon": "linkedin"
+    },
+    {
+      "platform": "GitHub",
+      "url": "https://github.com/garymike07",
+      "icon": "github"
+    },
+    {
+      "platform": "Twitter",
+      "url": "https://x.com/Garymike001?t=JGxn_ZztN13oTd6hVcLqbQ&s=09",
+      "icon": "twitter"
+    },
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/myk.ih_1",
+      "icon": "instagram"
+    }
+  ],
+  "resume": {
+    "thumbnail": "assets/cv_thumbnail.png",
+    "pdf": "assets/My_CV_new.pdf",
+    "data": {
+      "about": "ICT professional with expertise in system development, app development, database management, IT infrastructure support, and user training. Passionate about using technology to solve real-world problems and improve organizational efficiency.",
+      "skills": {
+        "technical": [
+          "System Development",
+          "App Development",
+          "Database Management",
+          "IT Infrastructure Support",
+          "Technical Troubleshooting",
+          "Web Development",
+          "Mobile Development",
+          "Cloud Computing",
+          "Network Administration",
+          "Cybersecurity"
+        ],
+        "soft": [
+          "Communication",
+          "Teamwork",
+          "Problem-solving",
+          "Time Management",
+          "Self-discipline",
+          "Leadership",
+          "Project Management",
+          "Critical Thinking"
+        ],
+        "languages": [
+          "English (Fluent)",
+          "Kiswahili (Native)"
+        ]
+      },
+      "experience": [
+        {
+          "role": "Freelance Graphic Designer",
+          "date": "Feb 2021 - Present",
+          "description": "Creating engaging visual content for various clients, developing technical and soft skills in design and project management."
+        },
+        {
+          "role": "Academic Writer",
+          "date": "Apr 2021 - Dec 2021",
+          "description": "Completing academic writing assignments with proper formatting, referencing, and research."
+        },
+        {
+          "role": "Tutor (Peer Teacher)",
+          "date": "Jan 2021 - Mar 2021",
+          "description": "Providing academic support and guidance to high school students in ICT and related subjects."
+        }
+      ]
+    }
+  },
+  "blogs": [
+    {
+      "title": "The Future of Digital Transformation in Public Service",
+      "thumbnail": "assets/blogs/blog1-thumbnail.jpg",
+      "excerpt": "Exploring how digital transformation is revolutionizing public service delivery, improving efficiency, and enhancing citizen experience through innovative ICT solutions.",
+      "date": "2024-01-15",
+      "author": "ICT Professional"
+    },
+    {
+      "title": "Best Practices in System Development",
+      "thumbnail": "assets/blogs/blog2-thumbnail.jpg",
+      "excerpt": "A comprehensive guide to modern system development practices, including agile methodologies, security considerations, and scalable architecture design.",
+      "date": "2024-01-10",
+      "author": "ICT Professional"
+    },
+    {
+      "title": "Database Management in the Cloud Era",
+      "thumbnail": "assets/blogs/blog3-thumbnail.jpg",
+      "excerpt": "Understanding the evolution of database management systems in cloud computing environments and the benefits of modern database solutions.",
+      "date": "2024-01-05",
+      "author": "ICT Professional"
+    }
+  ],
+  "testimonials": [
+    {
+      "name": "John Doe",
+      "role": "Project Manager",
+      "company": "Tech Solutions Inc.",
+      "message": "Outstanding work on our e-government portal. The system exceeded our expectations in terms of functionality and user experience.",
+      "rating": 5
+    },
+    {
+      "name": "Jane Smith",
+      "role": "IT Director",
+      "company": "Education Ministry",
+      "message": "Excellent technical skills and professional approach. The mobile learning app has significantly improved our educational delivery.",
+      "rating": 5
+    }
+  ],
+  "contact": {
+    "email": "contact@example.com",
+    "phone": "+1234567890",
+    "location": "City, Country",
+    "availability": "Available for freelance projects and consultations"
+  },
+  "settings": {
+    "theme": "dark",
+    "primaryColor": "#00b7eb",
+    "secondaryColor": "#8b00ff",
+    "lastUpdated": "2024-01-20"
+  }
+}
+
