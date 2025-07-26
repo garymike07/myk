@@ -197,33 +197,51 @@ class PortfolioApp {
                         <div class="w-20 h-1 bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] mx-auto"></div>
                     </div>
                     <div class="grid md:grid-cols-3 gap-8">
-                        <div class="animate-fadeInUp">
-                            <h3 class="text-2xl font-semibold mb-6 text-[var(--primary-color)]">Technical Skills</h3>
-                            <div class="flex flex-wrap gap-2">
-                                ${this.data.skills.technical.map(skill => `
-                                    <span class="skill-tag">${skill}</span>
-                                `).join('')}
-                            </div>
-                        </div>
-                        <div class="animate-fadeInUp" style="animation-delay: 0.2s">
-                            <h3 class="text-2xl font-semibold mb-6 text-[var(--primary-color)]">Soft Skills</h3>
-                            <div class="flex flex-wrap gap-2">
-                                ${this.data.skills.soft.map(skill => `
-                                    <span class="skill-tag">${skill}</span>
-                                `).join('')}
-                            </div>
-                        </div>
-                        <div class="animate-fadeInUp" style="animation-delay: 0.4s">
-                            <h3 class="text-2xl font-semibold mb-6 text-[var(--primary-color)]">Languages</h3>
-                            <div class="flex flex-wrap gap-2">
-                                ${this.data.skills.languages.map(lang => `
-                                    <span class="skill-tag">${lang}</span>
-                                `).join('')}
-                            </div>
-                        </div>
+                        ${this.renderTechnicalSkills()}
+                        ${this.renderSoftSkills()}
+                        ${this.renderLanguages()}
                     </div>
                 </div>
             </section>
+        `;
+    }
+
+    renderTechnicalSkills() {
+        return `
+            <div class="card animate-fadeInUp enhanced-hover glow-effect">
+                <h3 class="text-2xl font-semibold mb-6 text-[var(--primary-color)]">Technical Skills</h3>
+                <div class="flex flex-wrap gap-2">
+                    ${this.data.skills.technical.map(skill => `
+                        <span class="skill-tag">${skill}</span>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    renderSoftSkills() {
+        return `
+            <div class="card animate-fadeInUp enhanced-hover glow-effect" style="animation-delay: 0.2s">
+                <h3 class="text-2xl font-semibold mb-6 text-[var(--primary-color)]">Soft Skills</h3>
+                <div class="flex flex-wrap gap-2">
+                    ${this.data.skills.soft.map(skill => `
+                        <span class="skill-tag">${skill}</span>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+    }
+
+    renderLanguages() {
+        return `
+            <div class="card animate-fadeInUp enhanced-hover glow-effect" style="animation-delay: 0.4s">
+                <h3 class="text-2xl font-semibold mb-6 text-[var(--primary-color)]">Languages</h3>
+                <div class="flex flex-wrap gap-2">
+                    ${this.data.skills.languages.map(lang => `
+                        <span class="skill-tag">${lang}</span>
+                    `).join('')}
+                </div>
+            </div>
         `;
     }
 
@@ -260,21 +278,25 @@ class PortfolioApp {
                         <div class="w-20 h-1 bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] mx-auto"></div>
                     </div>
                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        ${this.data.projects.map((project, index) => `
-                            <a href="${project.url}" target="_blank" class="block">
-                                <div class="project-card animate-fadeInUp" style="animation-delay: ${index * 0.2}s">
-                                    <img src="${project.thumbnail}" alt="${project.title}" 
-                                         onerror="this.src=\'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMmEyYTJhIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMTAwIiBmaWxsPSIjMDBiN2ViIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0Ij5Qcm9qZWN0IEltYWdlPC90ZXh0Pgo8L2Nzdmc+CjwnLz4n\'">
-                                    <div class="p-6">
-                                        <h3 class="text-xl font-semibold mb-3 text-[var(--primary-color)]">${project.title}</h3>
-                                        <p class="text-[var(--text-secondary)] leading-relaxed">${project.description}</p>
-                                    </div>
-                                </div>
-                            </a>
-                        `).join('')}
+                        ${this.data.projects.map((project, index) => this.renderProjectCard(project, index)).join('')}
                     </div>
                 </div>
             </section>
+        `;
+    }
+
+    renderProjectCard(project, index) {
+        return `
+            <a href="${project.url}" target="_blank" class="block">
+                <div class="project-card animate-fadeInUp enhanced-hover glow-effect" style="animation-delay: ${index * 0.2}s">
+                    <img src="${project.thumbnail}" alt="${project.title}" 
+                         onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMmEyYTJhIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMTAwIiBmaWxsPSIjMDBiN2ViIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0Ij5Qcm9qZWN0IEltYWdlPC90ZXh0Pgo8L3N2Zz4K'">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-[var(--primary-color)]">${project.title}</h3>
+                        <p class="text-[var(--text-secondary)] leading-relaxed">${project.description}</p>
+                    </div>
+                </div>
+            </a>
         `;
     }
 
@@ -287,18 +309,22 @@ class PortfolioApp {
                         <div class="w-20 h-1 bg-gradient-to-r from-[var(--primary-color)] to-[var(--secondary-color)] mx-auto"></div>
                     </div>
                     <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        ${this.data.blogs.map((blog, index) => `
-                            <div class="card animate-fadeInUp" style="animation-delay: ${index * 0.2}s">
-                                <img src="${blog.thumbnail}" alt="${blog.title}" 
-                                     class="w-full h-48 object-cover rounded-lg mb-4"
-                                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMmEyYTJhIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMTAwIiBmaWxsPSIjMDBiN2ViIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0Ij5CbG9nIEltYWdlPC90ZXh0Pgo8L3N2Zz4K'">
-                                <h3 class="text-xl font-semibold mb-3 text-[var(--primary-color)]">${blog.title}</h3>
-                                <p class="text-[var(--text-secondary)] leading-relaxed">${blog.excerpt}</p>
-                            </div>
-                        `).join('')}
+                        ${this.data.blogs.map((blog, index) => this.renderBlogCard(blog, index)).join('')}
                     </div>
                 </div>
             </section>
+        `;
+    }
+
+    renderBlogCard(blog, index) {
+        return `
+            <div class="card animate-fadeInUp enhanced-hover glow-effect" style="animation-delay: ${index * 0.2}s">
+                <img src="${blog.thumbnail}" alt="${blog.title}" 
+                     class="w-full h-48 object-cover rounded-lg mb-4"
+                     onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMmEyYTJhIi8+Cjx0ZXh0IHg9IjE1MCIgeT0iMTAwIiBmaWxsPSIjMDBiN2ViIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBkeT0iLjNlbSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0Ij5CbG9nIEltYWdlPC90ZXh0Pgo8L3N2Zz4K'">
+                <h3 class="text-xl font-semibold mb-3 text-[var(--primary-color)]">${blog.title}</h3>
+                <p class="text-[var(--text-secondary)] leading-relaxed">${blog.excerpt}</p>
+            </div>
         `;
     }
 
