@@ -8,16 +8,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+            --primary-gradient: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
+            --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+            --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
             --card-gradient: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
             --text-color: #ffffff;
             --text-secondary: #b8b8b8;
             --bg-color: #0a0a0a;
             --glass-bg: rgba(255, 255, 255, 0.08);
             --glass-border: rgba(255, 255, 255, 0.18);
+            --neon-pink: #ff0080;
+            --neon-blue: #00d4ff;
+            --neon-green: #39ff14;
+            --neon-purple: #bf00ff;
+            --warm-orange: #ff7f50;
+            --electric-yellow: #ffff00;
         }
 
         * {
@@ -68,11 +74,99 @@
             animation: float 20s infinite linear;
         }
 
+        /* Enhanced animations */
         @keyframes float {
             0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
             10% { opacity: 1; }
             90% { opacity: 1; }
             100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 107, 107, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(78, 205, 196, 0.8), 0 0 60px rgba(69, 183, 209, 0.6); }
+        }
+
+        @keyframes slideInFromLeft {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes slideInFromRight {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes rotateIn {
+            0% { transform: rotate(-200deg); opacity: 0; }
+            100% { transform: rotate(0); opacity: 1; }
+        }
+
+        /* Thumbnail gallery styles */
+        .thumbnail-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .thumbnail-item {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            animation: bounceIn 0.8s ease-out;
+        }
+
+        .thumbnail-item:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(255, 107, 107, 0.3);
+            animation: glow 2s infinite;
+        }
+
+        .thumbnail-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .thumbnail-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .thumbnail-content {
+            padding: 25px;
+        }
+
+        .thumbnail-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .thumbnail-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         nav {
@@ -87,6 +181,9 @@
             border-radius: 50px;
             z-index: 1000;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 20px;
         }
 
         nav:hover {
@@ -231,12 +328,14 @@
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
             border: 2px solid transparent;
             background-clip: padding-box;
+            animation: pulse 3s infinite;
         }
 
         .btn:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.4);
             background: var(--secondary-gradient);
+            animation: glow 1.5s infinite;
         }
 
         .btn::before {
@@ -496,6 +595,9 @@
     <div class="particles"></div>
 
     <nav>
+        <div class="nav-logo">
+            <img src="assets/logo.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 20px;">
+        </div>
         <ul>
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -552,24 +654,30 @@
     <section id="projects">
         <div class="container">
             <h2 class="section-title fade-in">Featured Projects</h2>
-            <div class="blog-grid">
-                <div class="blog-post fade-in">
-                    <h3>E-Commerce Platform</h3>
-                    <div class="date">React • Node.js • MongoDB</div>
-                    <p>A full-stack e-commerce solution with real-time inventory management, secure payment processing, and responsive design. Features include user authentication, shopping cart, order tracking, and admin dashboard.</p>
-                    <a href="#">View Project</a>
+            <div class="thumbnail-gallery">
+                <div class="thumbnail-item">
+                    <img src="assets/thumbnails.png" alt="E-Commerce Platform">
+                    <div class="thumbnail-content">
+                        <h3 class="thumbnail-title">E-Commerce Platform</h3>
+                        <p class="thumbnail-description">React • Node.js • MongoDB</p>
+                        <p class="thumbnail-description">A full-stack e-commerce solution with real-time inventory management, secure payment processing, and responsive design.</p>
+                    </div>
                 </div>
-                <div class="blog-post fade-in" style="animation-delay: 0.1s;">
-                    <h3>Task Management App</h3>
-                    <div class="date">Vue.js • Express • PostgreSQL</div>
-                    <p>A collaborative task management application with real-time updates, team collaboration features, and advanced filtering. Includes drag-and-drop functionality, deadline tracking, and progress analytics.</p>
-                    <a href="#">View Project</a>
+                <div class="thumbnail-item" style="animation-delay: 0.2s;">
+                    <img src="assets/thumbnails.png" alt="Task Management App">
+                    <div class="thumbnail-content">
+                        <h3 class="thumbnail-title">Task Management App</h3>
+                        <p class="thumbnail-description">Vue.js • Express • PostgreSQL</p>
+                        <p class="thumbnail-description">A collaborative task management application with real-time updates and team collaboration features.</p>
+                    </div>
                 </div>
-                <div class="blog-post fade-in" style="animation-delay: 0.2s;">
-                    <h3>Weather Analytics Dashboard</h3>
-                    <div class="date">Python • Flask • Chart.js</div>
-                    <p>A comprehensive weather analytics platform that aggregates data from multiple APIs, provides detailed forecasts, and generates insightful visualizations for weather patterns and trends.</p>
-                    <a href="#">View Project</a>
+                <div class="thumbnail-item" style="animation-delay: 0.4s;">
+                    <img src="assets/thumbnails.png" alt="Weather Analytics Dashboard">
+                    <div class="thumbnail-content">
+                        <h3 class="thumbnail-title">Weather Analytics Dashboard</h3>
+                        <p class="thumbnail-description">Python • Flask • Chart.js</p>
+                        <p class="thumbnail-description">A comprehensive weather analytics platform with detailed forecasts and insightful visualizations.</p>
+                    </div>
                 </div>
             </div>
         </div>
