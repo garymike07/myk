@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Software Developer</title>
+    <title>Gary Mike - Software Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -114,76 +114,7 @@
             100% { transform: rotate(0); opacity: 1; }
         }
 
-        /* Thumbnail gallery styles */
-        .thumbnail-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 60px;
-        }
-
-        .thumbnail-item {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            animation: bounceIn 0.8s ease-out;
-        }
-
-        .thumbnail-item:hover {
-            transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(255, 107, 107, 0.3);
-            animation: glow 2s infinite;
-        }
-
-        .thumbnail-item img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .thumbnail-item:hover img {
-            transform: scale(1.1);
-        }
-
-        .thumbnail-content {
-            padding: 25px;
-        }
-
-        .thumbnail-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 10px;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .thumbnail-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        .nav-logo img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 2px solid var(--glass-border);
-            transition: all 0.3s ease;
-        }
-
-        .nav-logo img:hover {
-            transform: scale(1.1);
-            border-color: var(--neon-blue);
-            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-        }
-
+        /* Navigation */
         nav {
             position: fixed;
             top: 20px;
@@ -199,6 +130,8 @@
             display: flex;
             align-items: center;
             gap: 20px;
+            max-width: 90vw;
+            width: auto;
         }
 
         nav:hover {
@@ -207,10 +140,43 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
 
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+        .nav-logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo img:hover {
+            transform: scale(1.1);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
+        .nav-logo span {
+            font-weight: 600;
+            font-size: 1.1rem;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: none;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         nav ul li a {
@@ -222,6 +188,7 @@
             transition: all 0.3s ease;
             padding: 8px 16px;
             border-radius: 25px;
+            white-space: nowrap;
         }
 
         nav ul li a:hover {
@@ -230,8 +197,85 @@
             box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
         }
 
+        /* Mobile Navigation */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Responsive Navigation */
+        @media (max-width: 768px) {
+            nav {
+                padding: 10px 20px;
+                gap: 15px;
+                top: 15px;
+                max-width: 95vw;
+            }
+
+            .nav-logo img {
+                width: 50px;
+                height: 50px;
+            }
+
+            .nav-logo span {
+                display: block;
+                font-size: 1rem;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--glass-bg);
+                backdrop-filter: blur(20px);
+                border: 1px solid var(--glass-border);
+                border-radius: 20px;
+                margin-top: 10px;
+                padding: 20px;
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            nav ul li a {
+                padding: 12px 20px;
+                text-align: center;
+                border-radius: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                padding: 8px 15px;
+                gap: 10px;
+            }
+
+            .nav-logo img {
+                width: 45px;
+                height: 45px;
+            }
+
+            .nav-logo span {
+                font-size: 0.9rem;
+            }
+        }
+
         section {
-            padding: 120px 20px;
+            padding: 80px 20px;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -249,7 +293,7 @@
         .section-title {
             font-size: clamp(2.5rem, 5vw, 4rem);
             font-weight: 700;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             text-align: center;
             background: var(--primary-gradient);
             -webkit-background-clip: text;
@@ -300,6 +344,7 @@
         /* Hero Section */
         #hero {
             background: radial-gradient(circle at center, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            padding-top: 140px;
         }
 
         #hero .container {
@@ -327,6 +372,9 @@
             color: var(--text-secondary);
             margin-bottom: 40px;
             font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .btn {
@@ -366,6 +414,11 @@
 
         .btn:hover::before {
             left: 100%;
+        }
+
+        /* About Section */
+        #about {
+            padding: 60px 20px;
         }
 
         /* Glass Card Effect */
@@ -428,6 +481,145 @@
 
         .skill-item:nth-child(even):hover {
             box-shadow: 0 20px 40px rgba(240, 147, 251, 0.2);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            animation: bounceIn 0.8s ease-out;
+            cursor: pointer;
+        }
+
+        .project-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(255, 107, 107, 0.3);
+            animation: glow 2s infinite;
+        }
+
+        .project-thumbnail {
+            width: 100%;
+            height: 220px;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-thumbnail img {
+            transform: scale(1.1);
+        }
+
+        .project-content {
+            padding: 30px;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .project-tech {
+            font-size: 0.9rem;
+            color: var(--neon-blue);
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-link {
+            padding: 8px 16px;
+            background: var(--secondary-gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .project-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(240, 147, 251, 0.4);
+        }
+
+        /* Modal for project details */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            margin: 5% auto;
+            padding: 40px;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 20px;
+            position: relative;
+            animation: bounceIn 0.5s ease-out;
+        }
+
+        .close {
+            color: var(--text-color);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        .close:hover {
+            color: var(--neon-pink);
         }
 
         /* Blog Section */
@@ -542,76 +734,147 @@
         .testimonial::before {
             content: '"';
             font-size: 4rem;
+            color: var(--neon-blue);
             position: absolute;
-            top: 10px;
+            top: -10px;
             left: 20px;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-weight: bold;
+            opacity: 0.3;
         }
 
         .testimonial:hover {
             transform: translateY(-10px) scale(1.02);
             background: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
+        }
+
+        .testimonial p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--neon-green);
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 80px 20px;
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-content p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            nav {
-                position: fixed;
-                bottom: 20px;
-                top: auto;
-                padding: 10px 20px;
+            section {
+                padding: 60px 15px;
             }
 
-            nav ul {
+            #hero {
+                padding-top: 120px;
+            }
+
+            #about {
+                padding: 40px 15px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .project-card {
+                min-width: unset;
+            }
+
+            .skills-matrix {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 20px;
+            }
+
+            .blog-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                margin-bottom: 30px;
+            }
+
+            .projects-grid {
+                gap: 20px;
+            }
+
+            .project-content {
+                padding: 20px;
+            }
+
+            .skills-matrix {
+                grid-template-columns: 1fr;
                 gap: 15px;
             }
 
-            nav ul li a {
-                font-size: 12px;
-                padding: 6px 12px;
-            }
-
-            section {
-                padding: 80px 15px;
-            }
-
-            .skills-matrix,
-            .blog-grid,
-            .testimonials {
-                grid-template-columns: 1fr;
+            .skill-item {
+                padding: 20px;
             }
         }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+        /* Scroll animations */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
         }
 
-        ::-webkit-scrollbar-track {
-            background: var(--bg-color);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary-gradient);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--secondary-gradient);
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
+    <!-- Floating Particles -->
     <div class="particles"></div>
 
+    <!-- Navigation -->
     <nav>
         <div class="nav-logo">
-            <img src="assets/logo.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 50%; margin-right: 20px;">
+            <img src="assets/logo.jpg" alt="Gary Mike" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display:none; width:45px; height:45px; border-radius:50%; background:var(--primary-gradient); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1.2rem;">GM</div>
+            <span>Gary Mike</span>
         </div>
         <ul>
             <li><a href="#hero">Home</a></li>
@@ -621,171 +884,356 @@
             <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+        <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
 
+    <!-- Hero Section -->
     <section id="hero">
         <div class="container">
             <h1 class="fade-in">Welcome to My Portfolio</h1>
-            <p class="fade-in">Hi, I'm [Your Name], a passionate software developer crafting digital experiences with cutting-edge technology.</p>
+            <p class="fade-in">Hi, I'm Gary Mike, a passionate software developer crafting digital experiences with cutting-edge technology.</p>
             <a href="#projects" class="btn fade-in">Explore My Work</a>
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            <div class="glass-card fade-in">
-                <p style="font-size: 1.1rem; color: var(--text-secondary); text-align: center; margin-bottom: 40px;">I'm a software developer with extensive experience in building innovative web applications using modern technologies. My passion lies in creating seamless user experiences and robust, scalable solutions.</p>
-                <div class="skills-matrix">
-                    <div class="skill-item slide-in-left">
-                        <i class="fab fa-js-square" style="font-size: 2rem; margin-bottom: 15px; color: #f7df1e;"></i>
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="skill-item slide-in-left" style="animation-delay: 0.1s;">
-                        <i class="fab fa-react" style="font-size: 2rem; margin-bottom: 15px; color: #61dafb;"></i>
-                        <h3>React</h3>
-                    </div>
-                    <div class="skill-item slide-in-right">
-                        <i class="fab fa-node-js" style="font-size: 2rem; margin-bottom: 15px; color: #68a063;"></i>
-                        <h3>Node.js</h3>
-                    </div>
-                    <div class="skill-item slide-in-right" style="animation-delay: 0.1s;">
-                        <i class="fab fa-python" style="font-size: 2rem; margin-bottom: 15px; color: #3776ab;"></i>
-                        <h3>Python</h3>
-                    </div>
-                    <div class="skill-item slide-in-left" style="animation-delay: 0.2s;">
-                        <i class="fas fa-database" style="font-size: 2rem; margin-bottom: 15px; color: #336791;"></i>
-                        <h3>Database</h3>
-                    </div>
-                    <div class="skill-item slide-in-right" style="animation-delay: 0.2s;">
-                        <i class="fab fa-aws" style="font-size: 2rem; margin-bottom: 15px; color: #ff9900;"></i>
-                        <h3>AWS</h3>
-                    </div>
+            <h2 class="section-title animate-on-scroll">About Me</h2>
+            <div class="glass-card animate-on-scroll">
+                <p>I'm a software developer with extensive experience in building innovative web applications using modern technologies. My passion lies in creating seamless user experiences and robust, scalable solutions.</p>
+            </div>
+
+            <div class="skills-matrix">
+                <div class="skill-item animate-on-scroll">
+                    <i class="fab fa-js-square" style="font-size: 2.5rem; color: #f7df1e; margin-bottom: 15px;"></i>
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <i class="fab fa-react" style="font-size: 2.5rem; color: #61dafb; margin-bottom: 15px;"></i>
+                    <h3>React</h3>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <i class="fab fa-node-js" style="font-size: 2.5rem; color: #339933; margin-bottom: 15px;"></i>
+                    <h3>Node.js</h3>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <i class="fab fa-python" style="font-size: 2.5rem; color: #3776ab; margin-bottom: 15px;"></i>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <i class="fas fa-database" style="font-size: 2.5rem; color: #336791; margin-bottom: 15px;"></i>
+                    <h3>Database</h3>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <i class="fab fa-aws" style="font-size: 2.5rem; color: #ff9900; margin-bottom: 15px;"></i>
+                    <h3>AWS</h3>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
         <div class="container">
-            <h2 class="section-title fade-in">Featured Projects</h2>
-            <div class="thumbnail-gallery">
-                <div class="thumbnail-item">
-                    <img src="assets/thumbnails.png" alt="E-Commerce Platform">
-                    <div class="thumbnail-content">
-                        <h3 class="thumbnail-title">E-Commerce Platform</h3>
-                        <p class="thumbnail-description">React • Node.js • MongoDB</p>
-                        <p class="thumbnail-description">A full-stack e-commerce solution with real-time inventory management, secure payment processing, and responsive design.</p>
+            <h2 class="section-title animate-on-scroll">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card animate-on-scroll" onclick="openModal('ecommerce')">
+                    <div class="project-thumbnail">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-tech">React • Node.js • MongoDB</p>
+                        <p class="project-description">A full-stack e-commerce solution with real-time inventory management, secure payment processing, and responsive design.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Details</a>
+                            <a href="#" class="project-link">Live Demo</a>
+                        </div>
                     </div>
                 </div>
-                <div class="thumbnail-item" style="animation-delay: 0.2s;">
-                    <img src="assets/thumbnails.png" alt="Task Management App">
-                    <div class="thumbnail-content">
-                        <h3 class="thumbnail-title">Task Management App</h3>
-                        <p class="thumbnail-description">Vue.js • Express • PostgreSQL</p>
-                        <p class="thumbnail-description">A collaborative task management application with real-time updates and team collaboration features.</p>
+
+                <div class="project-card animate-on-scroll" onclick="openModal('taskmanager')">
+                    <div class="project-thumbnail">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-tech">Vue.js • Express • PostgreSQL</p>
+                        <p class="project-description">A collaborative task management application with real-time updates and team collaboration features.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Details</a>
+                            <a href="#" class="project-link">Live Demo</a>
+                        </div>
                     </div>
                 </div>
-                <div class="thumbnail-item" style="animation-delay: 0.4s;">
-                    <img src="assets/thumbnails.png" alt="Weather Analytics Dashboard">
-                    <div class="thumbnail-content">
-                        <h3 class="thumbnail-title">Weather Analytics Dashboard</h3>
-                        <p class="thumbnail-description">Python • Flask • Chart.js</p>
-                        <p class="thumbnail-description">A comprehensive weather analytics platform that aggregates data from multiple APIs, provides detailed forecasts, and generates insightful visualizations.</p>
+
+                <div class="project-card animate-on-scroll" onclick="openModal('weather')">
+                    <div class="project-thumbnail">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Weather Analytics Dashboard</h3>
+                        <p class="project-tech">Python • Flask • Chart.js</p>
+                        <p class="project-description">A comprehensive weather analytics platform that aggregates data from multiple APIs, provides detailed forecasts, and generates insightful visualizations.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Details</a>
+                            <a href="#" class="project-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll" onclick="openModal('mentalhealth')">
+                    <div class="project-thumbnail">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Mental Health App</h3>
+                        <p class="project-tech">React Native • Firebase • Node.js</p>
+                        <p class="project-description">A comprehensive mental health tracking and support application with mood tracking, meditation guides, and professional consultation booking.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Details</a>
+                            <a href="#" class="project-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll" onclick="openModal('cvmaker')">
+                    <div class="project-thumbnail">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">CV Maker</h3>
+                        <p class="project-tech">React • PDF.js • Material-UI</p>
+                        <p class="project-description">An intuitive CV/Resume builder with multiple templates, real-time preview, and PDF export functionality.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Details</a>
+                            <a href="#" class="project-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll" onclick="openModal('hakitrack')">
+                    <div class="project-thumbnail">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">HakiTrack App</h3>
+                        <p class="project-tech">Flutter • Firebase • Google Maps API</p>
+                        <p class="project-description">A location-based rights tracking application for monitoring and reporting human rights violations with real-time GPS tracking.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Details</a>
+                            <a href="#" class="project-link">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll" onclick="openModal('landlord')">
+                    <div class="project-thumbnail">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Landlord Rent Management</h3>
+                        <p class="project-tech">Django • PostgreSQL • Stripe API</p>
+                        <p class="project-description">A comprehensive property management system for landlords to track rent payments, manage tenants, and handle maintenance requests.</p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">View Details</a>
+                            <a href="#" class="project-link">Live Demo</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Blog Section -->
     <section id="blog">
         <div class="container">
-            <h2 class="section-title fade-in">Latest Blog Posts</h2>
+            <h2 class="section-title animate-on-scroll">Latest Blog Posts</h2>
             <div class="blog-grid">
-                <div class="blog-post fade-in">
+                <article class="blog-post animate-on-scroll">
                     <h3>The Future of Web Development</h3>
                     <div class="date">January 15, 2024</div>
                     <p>Exploring emerging trends in web development, from WebAssembly to progressive web apps, and how they're shaping the future of digital experiences.</p>
                     <a href="#">Read More</a>
-                </div>
-                <div class="blog-post fade-in" style="animation-delay: 0.1s;">
+                </article>
+
+                <article class="blog-post animate-on-scroll">
                     <h3>Building Scalable APIs</h3>
                     <div class="date">December 28, 2023</div>
                     <p>Best practices for designing and implementing scalable REST APIs, including caching strategies, rate limiting, and microservices architecture.</p>
                     <a href="#">Read More</a>
-                </div>
-                <div class="blog-post fade-in" style="animation-delay: 0.2s;">
+                </article>
+
+                <article class="blog-post animate-on-scroll">
                     <h3>Modern CSS Techniques</h3>
                     <div class="date">December 10, 2023</div>
                     <p>Advanced CSS techniques including Grid, Flexbox, custom properties, and modern layout methods that enhance user experience and developer productivity.</p>
                     <a href="#">Read More</a>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
+    <!-- Testimonials Section -->
     <section id="testimonials">
         <div class="container">
-            <h2 class="section-title fade-in">What Clients Say</h2>
+            <h2 class="section-title animate-on-scroll">What Clients Say</h2>
             <div class="testimonials">
-                <div class="testimonial fade-in">
-                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 30px; line-height: 1.8;">Working with this developer was an absolute pleasure. They delivered a high-quality solution that exceeded our expectations and helped transform our business processes.</p>
-                    <h4 style="color: var(--text-color); font-weight: 600;">Sarah Johnson</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem;">CEO, TechStart Inc.</p>
+                <div class="testimonial animate-on-scroll">
+                    <p>Working with this developer was an absolute pleasure. They delivered a high-quality solution that exceeded our expectations and helped transform our business processes.</p>
+                    <div class="testimonial-author">Sarah Johnson</div>
+                    <div class="testimonial-role">CEO, TechStart Inc.</div>
                 </div>
-                <div class="testimonial fade-in" style="animation-delay: 0.1s;">
-                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 30px; line-height: 1.8;">Exceptional technical skills combined with great communication. The project was delivered on time and the code quality was outstanding. Highly recommended!</p>
-                    <h4 style="color: var(--text-color); font-weight: 600;">Michael Chen</h4>
-                    <p style="color: var(--text-secondary); font-size: 0.9rem;">CTO, Digital Solutions</p>
+
+                <div class="testimonial animate-on-scroll">
+                    <p>Exceptional technical skills combined with great communication. The project was delivered on time and the code quality was outstanding. Highly recommended!</p>
+                    <div class="testimonial-author">Michael Chen</div>
+                    <div class="testimonial-role">CTO, Digital Solutions</div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Contact Section -->
     <section id="contact">
         <div class="container">
-            <h2 class="section-title fade-in">Get In Touch</h2>
-            <div class="glass-card fade-in" style="text-align: center;">
-                <p style="font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 40px;">Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.</p>
-                <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
-                    <a href="mailto:your.email@example.com" class="btn">Send Email</a>
-                    <a href="https://linkedin.com/in/yourprofile" class="btn" style="background: var(--accent-gradient);">LinkedIn</a>
-                    <a href="https://github.com/yourusername" class="btn" style="background: var(--secondary-gradient);">GitHub</a>
-                </div>
+            <h2 class="section-title animate-on-scroll">Get In Touch</h2>
+            <div class="contact-content animate-on-scroll">
+                <p>Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.</p>
+                <a href="mailto:gary@example.com" class="btn">Contact Me</a>
             </div>
         </div>
     </section>
 
+    <!-- Project Modals -->
+    <div id="ecommerce-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>E-Commerce Platform</h2>
+            <p><strong>Technologies:</strong> React • Node.js • MongoDB • Stripe API</p>
+            <p>A comprehensive e-commerce solution featuring:</p>
+            <ul>
+                <li>Real-time inventory management</li>
+                <li>Secure payment processing with Stripe</li>
+                <li>Responsive design for all devices</li>
+                <li>Admin dashboard for order management</li>
+                <li>Customer reviews and ratings system</li>
+                <li>Advanced search and filtering</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="taskmanager-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Task Management App</h2>
+            <p><strong>Technologies:</strong> Vue.js • Express • PostgreSQL • Socket.io</p>
+            <p>A collaborative task management application featuring:</p>
+            <ul>
+                <li>Real-time collaboration with team members</li>
+                <li>Kanban board interface</li>
+                <li>Project timeline and milestone tracking</li>
+                <li>File attachments and comments</li>
+                <li>Email notifications and reminders</li>
+                <li>Advanced reporting and analytics</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="weather-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Weather Analytics Dashboard</h2>
+            <p><strong>Technologies:</strong> Python • Flask • Chart.js • OpenWeather API</p>
+            <p>A comprehensive weather analytics platform featuring:</p>
+            <ul>
+                <li>Multi-source weather data aggregation</li>
+                <li>Interactive charts and visualizations</li>
+                <li>Historical weather data analysis</li>
+                <li>Weather forecasting with ML models</li>
+                <li>Location-based weather alerts</li>
+                <li>Export data in multiple formats</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="mentalhealth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Mental Health App</h2>
+            <p><strong>Technologies:</strong> React Native • Firebase • Node.js • TensorFlow</p>
+            <p>A comprehensive mental health tracking and support application featuring:</p>
+            <ul>
+                <li>Daily mood tracking with analytics</li>
+                <li>Guided meditation and mindfulness exercises</li>
+                <li>Professional consultation booking system</li>
+                <li>Crisis support and emergency contacts</li>
+                <li>Progress tracking and insights</li>
+                <li>Community support forums</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="cvmaker-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>CV Maker</h2>
+            <p><strong>Technologies:</strong> React • PDF.js • Material-UI • Node.js</p>
+            <p>An intuitive CV/Resume builder featuring:</p>
+            <ul>
+                <li>Multiple professional templates</li>
+                <li>Real-time preview and editing</li>
+                <li>PDF export with custom styling</li>
+                <li>ATS-friendly resume formats</li>
+                <li>Cloud storage and sharing</li>
+                <li>Skills assessment and recommendations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="hakitrack-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>HakiTrack App</h2>
+            <p><strong>Technologies:</strong> Flutter • Firebase • Google Maps API • Node.js</p>
+            <p>A location-based rights tracking application featuring:</p>
+            <ul>
+                <li>Real-time GPS tracking and reporting</li>
+                <li>Anonymous incident reporting system</li>
+                <li>Interactive map with incident markers</li>
+                <li>Multi-language support</li>
+                <li>Secure data encryption and privacy</li>
+                <li>Integration with human rights organizations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="landlord-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Landlord Rent Management</h2>
+            <p><strong>Technologies:</strong> Django • PostgreSQL • Stripe API • Celery</p>
+            <p>A comprehensive property management system featuring:</p>
+            <ul>
+                <li>Automated rent collection and reminders</li>
+                <li>Tenant management and communication</li>
+                <li>Maintenance request tracking</li>
+                <li>Financial reporting and analytics</li>
+                <li>Document management and storage</li>
+                <li>Mobile app for tenants and landlords</li>
+            </ul>
+        </div>
+    </div>
+
     <script>
-        // Particle animation
-        function createParticles() {
-            const particlesContainer = document.querySelector('.particles');
-            const particleCount = 50;
-
-            for (let i = 0; i < particleCount; i++) {
-                const particle = document.createElement('div');
-                particle.className = 'particle';
-                particle.style.left = Math.random() * 100 + '%';
-                particle.style.width = particle.style.height = Math.random() * 4 + 2 + 'px';
-                particle.style.animationDelay = Math.random() * 20 + 's';
-                particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
-                particlesContainer.appendChild(particle);
-            }
-        }
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('active');
+        });
 
         // Smooth scrolling for navigation links
         document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
@@ -798,38 +1246,77 @@
                         block: 'start'
                     });
                 }
+                // Close mobile menu after clicking
+                document.querySelector('nav ul').classList.remove('active');
             });
         });
 
-        // Initialize animations and particles when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            createParticles();
-            
-            // Observe all animated elements
-            document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-                observer.observe(el);
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Fade in animations for hero section
+        window.addEventListener('load', function() {
+            document.querySelectorAll('#hero .fade-in').forEach((el, index) => {
+                setTimeout(() => {
+                    el.classList.add('visible');
+                }, index * 200);
             });
         });
 
-        // Add active navigation state
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
+        // Floating particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + 'vw';
+            particle.style.width = particle.style.height = Math.random() * 10 + 5 + 'px';
+            particle.style.animationDuration = Math.random() * 15 + 10 + 's';
+            document.querySelector('.particles').appendChild(particle);
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
+            setTimeout(() => {
+                particle.remove();
+            }, 25000);
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 2000);
+
+        // Modal functionality
+        function openModal(projectId) {
+            document.getElementById(projectId + '-modal').style.display = 'block';
+        }
+
+        // Close modal when clicking the X or outside the modal
+        document.querySelectorAll('.close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function() {
+                this.closest('.modal').style.display = 'none';
+            });
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        });
+
+        // Prevent modal from closing when clicking inside modal content
+        document.querySelectorAll('.modal-content').forEach(content => {
+            content.addEventListener('click', function(event) {
+                event.stopPropagation();
             });
         });
     </script>
