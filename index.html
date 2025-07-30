@@ -344,39 +344,109 @@
 
         /* Hero Section */
         #hero {
-            background: radial-gradient(circle at center, rgba(102, 126, 234, 0.1) 0%, transparent 70%);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
             padding-top: 120px;
             padding-bottom: 40px;
-        }
-
-        #hero .container {
             text-align: center;
         }
 
-        #hero h1 {
-            font-size: clamp(3rem, 7vw, 6rem);
-            font-weight: 700;
+        .hero-header {
             margin-bottom: 30px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: heroText 4s ease-in-out infinite alternate;
         }
 
-        @keyframes heroText {
-            0% { filter: drop-shadow(0 0 30px rgba(102, 126, 234, 0.6)); }
-            100% { filter: drop-shadow(0 0 50px rgba(240, 147, 251, 0.8)); }
+        .site-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #4ecdc4;
+            margin-bottom: 0;
         }
 
-        #hero p {
-            font-size: 1.3rem;
+        .hero-profile {
+            margin-bottom: 20px;
+        }
+
+        .profile-image {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #4ecdc4;
+            position: relative;
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-placeholder {
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+        }
+
+        .hero-time {
+            margin-bottom: 20px;
+        }
+
+        .time-display {
+            font-size: 1.2rem;
+            color: #4ecdc4;
+            font-weight: 500;
+        }
+
+        .hero-greeting {
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--text-color);
+            margin-bottom: 30px;
+        }
+
+        .hero-roles {
+            margin-bottom: 20px;
+        }
+
+        .hero-roles p {
+            font-size: 1.1rem;
             color: var(--text-secondary);
-            margin-bottom: 40px;
             font-weight: 300;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        }
+
+        .hero-tagline {
+            margin-bottom: 40px;
+        }
+
+        .hero-tagline p {
+            font-size: 1.3rem;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #4ecdc4;
+            color: #4ecdc4;
+        }
+
+        .btn-secondary:hover {
+            background: #4ecdc4;
+            color: #0a0a0a;
         }
 
         .btn {
@@ -418,9 +488,100 @@
             left: 100%;
         }
 
-        /* About Section */
-        #about {
-            padding: 40px 20px;
+        /* Social Links */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .social-link {
+            width: 50px;
+            height: 50px;
+            background: rgba(78, 205, 196, 0.1);
+            border: 2px solid #4ecdc4;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #4ecdc4;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: #4ecdc4;
+            color: #0a0a0a;
+            transform: translateY(-3px);
+        }
+
+        /* Experience Timeline */
+        #experience {
+            padding: 60px 20px;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 30px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #4ecdc4;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            padding-left: 40px;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -25px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #4ecdc4;
+            border-radius: 50%;
+            border: 3px solid #0a0a0a;
+        }
+
+        .timeline-content {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .timeline-content h3 {
+            color: #4ecdc4;
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .timeline-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+        }
+
+        .timeline-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
         }
 
         /* Glass Card Effect */
@@ -488,7 +649,7 @@
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 40px;
         }
@@ -498,90 +659,83 @@
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 15px;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-            animation: bounceIn 0.8s ease-out;
+            padding: 20px;
             cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .project-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.3);
-            animation: glow 2s infinite;
+            transform: translateY(-5px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
         }
 
-        .project-thumbnail {
-            width: 100%;
-            height: 160px;
-            background: var(--accent-gradient);
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .stat {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
+            gap: 5px;
         }
 
-        .project-thumbnail img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .project-card:hover .project-thumbnail img {
-            transform: scale(1.1);
-        }
-
-        .project-content {
-            padding: 20px;
+        .project-time {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
         .project-title {
-            font-size: 1.2rem;
+            color: var(--text-color);
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 8px;
-            background: var(--accent-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 10px;
         }
 
-        .project-tech {
+        .project-status {
+            background: #4ecdc4;
+            color: #0a0a0a;
+            padding: 4px 12px;
+            border-radius: 20px;
             font-size: 0.8rem;
-            color: var(--neon-blue);
-            margin-bottom: 12px;
-            font-weight: 500;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 15px;
         }
 
         .project-description {
             color: var(--text-secondary);
+            font-size: 0.95rem;
             line-height: 1.5;
-            margin-bottom: 15px;
-            font-size: 0.9rem;
+            margin-bottom: 20px;
         }
 
-        .project-links {
+        .project-tech-tags {
             display: flex;
-            gap: 15px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
-        .project-link {
-            padding: 8px 16px;
-            background: var(--secondary-gradient);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-size: 0.9rem;
+        .tech-tag {
+            background: rgba(78, 205, 196, 0.1);
+            color: #4ecdc4;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
             font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .project-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(240, 147, 251, 0.4);
+            border: 1px solid rgba(78, 205, 196, 0.3);
         }
 
         /* Modal for project details */
@@ -897,9 +1051,37 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="container">
-            <h1 class="fade-in">Welcome to My Portfolio</h1>
-            <p class="fade-in">Hi, I'm Gary Mike, a passionate software developer crafting digital experiences with cutting-edge technology.</p>
-            <a href="#projects" class="btn fade-in">Explore My Work</a>
+            <div class="hero-header">
+                <h1 class="site-title fade-in">Mike portfolio site</h1>
+            </div>
+            
+            <div class="hero-profile fade-in">
+                <div class="profile-image">
+                    <img src="assets/profile.jpg" alt="Gary Mike" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="profile-placeholder" style="display:none;">
+                        <span>GM</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-time fade-in">
+                <div class="time-display" id="current-time">11:12:09 AM</div>
+            </div>
+            
+            <h2 class="hero-greeting fade-in">Good morning! Welcome to my portfolio</h2>
+            
+            <div class="hero-roles fade-in">
+                <p>Full-stack Developer | ICT Officer | Network Administrator | Web 3 Enthusiast</p>
+            </div>
+            
+            <div class="hero-tagline fade-in">
+                <p>Transforming Challenges into Tech Solutions</p>
+            </div>
+            
+            <div class="hero-buttons fade-in">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
         </div>
     </section>
 
@@ -908,7 +1090,22 @@
         <div class="container">
             <h2 class="section-title animate-on-scroll">About Me</h2>
             <div class="glass-card animate-on-scroll">
-                <p>I'm a software developer with extensive experience in building innovative web applications using modern technologies. My passion lies in creating seamless user experiences and robust, scalable solutions.</p>
+                <p>A visionary IT Professional with a rich tapestry of expertise in full-stack development, ICT oversight, and network mastery. As a fervent Web 3 advocate, Mike weaves cutting-edge innovation into every project, crafting transformative digital experiences that propel organizations into the future.</p>
+                
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
             </div>
 
             <div class="skills-matrix">
@@ -940,114 +1137,176 @@
         </div>
     </section>
 
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>ICT Officer Council of Legal Education</h3>
+                        <div class="timeline-date">January 2024 - Present</div>
+                        <p>Currently serving as an ICT Officer the Council of Legal Education, gaining hands-on experience in information technology support and system administration within the legal education sector.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>ICT Attache - Gatundu Law Courts</h3>
+                        <div class="timeline-date">January 2023 - April 2023</div>
+                        <p>Helped troubleshoot technical issues reported by staff, resolving them quickly and effectively. Assisted with the maintenance and management of the court's computer systems and networks. Also assisted with website maintenance and updates.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>IEBC ICT Officer - Independent Electoral and Boundaries Commission</h3>
+                        <div class="timeline-date">August 2022</div>
+                        <p>Served as ICT Officer during the August 2022 polls, overseeing maintenance and troubleshooting of KEIMS kit and setting up network infrastructure in the tallying centre for Gatundu South constituency.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Junior Software Developer - Freelancer</h3>
+                        <div class="timeline-date">July 2021 - February 2022</div>
+                        <p>Worked as a freelance junior software developer, primarily focusing on website development for clients on a contract basis, delivering custom web solutions and applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Projects Section -->
     <section id="projects">
         <div class="container">
             <h2 class="section-title animate-on-scroll">Featured Projects</h2>
             <div class="projects-grid">
+                <div class="project-card animate-on-scroll" onclick="openModal('blockchain')">
+                    <div class="project-header">
+                        <div class="project-stats">
+                            <span class="stat"><i class="fas fa-star"></i> 324</span>
+                            <span class="stat"><i class="fas fa-code-branch"></i> 145</span>
+                            <span class="project-time">8 months</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Blockchain Analytics Platform</h3>
+                        <div class="project-status">Production</div>
+                        <p class="project-description">A real-time cryptocurrency tracking and analysis platform with advanced charting and portfolio management.</p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">TypeScript</span>
+                            <span class="tech-tag">Web3.js</span>
+                            <span class="tech-tag">+3</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll" onclick="openModal('ml-api')">
+                    <div class="project-header">
+                        <div class="project-stats">
+                            <span class="stat"><i class="fas fa-star"></i> 445</span>
+                            <span class="stat"><i class="fas fa-code-branch"></i> 234</span>
+                            <span class="project-time">7 months</span>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Machine Learning API</h3>
+                        <div class="project-status">Production</div>
+                        <p class="project-description">A scalable ML microservice for image recognition and natural language processing with auto-scaling capabilities.</p>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">+3</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="project-card animate-on-scroll" onclick="openModal('ecommerce')">
-                    <div class="project-thumbnail">
-                        <i class="fas fa-shopping-cart"></i>
+                    <div class="project-header">
+                        <div class="project-stats">
+                            <span class="stat"><i class="fas fa-star"></i> 203</span>
+                            <span class="stat"><i class="fas fa-code-branch"></i> 89</span>
+                            <span class="project-time">5 months</span>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">E-Commerce Platform</h3>
-                        <p class="project-tech">React • Node.js • MongoDB</p>
+                        <div class="project-status">Production</div>
                         <p class="project-description">A full-stack e-commerce solution with real-time inventory management, secure payment processing, and responsive design.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Details</a>
-                            <a href="#" class="project-link">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card animate-on-scroll" onclick="openModal('taskmanager')">
-                    <div class="project-thumbnail">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Task Management App</h3>
-                        <p class="project-tech">Vue.js • Express • PostgreSQL</p>
-                        <p class="project-description">A collaborative task management application with real-time updates and team collaboration features.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Details</a>
-                            <a href="#" class="project-link">Live Demo</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card animate-on-scroll" onclick="openModal('weather')">
-                    <div class="project-thumbnail">
-                        <i class="fas fa-cloud-sun"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Weather Analytics Dashboard</h3>
-                        <p class="project-tech">Python • Flask • Chart.js</p>
-                        <p class="project-description">A comprehensive weather analytics platform that aggregates data from multiple APIs, provides detailed forecasts, and generates insightful visualizations.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Details</a>
-                            <a href="#" class="project-link">Live Demo</a>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                            <span class="tech-tag">MongoDB</span>
+                            <span class="tech-tag">+2</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="project-card animate-on-scroll" onclick="openModal('mentalhealth')">
-                    <div class="project-thumbnail">
-                        <i class="fas fa-brain"></i>
+                    <div class="project-header">
+                        <div class="project-stats">
+                            <span class="stat"><i class="fas fa-star"></i> 156</span>
+                            <span class="stat"><i class="fas fa-code-branch"></i> 67</span>
+                            <span class="project-time">4 months</span>
+                        </div>
                     </div>
                     <div class="project-content">
                         <h3 class="project-title">Mental Health App</h3>
-                        <p class="project-tech">React Native • Firebase • Node.js</p>
+                        <div class="project-status">Development</div>
                         <p class="project-description">A comprehensive mental health tracking and support application with mood tracking, meditation guides, and professional consultation booking.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Details</a>
-                            <a href="#" class="project-link">Live Demo</a>
+                        <div class="project-tech-tags">
+                            <span class="tech-tag">React Native</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">+2</span>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="project-card animate-on-scroll" onclick="openModal('cvmaker')">
-                    <div class="project-thumbnail">
-                        <i class="fas fa-file-alt"></i>
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Expertise</h2>
+            <div class="expertise-grid">
+                <div class="expertise-card animate-on-scroll">
+                    <div class="expertise-icon">
+                        <i class="fas fa-code" style="color: #bf00ff;"></i>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">CV Maker</h3>
-                        <p class="project-tech">React • PDF.js • Material-UI</p>
-                        <p class="project-description">An intuitive CV/Resume builder with multiple templates, real-time preview, and PDF export functionality.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Details</a>
-                            <a href="#" class="project-link">Live Demo</a>
-                        </div>
-                    </div>
+                    <h3>Clean Code</h3>
+                    <p>Writing maintainable, scalable, and efficient code with modern best practices.</p>
                 </div>
 
-                <div class="project-card animate-on-scroll" onclick="openModal('hakitrack')">
-                    <div class="project-thumbnail">
-                        <i class="fas fa-map-marker-alt"></i>
+                <div class="expertise-card animate-on-scroll">
+                    <div class="expertise-icon">
+                        <i class="fas fa-palette" style="color: #bf00ff;"></i>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">HakiTrack App</h3>
-                        <p class="project-tech">Flutter • Firebase • Google Maps API</p>
-                        <p class="project-description">A location-based rights tracking application for monitoring and reporting human rights violations with real-time GPS tracking.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Details</a>
-                            <a href="#" class="project-link">Live Demo</a>
-                        </div>
-                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Creating beautiful and intuitive user interfaces with attention to detail.</p>
                 </div>
 
-                <div class="project-card animate-on-scroll" onclick="openModal('landlord')">
-                    <div class="project-thumbnail">
-                        <i class="fas fa-home"></i>
+                <div class="expertise-card animate-on-scroll">
+                    <div class="expertise-icon">
+                        <i class="fas fa-rocket" style="color: #bf00ff;"></i>
                     </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Landlord Rent Management</h3>
-                        <p class="project-tech">Django • PostgreSQL • Stripe API</p>
-                        <p class="project-description">A comprehensive property management system for landlords to track rent payments, manage tenants, and handle maintenance requests.</p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">View Details</a>
-                            <a href="#" class="project-link">Live Demo</a>
-                        </div>
+                    <h3>Performance</h3>
+                    <p>Optimizing applications for speed, accessibility, and user experience.</p>
+                </div>
+
+                <div class="expertise-card animate-on-scroll">
+                    <div class="expertise-icon">
+                        <i class="fas fa-users" style="color: #bf00ff;"></i>
                     </div>
+                    <h3>Collaboration</h3>
+                    <p>Working effectively with teams using agile methodologies and version control.</p>
                 </div>
             </div>
         </div>
@@ -1327,4 +1586,107 @@
     </script>
 </body>
 </html>
+
+
+        /* Expertise Section */
+        #expertise {
+            padding: 60px 20px;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .expertise-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 30px 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            border-color: #bf00ff;
+            box-shadow: 0 10px 30px rgba(191, 0, 255, 0.2);
+        }
+
+        .expertise-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .expertise-card h3 {
+            color: var(--text-color);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .expertise-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Override testimonial styles to make them smaller */
+        .testimonial-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 20px !important;
+            text-align: center;
+            transition: all 0.3s ease;
+            min-height: 180px !important;
+        }
+
+        .testimonial-avatar {
+            width: 50px !important;
+            height: 50px !important;
+            font-size: 1.2rem !important;
+            margin-bottom: 12px !important;
+        }
+
+        .testimonial-text {
+            font-size: 0.85rem !important;
+            margin-bottom: 12px !important;
+        }
+
+        .testimonial-author {
+            font-size: 0.9rem !important;
+        }
+
+        .testimonial-role {
+            font-size: 0.75rem !important;
+        }
+
+
+    <script>
+        // Update time display in real-time
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString('en-US', {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            });
+            const timeDisplay = document.getElementById('current-time');
+            if (timeDisplay) {
+                timeDisplay.textContent = timeString;
+            }
+        }
+
+        // Update time every second
+        setInterval(updateTime, 1000);
+        
+        // Initialize time on page load
+        document.addEventListener('DOMContentLoaded', updateTime);
+    </script>
 
