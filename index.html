@@ -884,60 +884,7 @@
             width: 100%;
         }
 
-        /* Testimonials */
-        .testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
 
-        .testimonial {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid var(--glass-border);
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-            position: relative;
-        }
-
-        .testimonial::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--neon-blue);
-            position: absolute;
-            top: -10px;
-            left: 20px;
-            opacity: 0.3;
-        }
-
-        .testimonial:hover {
-            transform: translateY(-10px) scale(1.02);
-            background: rgba(255, 255, 255, 0.12);
-            box-shadow: 0 25px 50px rgba(0, 212, 255, 0.2);
-        }
-
-        .testimonial p {
-            font-size: 1.1rem;
-            line-height: 1.7;
-            margin-bottom: 25px;
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--text-color);
-            margin-bottom: 5px;
-        }
-
-        .testimonial-role {
-            font-size: 0.9rem;
-            color: var(--neon-green);
-            font-weight: 500;
-        }
 
         /* Contact Section */
         #contact {
@@ -986,11 +933,6 @@
             }
 
             .blog-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .testimonials {
                 grid-template-columns: 1fr;
                 gap: 20px;
             }
@@ -1135,7 +1077,6 @@
             <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#blog">Blog</a></li>
-            <li><a href="#testimonials">Testimonials</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
         <button class="mobile-menu-toggle">
@@ -1436,26 +1377,7 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">What Clients Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-avatar">SJ</div>
-                    <div class="testimonial-text">Working with this developer was an absolute pleasure. They delivered a high-quality solution that exceeded our expectations and helped transform our business processes.</div>
-                    <div class="testimonial-author">Sarah Johnson</div>
-                    <div class="testimonial-role">CEO, TechStart Inc.</div>
-                </div>
 
-                <div class="testimonial-card animate-on-scroll">
-                    <div class="testimonial-avatar">MC</div>
-                    <div class="testimonial-text">Exceptional technical skills combined with great communication. The project was delivered on time and the code quality was outstanding. Highly recommended!</div>
-                    <div class="testimonial-author">Michael Chen</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Project Modals -->
     <div id="ecommerce-modal" class="modal">
@@ -1739,82 +1661,7 @@
             margin-bottom: 0;
         }
 
-        /* Testimonials Section - Match projects layout */
-        #testimonials {
-            padding: 60px 20px;
-        }
 
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-top: 40px;
-        }
-
-        .testimonial-card {
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 15px;
-            padding: 20px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            position: relative;
-            animation: testimonialSway 5s ease-in-out infinite;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-6px) rotateZ(2deg);
-            border-color: #00ff88;
-            box-shadow: 0 18px 38px rgba(0, 255, 136, 0.6), 0 0 28px rgba(0, 255, 136, 0.4), 0 10px 25px rgba(0, 0, 0, 0.3);
-            animation: testimonialBounce 1.2s ease-in-out infinite;
-        }
-
-        @keyframes testimonialSway {
-            0%, 100% { transform: translateX(0px) rotate(0deg); }
-            25% { transform: translateX(-2px) rotate(-0.5deg); }
-            50% { transform: translateX(0px) rotate(0deg); }
-            75% { transform: translateX(2px) rotate(0.5deg); }
-        }
-
-        @keyframes testimonialBounce {
-            0%, 100% { transform: translateY(-6px) rotateZ(2deg) scale(1); }
-            50% { transform: translateY(-10px) rotateZ(2deg) scale(1.03); }
-        }
-
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: var(--primary-gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 15px;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-        }
-
-        .testimonial-text {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        .testimonial-author {
-            color: var(--text-color);
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .testimonial-role {
-            color: var(--text-secondary);
-            font-size: 0.85rem;
-        }
 
 
     <script>
