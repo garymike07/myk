@@ -169,6 +169,21 @@
             line-height: 1.6;
         }
 
+        .nav-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--glass-border);
+            transition: all 0.3s ease;
+        }
+
+        .nav-logo img:hover {
+            transform: scale(1.1);
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
         nav {
             position: fixed;
             top: 20px;
@@ -676,7 +691,7 @@
                     <div class="thumbnail-content">
                         <h3 class="thumbnail-title">Weather Analytics Dashboard</h3>
                         <p class="thumbnail-description">Python • Flask • Chart.js</p>
-                        <p class="thumbnail-description">A comprehensive weather analytics platform with detailed forecasts and insightful visualizations.</p>
+                        <p class="thumbnail-description">A comprehensive weather analytics platform that aggregates data from multiple APIs, provides detailed forecasts, and generates insightful visualizations.</p>
                     </div>
                 </div>
             </div>
