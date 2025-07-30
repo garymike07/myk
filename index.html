@@ -209,7 +209,8 @@
             padding: 5px;
         }
 
-        /* Responsive N        @media (max-width: 768px) {
+        /* Responsive Navigation */
+        @media (max-width: 768px) {
             nav {
                 padding: 10px 20px;
                 gap: 15px;
@@ -218,8 +219,8 @@
             }
 
             .nav-logo img {
-                width: 50px;
-                height: 50px;
+                width: 45px;
+                height: 45px;
             }
 
             .nav-logo span {
@@ -256,11 +257,12 @@
                 text-align: center;
                 border-radius: 15px;
             }
+        }
 
-
-        }  .nav-logo img {
-                width: 45px;
-                height: 45px;
+        @media (max-width: 480px) {
+            .nav-logo img {
+                width: 40px;
+                height: 40px;
             }
 
             .nav-logo span {
@@ -1087,11 +1089,12 @@
                 </div>
             </div>
             
-            <div class="hero-time fade-in">
-                <div class="time-display" id="current-time">11:12:09 AM</div>
-            </div>
-            
-            <h2 class="hero-greeting fade-in">Good morning! Welcome to my portfolio</h2>
+           <div class="hero-time">
+            <div id="time-display" class="time-display"></div>
+        </div>
+        <div class="hero-greeting">
+            <div id="greeting-display" class="hero-greeting"></div>
+        </div>fade-in">Good morning! Welcome to my portfolio</h2>
             
             <div class="hero-roles fade-in">
                 <p>Full-stack Developer | ICT Officer | Network Administrator | Web 3 Enthusiast</p>
@@ -1549,3 +1552,30 @@
 
 <!-- Forced refresh for GitHub Pages -->
 
+
+
+    <script>
+        function updateTimeAndGreeting() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+
+            let greeting;
+            if (hours < 12) {
+                greeting = 'Good morning!';
+            } else if (hours < 18) {
+                greeting = 'Good afternoon!';
+            } else {
+                greeting = 'Good evening!';
+            }
+
+            document.getElementById('time-display').textContent = `${hours % 12 || 12}:${minutes}:${seconds} ${hours >= 12 ? 'PM' : 'AM'}`;
+            document.getElementById('greeting-display').textContent = greeting;
+        }
+
+        setInterval(updateTimeAndGreeting, 1000);
+        updateTimeAndGreeting(); // Initial call to display immediately
+    </script>
+</body>
+</html>
