@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gary Mike - Software Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary-gradient: linear-gradient(135deg, #ff6b6b 0%, #4ecdc4 50%, #45b7d1 100%);
@@ -33,7 +33,7 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Sora', sans-serif;
             background: url('assets/background.jpg') no-repeat center center fixed;
             background-size: cover;
             color: var(--text-color);
@@ -657,7 +657,7 @@
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 10px;
-            padding: 12px;
+            padding: 20px;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
@@ -806,7 +806,7 @@
         .blog-post {
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
-            padding: 12px;
+            padding: 20px;
             border-radius: 10px;
             border: 1px solid var(--glass-border);
             transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -921,22 +921,40 @@
             }
 
             .projects-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 8px;
+                max-width: 350px;
             }
 
             .project-card {
                 min-width: unset;
+                padding: 15px;
+                font-size: 0.9rem;
             }
 
             .skills-matrix {
-                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-                gap: 15px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 8px;
+                max-width: 300px;
+            }
+
+            .skill-item {
+                padding: 12px;
+                font-size: 0.9rem;
             }
 
             .blog-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 8px;
+                max-width: 350px;
+            }
+
+            .blog-post {
+                padding: 15px;
+                font-size: 0.9rem;
             }
 
             .modal-content {
@@ -944,32 +962,52 @@
                 margin: 10% auto;
                 padding: 30px;
             }
-        }
-
-        @media (max-width: 480px) {
-            .section-title {
-                margin-bottom: 30px;
+            @media (max-width: 480px) {
+            .modal-content {
+                width: 95%;
+                padding: 20px;
             }
 
             .projects-grid {
-                gap: 20px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 6px;
+                max-width: 280px;
+            }
+
+            .project-card {
+                padding: 12px;
+                font-size: 0.8rem;
             }
 
             .project-content {
-                padding: 20px;
+                padding: 15px;
             }
 
             .skills-matrix {
-                grid-template-columns: 1fr;
-                gap: 15px;
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 6px;
+                max-width: 250px;
             }
 
             .skill-item {
-                padding: 20px;
+                padding: 10px;
+                font-size: 0.8rem;
             }
-        }
 
-        /* Scroll animations */
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(2, 1fr);
+                gap: 6px;
+                max-width: 280px;
+            }
+
+            .blog-post {
+                padding: 12px;
+                font-size: 0.8rem;
+            }
+        }roll animations */
         .animate-on-scroll {
             opacity: 0;
             transform: translateY(30px);
