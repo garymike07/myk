@@ -661,14 +661,28 @@
             border-radius: 15px;
             padding: 20px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
+            animation: projectFloat 6s ease-in-out infinite;
         }
 
         .project-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary-color);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transform: translateY(-10px) scale(1.02);
+            border-color: #4ecdc4;
+            box-shadow: 0 20px 40px rgba(78, 205, 196, 0.4), 0 0 30px rgba(78, 205, 196, 0.2);
+            animation: projectGlow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes projectFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-5px) rotate(0.5deg); }
+            50% { transform: translateY(-3px) rotate(0deg); }
+            75% { transform: translateY(-7px) rotate(-0.5deg); }
+        }
+
+        @keyframes projectGlow {
+            0% { box-shadow: 0 20px 40px rgba(78, 205, 196, 0.4), 0 0 30px rgba(78, 205, 196, 0.2); }
+            100% { box-shadow: 0 25px 50px rgba(78, 205, 196, 0.6), 0 0 40px rgba(78, 205, 196, 0.4); }
         }
 
         .project-header {
@@ -1022,6 +1036,87 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* Blog Section - Match projects layout */
+        #blog {
+            padding: 60px 20px;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .blog-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 15px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            animation: blogWave 7s ease-in-out infinite;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-7px) rotateX(5deg);
+            border-color: #ff6b6b;
+            box-shadow: 0 16px 36px rgba(255, 107, 107, 0.4), 0 0 26px rgba(255, 107, 107, 0.3);
+            animation: blogFlicker 1.8s ease-in-out infinite alternate;
+        }
+
+        @keyframes blogWave {
+            0%, 100% { transform: translateY(0px) skewX(0deg); }
+            25% { transform: translateY(-3px) skewX(0.5deg); }
+            50% { transform: translateY(-1px) skewX(0deg); }
+            75% { transform: translateY(-4px) skewX(-0.5deg); }
+        }
+
+        @keyframes blogFlicker {
+            0% { 
+                box-shadow: 0 16px 36px rgba(255, 107, 107, 0.4), 0 0 26px rgba(255, 107, 107, 0.3);
+                opacity: 1;
+            }
+            100% { 
+                box-shadow: 0 22px 46px rgba(255, 107, 107, 0.6), 0 0 36px rgba(255, 107, 107, 0.5);
+                opacity: 0.95;
+            }
+        }
+
+        .blog-title {
+            color: var(--text-color);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .blog-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .blog-read-more {
+            color: #ff6b6b;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .blog-read-more:hover {
+            color: var(--text-color);
+        }
+
+
     </style>
 </head>
 <body>
@@ -1317,26 +1412,26 @@
         <div class="container">
             <h2 class="section-title animate-on-scroll">Latest Blog Posts</h2>
             <div class="blog-grid">
-                <article class="blog-post animate-on-scroll">
-                    <h3>The Future of Web Development</h3>
-                    <div class="date">January 15, 2024</div>
-                    <p>Exploring emerging trends in web development, from WebAssembly to progressive web apps, and how they're shaping the future of digital experiences.</p>
-                    <a href="#">Read More</a>
-                </article>
+                <div class="blog-card animate-on-scroll">
+                    <h3 class="blog-title">The Future of Web Development</h3>
+                    <div class="blog-date">January 15, 2024</div>
+                    <p class="blog-excerpt">Exploring emerging trends in web development, from WebAssembly to progressive web apps, and how they're shaping the future of digital experiences.</p>
+                    <a href="#" class="blog-read-more">Read More</a>
+                </div>
 
-                <article class="blog-post animate-on-scroll">
-                    <h3>Building Scalable APIs</h3>
-                    <div class="date">December 28, 2023</div>
-                    <p>Best practices for designing and implementing scalable REST APIs, including caching strategies, rate limiting, and microservices architecture.</p>
-                    <a href="#">Read More</a>
-                </article>
+                <div class="blog-card animate-on-scroll">
+                    <h3 class="blog-title">Building Scalable APIs</h3>
+                    <div class="blog-date">December 28, 2023</div>
+                    <p class="blog-excerpt">Best practices for designing and implementing scalable REST APIs, including caching strategies, rate limiting, and microservices architecture.</p>
+                    <a href="#" class="blog-read-more">Read More</a>
+                </div>
 
-                <article class="blog-post animate-on-scroll">
-                    <h3>Modern CSS Techniques</h3>
-                    <div class="date">December 10, 2023</div>
-                    <p>Advanced CSS techniques including Grid, Flexbox, custom properties, and modern layout methods that enhance user experience and developer productivity.</p>
-                    <a href="#">Read More</a>
-                </article>
+                <div class="blog-card animate-on-scroll">
+                    <h3 class="blog-title">Modern CSS Techniques</h3>
+                    <div class="blog-date">December 10, 2023</div>
+                    <p class="blog-excerpt">Advanced CSS techniques including Grid, Flexbox, custom properties, and modern layout methods that enhance user experience and developer productivity.</p>
+                    <a href="#" class="blog-read-more">Read More</a>
+                </div>
             </div>
         </div>
     </section>
@@ -1345,29 +1440,20 @@
     <section id="testimonials">
         <div class="container">
             <h2 class="section-title animate-on-scroll">What Clients Say</h2>
-            <div class="testimonials">
-                <div class="testimonial animate-on-scroll">
-                    <p>Working with this developer was an absolute pleasure. They delivered a high-quality solution that exceeded our expectations and helped transform our business processes.</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-avatar">SJ</div>
+                    <div class="testimonial-text">Working with this developer was an absolute pleasure. They delivered a high-quality solution that exceeded our expectations and helped transform our business processes.</div>
                     <div class="testimonial-author">Sarah Johnson</div>
                     <div class="testimonial-role">CEO, TechStart Inc.</div>
                 </div>
 
-                <div class="testimonial animate-on-scroll">
-                    <p>Exceptional technical skills combined with great communication. The project was delivered on time and the code quality was outstanding. Highly recommended!</p>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="testimonial-avatar">MC</div>
+                    <div class="testimonial-text">Exceptional technical skills combined with great communication. The project was delivered on time and the code quality was outstanding. Highly recommended!</div>
                     <div class="testimonial-author">Michael Chen</div>
                     <div class="testimonial-role">CTO, Digital Solutions</div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <h2 class="section-title animate-on-scroll">Get In Touch</h2>
-            <div class="contact-content animate-on-scroll">
-                <p>Ready to start your next project? Let's discuss how we can work together to bring your ideas to life.</p>
-                <a href="mailto:gary@example.com" class="btn">Contact Me</a>
             </div>
         </div>
     </section>
@@ -1595,7 +1681,7 @@
 
         .expertise-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
             margin-top: 40px;
         }
@@ -1605,65 +1691,130 @@
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 15px;
-            padding: 30px 25px;
+            padding: 20px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            animation: expertisePulse 4s ease-in-out infinite;
         }
 
         .expertise-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px) rotateY(5deg);
             border-color: #bf00ff;
-            box-shadow: 0 10px 30px rgba(191, 0, 255, 0.2);
+            box-shadow: 0 15px 35px rgba(191, 0, 255, 0.4), 0 0 25px rgba(191, 0, 255, 0.3);
+            animation: expertiseShine 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes expertisePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        @keyframes expertiseShine {
+            0% { 
+                box-shadow: 0 15px 35px rgba(191, 0, 255, 0.4), 0 0 25px rgba(191, 0, 255, 0.3);
+                filter: brightness(1);
+            }
+            100% { 
+                box-shadow: 0 20px 45px rgba(191, 0, 255, 0.6), 0 0 35px rgba(191, 0, 255, 0.5);
+                filter: brightness(1.1);
+            }
         }
 
         .expertise-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.5rem;
+            margin-bottom: 15px;
         }
 
         .expertise-card h3 {
             color: var(--text-color);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
 
         .expertise-card p {
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.5;
+            margin-bottom: 0;
         }
 
-        /* Override testimonial styles to make them smaller */
+        /* Testimonials Section - Match projects layout */
+        #testimonials {
+            padding: 60px 20px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
         .testimonial-card {
             background: var(--glass-bg);
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 15px;
-            padding: 20px !important;
+            padding: 20px;
             text-align: center;
-            transition: all 0.3s ease;
-            min-height: 180px !important;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            animation: testimonialSway 5s ease-in-out infinite;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-6px) rotateZ(2deg);
+            border-color: #00ff88;
+            box-shadow: 0 18px 38px rgba(0, 255, 136, 0.4), 0 0 28px rgba(0, 255, 136, 0.2);
+            animation: testimonialBounce 1.2s ease-in-out infinite;
+        }
+
+        @keyframes testimonialSway {
+            0%, 100% { transform: translateX(0px) rotate(0deg); }
+            25% { transform: translateX(-2px) rotate(-0.5deg); }
+            50% { transform: translateX(0px) rotate(0deg); }
+            75% { transform: translateX(2px) rotate(0.5deg); }
+        }
+
+        @keyframes testimonialBounce {
+            0%, 100% { transform: translateY(-6px) rotateZ(2deg) scale(1); }
+            50% { transform: translateY(-10px) rotateZ(2deg) scale(1.03); }
         }
 
         .testimonial-avatar {
-            width: 50px !important;
-            height: 50px !important;
-            font-size: 1.2rem !important;
-            margin-bottom: 12px !important;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: white;
         }
 
         .testimonial-text {
-            font-size: 0.85rem !important;
-            margin-bottom: 12px !important;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            font-style: italic;
         }
 
         .testimonial-author {
-            font-size: 0.9rem !important;
+            color: var(--text-color);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 5px;
         }
 
         .testimonial-role {
-            font-size: 0.75rem !important;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
         }
 
 
