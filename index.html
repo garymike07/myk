@@ -895,6 +895,41 @@
             margin-bottom: 40px;
         }
 
+        /* Footer Section */
+        #footer {
+            padding: 40px 20px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--glass-border);
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+        }
+
+        .footer-content p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .footer-social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-social-links .social-link {
+            width: 40px;
+            height: 40px;
+            font-size: 1.2rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             section {
@@ -1450,6 +1485,29 @@
             </ul>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social-links">
+                    <a href="https://linkedin.com" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p>&copy; 2024 Gary Mike. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
     <script>
         // Mobile menu toggle
