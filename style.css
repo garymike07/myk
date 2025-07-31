@@ -635,7 +635,7 @@ section {
 /* Projects Grid */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     margin-top: 40px;
 }
@@ -650,14 +650,6 @@ section {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
     animation: projectFloat 6s ease-in-out infinite;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
 }
 
 .project-card:hover {
@@ -728,7 +720,6 @@ section {
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 20px;
-    flex-grow: 1;
 }
 
 .project-tech-tags {
@@ -897,13 +888,6 @@ section {
 }
 
 /* Responsive Design */
-@media (max-width: 992px) {
-    .projects-grid,
-    .blog-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media (max-width: 768px) {
     section {
         padding: 40px 15px;
@@ -987,7 +971,7 @@ section {
 
 .blog-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     margin-top: 40px;
 }
@@ -1047,7 +1031,6 @@ section {
     font-size: 0.95rem;
     line-height: 1.5;
     margin-bottom: 20px;
-    flex-grow: 1;
 }
 
 .blog-read-more {
