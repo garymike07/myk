@@ -1081,49 +1081,6 @@ section {
     padding: 16px;
 }
 
-/* Testimonials Section */
-#testimonials {
-    padding: 60px 20px;
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px;
-    margin-top: 40px;
-}
-
-.testimonial-card {
-    padding: 30px;
-}
-
-.testimonial-card p {
-    font-style: italic;
-    margin-bottom: 20px;
-}
-
-.testimonial-author {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
-.testimonial-author img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.testimonial-author h4 {
-    font-weight: 600;
-    margin: 0;
-}
-
-.testimonial-author span {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-}
 
 /* Filter Buttons */
 .filter-buttons {
