@@ -1358,7 +1358,7 @@
         <div class="container">
             <h2 class="section-title animate-on-scroll">Featured Projects</h2>
             <div class="projects-grid">
-                <a href="blockchain-project.html" class="project-card animate-on-scroll" data-tech="next.js typescript web3.js">
+                <div class="project-card animate-on-scroll" data-tech="next.js typescript web3.js" onclick="openModal('blockchain-modal')">
                     <div class="project-header">
                         <div class="project-stats">
                             <span class="stat"><i class="fas fa-star"></i> 324</span>
@@ -1377,7 +1377,7 @@
                     </div>
                 </div>
 
-                <a href="ml-api-project.html" class="project-card animate-on-scroll" data-tech="python tensorflow fastapi">
+                <div class="project-card animate-on-scroll" data-tech="python tensorflow fastapi" onclick="openModal('ml-api-modal')">
                     <div class="project-header">
                         <div class="project-stats">
                             <span class="stat"><i class="fas fa-star"></i> 445</span>
@@ -1396,7 +1396,7 @@
                     </div>
                 </div>
 
-                <a href="ecommerce-project.html" class="project-card animate-on-scroll" data-tech="react node.js mongodb">
+                <div class="project-card animate-on-scroll" data-tech="react node.js mongodb" onclick="openModal('ecommerce-modal')">
                     <div class="project-header">
                         <div class="project-stats">
                             <span class="stat"><i class="fas fa-star"></i> 203</span>
@@ -1415,7 +1415,7 @@
                     </div>
                 </div>
 
-                <a href="mentalhealth-project.html" class="project-card animate-on-scroll" data-tech="react-native firebase">
+                <div class="project-card animate-on-scroll" data-tech="react-native firebase" onclick="openModal('mentalhealth-modal')">
                     <div class="project-header">
                         <div class="project-stats">
                             <span class="stat"><i class="fas fa-star"></i> 156</span>
@@ -1517,6 +1517,233 @@
         </div>
     </footer>
 
+    <!-- Project Modals -->
+    <!-- Blockchain Analytics Platform Modal -->
+    <div id="blockchain-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Blockchain Analytics Platform</h2>
+                <div class="modal-status">Production</div>
+            </div>
+            <div class="modal-body">
+                <div class="project-image-gallery">
+                    <img src="assets/thumbnails.png" alt="Blockchain Analytics Platform" class="modal-main-image">
+                </div>
+                <div class="project-details">
+                    <div class="project-overview">
+                        <h3>Project Overview</h3>
+                        <p>A comprehensive real-time cryptocurrency tracking and analysis platform that provides advanced charting capabilities, portfolio management tools, and market insights. Built with modern web technologies to deliver a seamless user experience for crypto enthusiasts and professional traders.</p>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Real-time cryptocurrency price tracking</li>
+                            <li>Advanced charting with technical indicators</li>
+                            <li>Portfolio management and performance analytics</li>
+                            <li>Market sentiment analysis</li>
+                            <li>Custom alerts and notifications</li>
+                            <li>Multi-exchange data aggregation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-item">Next.js</span>
+                            <span class="tech-item">TypeScript</span>
+                            <span class="tech-item">Web3.js</span>
+                            <span class="tech-item">Chart.js</span>
+                            <span class="tech-item">WebSocket</span>
+                            <span class="tech-item">Redis</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h3>Challenges & Solutions</h3>
+                        <p>The main challenge was handling real-time data from multiple cryptocurrency exchanges while maintaining optimal performance. We implemented WebSocket connections with Redis caching to ensure low-latency updates and implemented efficient data aggregation algorithms.</p>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="btn btn-primary">View Live Demo</a>
+                        <a href="#" class="btn btn-secondary">View Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Machine Learning API Modal -->
+    <div id="ml-api-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Machine Learning API</h2>
+                <div class="modal-status">Production</div>
+            </div>
+            <div class="modal-body">
+                <div class="project-image-gallery">
+                    <img src="assets/thumbnails.png" alt="Machine Learning API" class="modal-main-image">
+                </div>
+                <div class="project-details">
+                    <div class="project-overview">
+                        <h3>Project Overview</h3>
+                        <p>A scalable microservice architecture for machine learning operations, providing image recognition and natural language processing capabilities with auto-scaling features. Designed to handle high-volume requests with optimal performance and reliability.</p>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Image classification and object detection</li>
+                            <li>Natural language processing and sentiment analysis</li>
+                            <li>Auto-scaling based on demand</li>
+                            <li>RESTful API with comprehensive documentation</li>
+                            <li>Real-time model inference</li>
+                            <li>Model versioning and A/B testing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">TensorFlow</span>
+                            <span class="tech-item">FastAPI</span>
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">Kubernetes</span>
+                            <span class="tech-item">PostgreSQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h3>Challenges & Solutions</h3>
+                        <p>Managing model deployment and scaling was complex. We implemented containerized microservices with Kubernetes orchestration, enabling automatic scaling based on CPU and memory usage. Model versioning was handled through MLOps pipelines.</p>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="btn btn-primary">View API Documentation</a>
+                        <a href="#" class="btn btn-secondary">View Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- E-Commerce Platform Modal -->
+    <div id="ecommerce-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>E-Commerce Platform</h2>
+                <div class="modal-status">Production</div>
+            </div>
+            <div class="modal-body">
+                <div class="project-image-gallery">
+                    <img src="assets/thumbnails.png" alt="E-Commerce Platform" class="modal-main-image">
+                </div>
+                <div class="project-details">
+                    <div class="project-overview">
+                        <h3>Project Overview</h3>
+                        <p>A full-stack e-commerce solution featuring real-time inventory management, secure payment processing, and responsive design. Built to handle high-traffic scenarios with optimal user experience and robust security measures.</p>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Real-time inventory management</li>
+                            <li>Secure payment processing with Stripe</li>
+                            <li>User authentication and authorization</li>
+                            <li>Product catalog with search and filtering</li>
+                            <li>Shopping cart and wishlist functionality</li>
+                            <li>Order tracking and management</li>
+                            <li>Admin dashboard for store management</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">Express.js</span>
+                            <span class="tech-item">Stripe API</span>
+                            <span class="tech-item">Redux</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h3>Challenges & Solutions</h3>
+                        <p>Implementing secure payment processing was crucial. We integrated Stripe API for PCI-compliant payment handling and implemented JWT-based authentication. Real-time inventory updates were achieved using WebSocket connections and optimistic UI updates.</p>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="btn btn-primary">View Live Demo</a>
+                        <a href="#" class="btn btn-secondary">View Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mental Health App Modal -->
+    <div id="mentalhealth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Mental Health App</h2>
+                <div class="modal-status">Development</div>
+            </div>
+            <div class="modal-body">
+                <div class="project-image-gallery">
+                    <img src="assets/thumbnails.png" alt="Mental Health App" class="modal-main-image">
+                </div>
+                <div class="project-details">
+                    <div class="project-overview">
+                        <h3>Project Overview</h3>
+                        <p>A comprehensive mental health tracking and support application designed to help users monitor their emotional well-being, access meditation resources, and connect with mental health professionals. Built with privacy and user experience as top priorities.</p>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Daily mood tracking and analytics</li>
+                            <li>Guided meditation and mindfulness exercises</li>
+                            <li>Professional consultation booking</li>
+                            <li>Personalized wellness recommendations</li>
+                            <li>Crisis support and emergency contacts</li>
+                            <li>Progress tracking and insights</li>
+                            <li>Community support forums</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-item">React Native</span>
+                            <span class="tech-item">Firebase</span>
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">Express.js</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">Socket.io</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h3>Challenges & Solutions</h3>
+                        <p>Privacy and data security were paramount concerns. We implemented end-to-end encryption for sensitive data and ensured HIPAA compliance. The app features offline functionality for mood tracking and includes AI-powered insights while maintaining user anonymity.</p>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="btn btn-primary">View Prototype</a>
+                        <a href="#" class="btn btn-secondary">View Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
@@ -1584,7 +1811,65 @@
         // Create particles periodically
         setInterval(createParticle, 2000);
 
+        // Enhanced Modal functionality
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                
+                // Add animation class
+                setTimeout(() => {
+                    modal.querySelector('.modal-content').style.transform = 'scale(1)';
+                    modal.querySelector('.modal-content').style.opacity = '1';
+                }, 10);
+            }
+        }
 
+        function closeModal(modal) {
+            const modalContent = modal.querySelector('.modal-content');
+            modalContent.style.transform = 'scale(0.8)';
+            modalContent.style.opacity = '0';
+            
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Restore scrolling
+            }, 300);
+        }
+
+        // Close modal when clicking the X button
+        document.querySelectorAll('.close').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function() {
+                const modal = this.closest('.modal');
+                closeModal(modal);
+            });
+        });
+
+        // Close modal when clicking outside the modal content
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                closeModal(event.target);
+            }
+        });
+
+        // Prevent modal from closing when clicking inside modal content
+        document.querySelectorAll('.modal-content').forEach(content => {
+            content.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+        });
+
+        // Keyboard navigation for modals
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const openModal = document.querySelector('.modal[style*="block"]');
+                if (openModal) {
+                    closeModal(openModal);
+                }
+            }
+        });
+
+        // Time and greeting functionality
         function updateTimeAndGreeting() {
             const now = new Date();
             const hours = now.getHours();
@@ -1614,14 +1899,27 @@
         setInterval(updateTimeAndGreeting, 1000);
         updateTimeAndGreeting(); // Initial call to display immediately
 
+        // Project card hover effects
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+                this.style.cursor = 'pointer';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
 
-        // Avatar guide functionality
+        // Avatar guide functionality (if exists)
         const avatarGuide = document.getElementById('avatar-guide');
         const avatarMessage = document.getElementById('avatar-message');
 
-        avatarGuide.addEventListener('click', () => {
-            avatarMessage.classList.toggle('visible');
-        });
+        if (avatarGuide && avatarMessage) {
+            avatarGuide.addEventListener('click', () => {
+                avatarMessage.classList.toggle('visible');
+            });
+        }
     </script>
 </body>
 </html>
