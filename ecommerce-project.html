@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Platform - Gary Mike</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation (copied from index.html) -->
+    <nav>
+        <div class="nav-logo">
+            <img src="assets/logo.jpg" alt="Gary Mike" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display:none; width:45px; height:45px; border-radius:50%; background:var(--primary-gradient); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1.2rem;">GM</div>
+            <span>Gary Mike</span>
+        </div>
+        <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <section id="project-details">
+        <div class="container">
+            <h2 class="section-title">E-Commerce Platform</h2>
+            <div class="project-image">
+                <img src="assets/thumbnails.png" alt="">
+            </div>
+            <div class="project-info">
+                <h3>About the Project</h3>
+                <p>A full-stack e-commerce solution with real-time inventory management, secure payment processing, and responsive design.</p>
+                <h3>Technologies Used</h3>
+                <ul>
+                    <li>React</li>
+                    <li>Node.js</li>
+                    <li>MongoDB</li>
+                    <li>Stripe API</li>
+                    <li>Redux</li>
+                </ul>
+                <h3>Project Goals</h3>
+                <p>The goal of this project was to create a fully functional e-commerce platform that was easy to use and manage. The platform needed to be able to handle a large number of products and orders, and it needed to be secure and reliable.</p>
+                <h3>Challenges and Solutions</h3>
+                <p>One of the biggest challenges was to implement a secure payment processing system. We solved this by using the Stripe API, which allowed us to securely process payments without having to store any sensitive credit card information on our servers. We also used Redux to manage the state of the application and make it easier to reason about.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

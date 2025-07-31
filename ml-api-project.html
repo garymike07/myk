@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning API - Gary Mike</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation (copied from index.html) -->
+    <nav>
+        <div class="nav-logo">
+            <img src="assets/logo.jpg" alt="Gary Mike" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display:none; width:45px; height:45px; border-radius:50%; background:var(--primary-gradient); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1.2rem;">GM</div>
+            <span>Gary Mike</span>
+        </div>
+        <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <section id="project-details">
+        <div class="container">
+            <h2 class="section-title">Machine Learning API</h2>
+            <div class="project-image">
+                <img src="assets/thumbnails.png" alt="">
+            </div>
+            <div class="project-info">
+                <h3>About the Project</h3>
+                <p>A scalable ML microservice for image recognition and natural language processing with auto-scaling capabilities.</p>
+                <h3>Technologies Used</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>TensorFlow</li>
+                    <li>FastAPI</li>
+                    <li>Docker</li>
+                    <li>Kubernetes</li>
+                    <li>AWS</li>
+                </ul>
+                <h3>Project Goals</h3>
+                <p>The goal of this project was to create a highly scalable and reliable machine learning API that could be used to power a variety of applications. The API needed to be able to handle a large number of requests and provide accurate results in real-time.</p>
+                <h3>Challenges and Solutions</h3>
+                <p>One of the biggest challenges was to create a system that could automatically scale to meet demand. We solved this by using Kubernetes to manage our Docker containers and automatically scale them based on CPU and memory usage. We also used a load balancer to distribute traffic across our containers and ensure high availability.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
