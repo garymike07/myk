@@ -664,12 +664,13 @@
             backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 15px;
-            padding: 20px;
+            padding: 25px;
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             animation: projectFloat 6s ease-in-out infinite;
             box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+            display: block;
         }
 
         .project-card:hover {
@@ -1153,8 +1154,9 @@
         }
 
         .testimonial-card p {
-            font-style: italic;
             margin-bottom: 20px;
+            color: var(--text-color);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
         .testimonial-author {
