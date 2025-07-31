@@ -1379,12 +1379,6 @@
     <section id="projects">
         <div class="container">
             <h2 class="section-title animate-on-scroll">Featured Projects</h2>
-            <div class="filter-buttons">
-                <button class="btn filter-btn active" data-filter="all">All</button>
-                <button class="btn filter-btn" data-filter="react">React</button>
-                <button class="btn filter-btn" data-filter="python">Python</button>
-                <button class="btn filter-btn" data-filter="next.js">Next.js</button>
-            </div>
             <div class="projects-grid">
                 <a href="blockchain-project.html" class="project-card animate-on-scroll" data-tech="next.js typescript web3.js">
                     <div class="project-header">
@@ -1642,26 +1636,6 @@
         setInterval(updateTimeAndGreeting, 1000);
         updateTimeAndGreeting(); // Initial call to display immediately
 
-        // Project filtering
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                const filter = button.dataset.filter;
-
-                projectCards.forEach(card => {
-                    if (filter === 'all' || card.dataset.tech.includes(filter)) {
-                        card.style.display = '';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
 
         // Avatar guide functionality
         const avatarGuide = document.getElementById('avatar-guide');
