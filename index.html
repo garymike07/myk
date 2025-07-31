@@ -1092,9 +1092,9 @@
            <div class="hero-time">
             <div id="time-display" class="time-display"></div>
         </div>
-        <div class="hero-greeting">
+        <div class="hero-greeting fade-in">
             <div id="greeting-display" class="hero-greeting"></div>
-        </div>fade-in">Good morning! Welcome to my portfolio</h2>
+        </div>
             
             <div class="hero-roles fade-in">
                 <p>Full-stack Developer | ICT Officer | Network Administrator | Web 3 Enthusiast</p>
@@ -1451,6 +1451,38 @@
         </div>
     </div>
 
+    <div id="blockchain-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Blockchain Analytics Platform</h2>
+            <p><strong>Technologies:</strong> Next.js • TypeScript • Web3.js</p>
+            <p>A real-time cryptocurrency tracking and analysis platform with advanced charting and portfolio management, featuring:</p>
+            <ul>
+                <li>Real-time data visualization</li>
+                <li>Advanced charting and technical analysis tools</li>
+                <li>Portfolio tracking and management</li>
+                <li>Wallet integration</li>
+                <li>Customizable alerts and notifications</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="ml-api-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Machine Learning API</h2>
+            <p><strong>Technologies:</strong> Python • TensorFlow • FastAPI</p>
+            <p>A scalable ML microservice for image recognition and natural language processing with auto-scaling capabilities, featuring:</p>
+            <ul>
+                <li>Scalable microservice architecture</li>
+                <li>Image recognition endpoints</li>
+                <li>Natural Language Processing (NLP) capabilities</li>
+                <li>Auto-scaling for handling variable loads</li>
+                <li>RESTful API with interactive documentation</li>
+            </ul>
+        </div>
+    </div>
+
     <script>
         // Mobile menu toggle
         document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
@@ -1520,7 +1552,10 @@
 
         // Modal functionality
         function openModal(projectId) {
-            document.getElementById(projectId + '-modal').style.display = 'block';
+            const modal = document.getElementById(projectId + '-modal');
+            if (modal) {
+                modal.style.display = 'block';
+            }
         }
 
         // Close modal when clicking the X or outside the modal
@@ -1542,19 +1577,7 @@
                 event.stopPropagation();
             });
         });
-    </script>
-</body>
-</html>
 
-
-
-
-
-<!-- Forced refresh for GitHub Pages -->
-
-
-
-    <script>
         function updateTimeAndGreeting() {
             const now = new Date();
             const hours = now.getHours();
@@ -1570,8 +1593,15 @@
                 greeting = 'Good evening!';
             }
 
-            document.getElementById('time-display').textContent = `${hours % 12 || 12}:${minutes}:${seconds} ${hours >= 12 ? 'PM' : 'AM'}`;
-            document.getElementById('greeting-display').textContent = greeting;
+            const timeDisplay = document.getElementById('time-display');
+            if(timeDisplay) {
+                timeDisplay.textContent = `${hours % 12 || 12}:${minutes}:${seconds} ${hours >= 12 ? 'PM' : 'AM'}`;
+            }
+
+            const greetingDisplay = document.getElementById('greeting-display')
+            if(greetingDisplay) {
+                greetingDisplay.textContent = greeting;
+            }
         }
 
         setInterval(updateTimeAndGreeting, 1000);
