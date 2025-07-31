@@ -1082,23 +1082,3 @@ section {
 }
 
 
-/* Filter Buttons */
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
-}
-
-.filter-btn {
-    background: transparent;
-    border: 2px solid var(--neon-blue);
-    color: var(--neon-blue);
-    padding: 10px 20px;
-    font-size: 14px;
-}
-
-.filter-btn.active {
-    background: var(--neon-blue);
-    color: #0a0a0a;
-}

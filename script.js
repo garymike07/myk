@@ -121,23 +121,3 @@ function updateTimeAndGreeting() {
 setInterval(updateTimeAndGreeting, 1000);
 updateTimeAndGreeting(); // Initial call to display immediately
 
-// Project filtering
-const filterButtons = document.querySelectorAll('.filter-btn');
-const projectCards = document.querySelectorAll('.project-card');
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const filter = button.dataset.filter;
-
-        projectCards.forEach(card => {
-            if (filter === 'all' || card.dataset.tech.includes(filter)) {
-                card.style.display = 'block';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    });
-});
