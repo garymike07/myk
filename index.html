@@ -1082,7 +1082,107 @@
             color: var(--text-color);
         }
 
+        /* Contact Form */
+        #contact-form {
+            margin-top: 40px;
+            text-align: left;
+        }
 
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        #contact-form .form-control {
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            background: var(--glass-bg);
+            color: var(--text-color);
+            font-family: 'Sora', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        #contact-form .form-control:focus {
+            outline: none;
+            border-color: var(--neon-blue);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        }
+
+        #contact-form textarea.form-control {
+            resize: vertical;
+        }
+
+        #contact-form .btn {
+            width: 100%;
+            padding: 16px;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            padding: 60px 20px;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .testimonial-card {
+            padding: 30px;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .testimonial-author h4 {
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .testimonial-author span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* Filter Buttons */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 2px solid var(--neon-blue);
+            color: var(--neon-blue);
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+
+        .filter-btn.active {
+            background: var(--neon-blue);
+            color: #0a0a0a;
+        }
     </style>
 </head>
 <body>
@@ -1103,7 +1203,7 @@
             <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <button class="mobile-menu-toggle">
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu">
             <i class="fas fa-bars"></i>
         </button>
     </nav>
@@ -1128,7 +1228,11 @@
             <div id="time-display" class="time-display"></div>
         </div>
         <div class="hero-greeting fade-in">
+<<<<<<< HEAD
             <h2 id="greeting-display"></h2>
+=======
+            <div id="greeting-display" class="hero-greeting"></div>
+>>>>>>> origin/fix-portfolio-bugs
         </div>
             
             <div class="hero-roles fade-in">
@@ -1154,18 +1258,21 @@
                 <p>A visionary IT Professional with a rich tapestry of expertise in full-stack development, ICT oversight, and network mastery. As a fervent Web 3 advocate, Mike weaves cutting-edge innovation into every project, crafting transformative digital experiences that propel organizations into the future.</p>
                 
                 <div class="social-links">
-                    <a href="https://linkedin.com" target="_blank" class="social-link">
+                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com" target="_blank" class="social-link">
+                    <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://twitter.com" target="_blank" class="social-link">
+                    <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="https://instagram.com" target="_blank" class="social-link">
+                    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="assets/resume.pdf" download="Mike-Resume.pdf" class="btn">Download CV</a>
                 </div>
             </div>
 
@@ -1246,8 +1353,14 @@
     <section id="projects">
         <div class="container">
             <h2 class="section-title animate-on-scroll">Featured Projects</h2>
+            <div class="filter-buttons">
+                <button class="btn filter-btn active" data-filter="all">All</button>
+                <button class="btn filter-btn" data-filter="react">React</button>
+                <button class="btn filter-btn" data-filter="python">Python</button>
+                <button class="btn filter-btn" data-filter="next.js">Next.js</button>
+            </div>
             <div class="projects-grid">
-                <div class="project-card animate-on-scroll" onclick="openModal('blockchain')">
+                <a href="blockchain-project.html" class="project-card animate-on-scroll" data-tech="next.js typescript web3.js">
                     <div class="project-header">
                         <div class="project-stats">
                             <span class="stat"><i class="fas fa-star"></i> 324</span>
@@ -1268,7 +1381,7 @@
                     </div>
                 </div>
 
-                <div class="project-card animate-on-scroll" onclick="openModal('ml-api')">
+                <a href="ml-api-project.html" class="project-card animate-on-scroll" data-tech="python tensorflow fastapi">
                     <div class="project-header">
                         <div class="project-stats">
                             <span class="stat"><i class="fas fa-star"></i> 445</span>
@@ -1289,7 +1402,7 @@
                     </div>
                 </div>
 
-                <div class="project-card animate-on-scroll" onclick="openModal('ecommerce')">
+                <a href="ecommerce-project.html" class="project-card animate-on-scroll" data-tech="react node.js mongodb">
                     <div class="project-header">
                         <div class="project-stats">
                             <span class="stat"><i class="fas fa-star"></i> 203</span>
@@ -1310,7 +1423,7 @@
                     </div>
                 </div>
 
-                <div class="project-card animate-on-scroll" onclick="openModal('mentalhealth')">
+                <a href="mentalhealth-project.html" class="project-card animate-on-scroll" data-tech="react-native firebase">
                     <div class="project-header">
                         <div class="project-stats">
                             <span class="stat"><i class="fas fa-star"></i> 156</span>
@@ -1326,6 +1439,35 @@
                             <span class="tech-tag">React Native</span>
                             <span class="tech-tag">Firebase</span>
                             <span class="tech-tag">+2</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Testimonials</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card glass-card animate-on-scroll">
+                    <p>"Mike is a highly skilled developer who is passionate about his work. He is a great communicator and a pleasure to work with. I would highly recommend him to anyone looking for a top-notch developer."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/avatar1.jpg" alt="Jane Doe">
+                        <div>
+                            <h4>Jane Doe</h4>
+                            <span>CEO, Example Inc.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card glass-card animate-on-scroll">
+                    <p>"I had the pleasure of working with Mike on a complex project, and I was blown away by his technical skills and problem-solving abilities. He is a true professional and a valuable asset to any team."</p>
+                    <div class="testimonial-author">
+                        <img src="assets/avatar2.jpg" alt="John Smith">
+                        <div>
+                            <h4>John Smith</h4>
+                            <span>Lead Engineer, Another Corp.</span>
                         </div>
                     </div>
                 </div>
@@ -1366,125 +1508,32 @@
 
 
 
-    <!-- Project Modals -->
-    <div id="ecommerce-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>E-Commerce Platform</h2>
-            <p><strong>Technologies:</strong> React • Node.js • MongoDB • Stripe API</p>
-            <p>A comprehensive e-commerce solution featuring:</p>
-            <ul>
-                <li>Real-time inventory management</li>
-                <li>Secure payment processing with Stripe</li>
-                <li>Responsive design for all devices</li>
-                <li>Admin dashboard for order management</li>
-                <li>Customer reviews and ratings system</li>
-                <li>Advanced search and filtering</li>
-            </ul>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Contact</h2>
+            <div class="contact-content glass-card animate-on-scroll">
+                <p>I'm currently open to new opportunities and would love to hear from you. Whether you have a question or just want to say hi, I'll get back to you as soon as possible.</p>
+                <!--
+                    To make this form work, you need to create a form on formspree.io and replace the action URL with your own.
+                    For example: action="https://formspree.io/f/your_form_id"
+                -->
+                <form id="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div id="taskmanager-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Task Management App</h2>
-            <p><strong>Technologies:</strong> Vue.js • Express • PostgreSQL • Socket.io</p>
-            <p>A collaborative task management application featuring:</p>
-            <ul>
-                <li>Real-time collaboration with team members</li>
-                <li>Kanban board interface</li>
-                <li>Project timeline and milestone tracking</li>
-                <li>File attachments and comments</li>
-                <li>Email notifications and reminders</li>
-                <li>Advanced reporting and analytics</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="weather-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Weather Analytics Dashboard</h2>
-            <p><strong>Technologies:</strong> Python • Flask • Chart.js • OpenWeather API</p>
-            <p>A comprehensive weather analytics platform featuring:</p>
-            <ul>
-                <li>Multi-source weather data aggregation</li>
-                <li>Interactive charts and visualizations</li>
-                <li>Historical weather data analysis</li>
-                <li>Weather forecasting with ML models</li>
-                <li>Location-based weather alerts</li>
-                <li>Export data in multiple formats</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="mentalhealth-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Mental Health App</h2>
-            <p><strong>Technologies:</strong> React Native • Firebase • Node.js • TensorFlow</p>
-            <p>A comprehensive mental health tracking and support application featuring:</p>
-            <ul>
-                <li>Daily mood tracking with analytics</li>
-                <li>Guided meditation and mindfulness exercises</li>
-                <li>Professional consultation booking system</li>
-                <li>Crisis support and emergency contacts</li>
-                <li>Progress tracking and insights</li>
-                <li>Community support forums</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="cvmaker-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>CV Maker</h2>
-            <p><strong>Technologies:</strong> React • PDF.js • Material-UI • Node.js</p>
-            <p>An intuitive CV/Resume builder featuring:</p>
-            <ul>
-                <li>Multiple professional templates</li>
-                <li>Real-time preview and editing</li>
-                <li>PDF export with custom styling</li>
-                <li>ATS-friendly resume formats</li>
-                <li>Cloud storage and sharing</li>
-                <li>Skills assessment and recommendations</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="hakitrack-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>HakiTrack App</h2>
-            <p><strong>Technologies:</strong> Flutter • Firebase • Google Maps API • Node.js</p>
-            <p>A location-based rights tracking application featuring:</p>
-            <ul>
-                <li>Real-time GPS tracking and reporting</li>
-                <li>Anonymous incident reporting system</li>
-                <li>Interactive map with incident markers</li>
-                <li>Multi-language support</li>
-                <li>Secure data encryption and privacy</li>
-                <li>Integration with human rights organizations</li>
-            </ul>
-        </div>
-    </div>
-
-    <div id="landlord-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Landlord Rent Management</h2>
-            <p><strong>Technologies:</strong> Django • PostgreSQL • Stripe API • Celery</p>
-            <p>A comprehensive property management system featuring:</p>
-            <ul>
-                <li>Automated rent collection and reminders</li>
-                <li>Tenant management and communication</li>
-                <li>Maintenance request tracking</li>
-                <li>Financial reporting and analytics</li>
-                <li>Document management and storage</li>
-                <li>Mobile app for tenants and landlords</li>
-            </ul>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer id="footer">
@@ -1576,43 +1625,7 @@
         // Create particles periodically
         setInterval(createParticle, 2000);
 
-        // Modal functionality
-        function openModal(projectId) {
-            document.getElementById(projectId + '-modal').style.display = 'block';
-        }
 
-        // Close modal when clicking the X or outside the modal
-        document.querySelectorAll('.close').forEach(closeBtn => {
-            closeBtn.addEventListener('click', function() {
-                this.closest('.modal').style.display = 'none';
-            });
-        });
-
-        window.addEventListener('click', function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
-        });
-
-        // Prevent modal from closing when clicking inside modal content
-        document.querySelectorAll('.modal-content').forEach(content => {
-            content.addEventListener('click', function(event) {
-                event.stopPropagation();
-            });
-        });
-    </script>
-</body>
-</html>
-
-
-
-
-
-<!-- Forced refresh for GitHub Pages -->
-
-
-
-    <script>
         function updateTimeAndGreeting() {
             const now = new Date();
             const hours = now.getHours();
@@ -1628,12 +1641,40 @@
                 greeting = 'Good evening!';
             }
 
-            document.getElementById('time-display').textContent = `${hours % 12 || 12}:${minutes}:${seconds} ${hours >= 12 ? 'PM' : 'AM'}`;
-            document.getElementById('greeting-display').textContent = greeting;
+            const timeDisplay = document.getElementById('time-display');
+            if(timeDisplay) {
+                timeDisplay.textContent = `${hours % 12 || 12}:${minutes}:${seconds} ${hours >= 12 ? 'PM' : 'AM'}`;
+            }
+
+            const greetingDisplay = document.getElementById('greeting-display')
+            if(greetingDisplay) {
+                greetingDisplay.textContent = greeting;
+            }
         }
 
         setInterval(updateTimeAndGreeting, 1000);
         updateTimeAndGreeting(); // Initial call to display immediately
+
+        // Project filtering
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.dataset.filter;
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.dataset.tech.includes(filter)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>

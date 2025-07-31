@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blockchain Analytics Platform - Gary Mike</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation (copied from index.html) -->
+    <nav>
+        <div class="nav-logo">
+            <img src="assets/logo.jpg" alt="Gary Mike" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display:none; width:45px; height:45px; border-radius:50%; background:var(--primary-gradient); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1.2rem;">GM</div>
+            <span>Gary Mike</span>
+        </div>
+        <ul>
+            <li><a href="index.html#hero">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#projects">Projects</a></li>
+            <li><a href="index.html#blog">Blog</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <section id="project-details">
+        <div class="container">
+            <h2 class="section-title">Blockchain Analytics Platform</h2>
+            <div class="project-image">
+                <img src="assets/thumbnails.png" alt="">
+            </div>
+            <div class="project-info">
+                <h3>About the Project</h3>
+                <p>A real-time cryptocurrency tracking and analysis platform with advanced charting and portfolio management.</p>
+                <h3>Technologies Used</h3>
+                <ul>
+                    <li>Next.js</li>
+                    <li>TypeScript</li>
+                    <li>Web3.js</li>
+                    <li>Chart.js</li>
+                    <li>Node.js</li>
+                    <li>MongoDB</li>
+                </ul>
+                <h3>Project Goals</h3>
+                <p>The main goal of this project was to create a comprehensive platform for cryptocurrency traders and investors to track and analyze the market in real-time. The platform needed to be fast, reliable, and easy to use, with a focus on data visualization and portfolio management.</p>
+                <h3>Challenges and Solutions</h3>
+                <p>One of the biggest challenges was to handle the real-time data from multiple sources and display it in a way that was easy to understand. We solved this by using WebSockets to stream the data and Chart.js to create interactive charts. We also used a microservices architecture to ensure the platform was scalable and resilient.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
