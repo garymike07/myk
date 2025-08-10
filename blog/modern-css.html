@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern CSS Techniques - Gary Mike</title>
+    <meta name="description" content="Advanced CSS techniques including Grid, Flexbox, and custom properties to create stunning and responsive web designs.">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles.css">
+    
+    <style>
+        /* Demo styles for the blog post */
+        .css-demo {
+            border: 2px solid var(--primary-color);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            background: rgba(0, 123, 255, 0.05);
+        }
+        
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .grid-item {
+            background: var(--primary-color);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+        
+        .flex-demo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .flex-item {
+            background: var(--secondary-color);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            flex: 1;
+            text-align: center;
+        }
+        
+        .custom-property-demo {
+            --demo-color: #ff6b6b;
+            --demo-size: 20px;
+            background: var(--demo-color);
+            color: white;
+            padding: var(--demo-size);
+            border-radius: calc(var(--demo-size) / 2);
+            margin: 20px 0;
+        }
+        
+        .container-query-demo {
+            container-type: inline-size;
+            border: 2px solid var(--primary-color);
+            padding: 20px;
+            margin: 20px 0;
+            resize: horizontal;
+            overflow: auto;
+            min-width: 200px;
+        }
+        
+        @container (min-width: 300px) {
+            .container-content {
+                display: flex;
+                gap: 20px;
+            }
+        }
+        
+        @container (max-width: 299px) {
+            .container-content {
+                display: block;
+            }
+        }
+        
+        .animation-demo {
+            width: 100px;
+            height: 100px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            margin: 20px auto;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="https://via.placeholder.com/45" alt="Gary Mike" class="profile-nav-img me-2">
+                <span class="brand-text">Gary Mike</span>
+            </a>
+            
+            <div class="ms-auto">
+                <button id="darkModeToggle" class="btn btn-outline-light btn-sm">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Post Content -->
+    <main class="py-5" style="margin-top: 100px;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <!-- Back Link -->
+                    <div class="mb-4">
+                        <a href="../index.html#blog" class="btn btn-outline-primary">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Portfolio
+                        </a>
+                    </div>
+                    
+                    <!-- Blog Post Header -->
+                    <article class="glass-card">
+                        <header class="mb-4">
+                            <div class="blog-meta mb-3">
+                                <span class="badge bg-primary me-2">CSS</span>
+                                <span class="badge bg-secondary me-2">Frontend</span>
+                                <span class="text-muted">
+                                    <i class="fas fa-calendar me-1"></i>December 10, 2023
+                                </span>
+                                <span class="text-muted ms-3">
+                                    <i class="fas fa-clock me-1"></i>10 min read
+                                </span>
+                            </div>
+                            
+                            <h1 class="display-4 mb-3">Modern CSS Techniques</h1>
+                            <p class="lead">Advanced CSS techniques including Grid, Flexbox, and custom properties to create stunning and responsive web designs that work across all devices.</p>
+                        </header>
+                        
+                        <!-- Featured Image -->
+                        <div class="mb-4">
+                            <img src="https://via.placeholder.com/800x400" alt="Modern CSS Techniques" class="img-fluid rounded">
+                        </div>
+                        
+                        <!-- Blog Content -->
+                        <div class="blog-content">
+                            <p>CSS has evolved tremendously over the past few years, introducing powerful new features that make creating complex layouts and beautiful designs easier than ever. In this comprehensive guide, we'll explore the most important modern CSS techniques that every developer should master.</p>
+                            
+                            <h2>CSS Grid: The Ultimate Layout System</h2>
+                            <p>CSS Grid is a two-dimensional layout system that gives you complete control over both rows and columns. It's perfect for creating complex layouts that were previously difficult or impossible with traditional CSS.</p>
+                            
+                            <h3>Basic Grid Setup</h3>
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    .grid-container {<br>
+                                    &nbsp;&nbsp;display: grid;<br>
+                                    &nbsp;&nbsp;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));<br>
+                                    &nbsp;&nbsp;gap: 20px;<br>
+                                    &nbsp;&nbsp;padding: 20px;<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <div class="css-demo">
+                                <h4>Grid Demo</h4>
+                                <div class="grid-demo">
+                                    <div class="grid-item">Item 1</div>
+                                    <div class="grid-item">Item 2</div>
+                                    <div class="grid-item">Item 3</div>
+                                    <div class="grid-item">Item 4</div>
+                                </div>
+                                <p><small>Resize your browser to see the responsive grid in action!</small></p>
+                            </div>
+                            
+                            <h3>Advanced Grid Techniques</h3>
+                            <ul>
+                                <li><strong>Grid Areas:</strong> Name grid areas for semantic layouts</li>
+                                <li><strong>Subgrid:</strong> Inherit grid lines from parent containers</li>
+                                <li><strong>Grid Auto-placement:</strong> Let CSS automatically place items</li>
+                                <li><strong>Implicit Grids:</strong> Handle overflow content gracefully</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    .layout {<br>
+                                    &nbsp;&nbsp;display: grid;<br>
+                                    &nbsp;&nbsp;grid-template-areas:<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"header header header"<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"sidebar main aside"<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;"footer footer footer";<br>
+                                    &nbsp;&nbsp;grid-template-rows: auto 1fr auto;<br>
+                                    &nbsp;&nbsp;min-height: 100vh;<br>
+                                    }<br><br>
+                                    
+                                    .header { grid-area: header; }<br>
+                                    .sidebar { grid-area: sidebar; }<br>
+                                    .main { grid-area: main; }<br>
+                                    .aside { grid-area: aside; }<br>
+                                    .footer { grid-area: footer; }
+                                </code>
+                            </div>
+                            
+                            <h2>Flexbox: One-Dimensional Layouts Made Easy</h2>
+                            <p>While Grid excels at two-dimensional layouts, Flexbox is perfect for one-dimensional layouts. It's ideal for navigation bars, card layouts, and centering content.</p>
+                            
+                            <h3>Flexbox Fundamentals</h3>
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    .flex-container {<br>
+                                    &nbsp;&nbsp;display: flex;<br>
+                                    &nbsp;&nbsp;justify-content: space-between;<br>
+                                    &nbsp;&nbsp;align-items: center;<br>
+                                    &nbsp;&nbsp;gap: 20px;<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <div class="css-demo">
+                                <h4>Flexbox Demo</h4>
+                                <div class="flex-demo">
+                                    <div class="flex-item">Flex 1</div>
+                                    <div class="flex-item">Flex 2</div>
+                                    <div class="flex-item">Flex 3</div>
+                                </div>
+                            </div>
+                            
+                            <h3>Advanced Flexbox Properties</h3>
+                            <ul>
+                                <li><strong>flex-grow:</strong> Control how items grow</li>
+                                <li><strong>flex-shrink:</strong> Control how items shrink</li>
+                                <li><strong>flex-basis:</strong> Set the initial size</li>
+                                <li><strong>align-self:</strong> Override alignment for individual items</li>
+                            </ul>
+                            
+                            <h2>CSS Custom Properties (Variables)</h2>
+                            <p>CSS custom properties allow you to store values that can be reused throughout your stylesheet. They're perfect for theming, maintaining consistency, and creating dynamic designs.</p>
+                            
+                            <h3>Defining and Using Custom Properties</h3>
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    :root {<br>
+                                    &nbsp;&nbsp;--primary-color: #007bff;<br>
+                                    &nbsp;&nbsp;--secondary-color: #6c757d;<br>
+                                    &nbsp;&nbsp;--font-size-large: 2rem;<br>
+                                    &nbsp;&nbsp;--spacing-unit: 1rem;<br>
+                                    }<br><br>
+                                    
+                                    .button {<br>
+                                    &nbsp;&nbsp;background-color: var(--primary-color);<br>
+                                    &nbsp;&nbsp;font-size: var(--font-size-large);<br>
+                                    &nbsp;&nbsp;padding: var(--spacing-unit);<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <div class="css-demo">
+                                <h4>Custom Properties Demo</h4>
+                                <div class="custom-property-demo">
+                                    This element uses CSS custom properties for color, padding, and border-radius!
+                                </div>
+                            </div>
+                            
+                            <h3>Dynamic Custom Properties with JavaScript</h3>
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    // Change custom property values dynamically<br>
+                                    document.documentElement.style.setProperty('--primary-color', '#28a745');<br><br>
+                                    
+                                    // Get custom property values<br>
+                                    const primaryColor = getComputedStyle(document.documentElement)<br>
+                                    &nbsp;&nbsp;.getPropertyValue('--primary-color');
+                                </code>
+                            </div>
+                            
+                            <h2>Container Queries: Element-Based Responsive Design</h2>
+                            <p>Container queries allow you to apply styles based on the size of a container rather than the viewport. This enables true component-based responsive design.</p>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    .card-container {<br>
+                                    &nbsp;&nbsp;container-type: inline-size;<br>
+                                    }<br><br>
+                                    
+                                    @container (min-width: 400px) {<br>
+                                    &nbsp;&nbsp;.card {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;display: flex;<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;gap: 20px;<br>
+                                    &nbsp;&nbsp;}<br>
+                                    }<br><br>
+                                    
+                                    @container (max-width: 399px) {<br>
+                                    &nbsp;&nbsp;.card {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;display: block;<br>
+                                    &nbsp;&nbsp;}<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <div class="css-demo">
+                                <h4>Container Query Demo</h4>
+                                <p><small>Try resizing this container by dragging the bottom-right corner:</small></p>
+                                <div class="container-query-demo">
+                                    <div class="container-content">
+                                        <div style="background: var(--primary-color); color: white; padding: 10px; border-radius: 5px;">Content 1</div>
+                                        <div style="background: var(--secondary-color); color: white; padding: 10px; border-radius: 5px;">Content 2</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <h2>Advanced Selectors and Pseudo-Classes</h2>
+                            <p>Modern CSS includes powerful selectors that make targeting specific elements easier and more semantic.</p>
+                            
+                            <h3>Useful Modern Selectors</h3>
+                            <ul>
+                                <li><code>:is()</code> - Matches any of the selectors in the list</li>
+                                <li><code>:where()</code> - Like :is() but with zero specificity</li>
+                                <li><code>:has()</code> - Parent selector (limited browser support)</li>
+                                <li><code>:not()</code> - Negation pseudo-class</li>
+                                <li><code>:nth-child()</code> - Advanced child selection</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    /* Select h1, h2, or h3 that are direct children of article */<br>
+                                    article > :is(h1, h2, h3) {<br>
+                                    &nbsp;&nbsp;color: var(--primary-color);<br>
+                                    }<br><br>
+                                    
+                                    /* Select every 3rd item starting from the 2nd */<br>
+                                    .item:nth-child(3n+2) {<br>
+                                    &nbsp;&nbsp;background-color: var(--secondary-color);<br>
+                                    }<br><br>
+                                    
+                                    /* Select articles that contain an image */<br>
+                                    article:has(img) {<br>
+                                    &nbsp;&nbsp;border: 2px solid var(--primary-color);<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <h2>CSS Animations and Transitions</h2>
+                            <p>Modern CSS provides powerful animation capabilities that can enhance user experience without requiring JavaScript.</p>
+                            
+                            <h3>Smooth Transitions</h3>
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    .button {<br>
+                                    &nbsp;&nbsp;transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);<br>
+                                    }<br><br>
+                                    
+                                    .button:hover {<br>
+                                    &nbsp;&nbsp;transform: translateY(-2px);<br>
+                                    &nbsp;&nbsp;box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <h3>CSS Animations</h3>
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    @keyframes bounce {<br>
+                                    &nbsp;&nbsp;0%, 20%, 50%, 80%, 100% {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;transform: translateY(0);<br>
+                                    &nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;40% {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;transform: translateY(-30px);<br>
+                                    &nbsp;&nbsp;}<br>
+                                    &nbsp;&nbsp;60% {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;transform: translateY(-15px);<br>
+                                    &nbsp;&nbsp;}<br>
+                                    }<br><br>
+                                    
+                                    .bouncing-element {<br>
+                                    &nbsp;&nbsp;animation: bounce 2s infinite;<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <div class="css-demo">
+                                <h4>Animation Demo</h4>
+                                <div class="animation-demo"></div>
+                            </div>
+                            
+                            <h2>Modern Color Functions</h2>
+                            <p>CSS now supports advanced color functions that make working with colors more intuitive and powerful.</p>
+                            
+                            <h3>New Color Functions</h3>
+                            <ul>
+                                <li><code>hsl()</code> and <code>hsla()</code> - Hue, Saturation, Lightness</li>
+                                <li><code>lab()</code> and <code>lch()</code> - Perceptually uniform color spaces</li>
+                                <li><code>color-mix()</code> - Mix two colors</li>
+                                <li><code>color()</code> - Use different color spaces</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    .color-examples {<br>
+                                    &nbsp;&nbsp;/* HSL for intuitive color manipulation */<br>
+                                    &nbsp;&nbsp;background: hsl(210, 100%, 50%);<br><br>
+                                    
+                                    &nbsp;&nbsp;/* Color mixing (limited browser support) */<br>
+                                    &nbsp;&nbsp;border-color: color-mix(in srgb, blue 70%, red 30%);<br><br>
+                                    
+                                    &nbsp;&nbsp;/* Relative colors */<br>
+                                    &nbsp;&nbsp;color: hsl(from var(--primary-color) h s calc(l * 0.8));<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <h2>CSS Logical Properties</h2>
+                            <p>Logical properties make your CSS more internationalization-friendly by using logical directions instead of physical ones.</p>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    .element {<br>
+                                    &nbsp;&nbsp;/* Instead of margin-left and margin-right */<br>
+                                    &nbsp;&nbsp;margin-inline: 20px;<br><br>
+                                    
+                                    &nbsp;&nbsp;/* Instead of margin-top and margin-bottom */<br>
+                                    &nbsp;&nbsp;margin-block: 10px;<br><br>
+                                    
+                                    &nbsp;&nbsp;/* Instead of padding-left */<br>
+                                    &nbsp;&nbsp;padding-inline-start: 15px;<br><br>
+                                    
+                                    &nbsp;&nbsp;/* Instead of border-left */<br>
+                                    &nbsp;&nbsp;border-inline-start: 2px solid blue;<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <h2>CSS Subgrid</h2>
+                            <p>Subgrid allows nested grid items to participate in their parent's grid, creating more cohesive layouts.</p>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    .parent-grid {<br>
+                                    &nbsp;&nbsp;display: grid;<br>
+                                    &nbsp;&nbsp;grid-template-columns: repeat(4, 1fr);<br>
+                                    &nbsp;&nbsp;gap: 20px;<br>
+                                    }<br><br>
+                                    
+                                    .nested-grid {<br>
+                                    &nbsp;&nbsp;display: grid;<br>
+                                    &nbsp;&nbsp;grid-column: span 2;<br>
+                                    &nbsp;&nbsp;grid-template-columns: subgrid;<br>
+                                    &nbsp;&nbsp;gap: inherit;<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <h2>Performance Considerations</h2>
+                            <p>Modern CSS techniques should be used with performance in mind:</p>
+                            
+                            <h3>Best Practices</h3>
+                            <ul>
+                                <li><strong>Use transform and opacity for animations</strong> - They don't trigger layout recalculations</li>
+                                <li><strong>Minimize repaints and reflows</strong> - Avoid animating layout properties</li>
+                                <li><strong>Use will-change sparingly</strong> - Only when necessary for performance</li>
+                                <li><strong>Optimize CSS delivery</strong> - Critical CSS inline, non-critical CSS async</li>
+                                <li><strong>Use CSS containment</strong> - Isolate layout and style calculations</li>
+                            </ul>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    /* Good for performance */<br>
+                                    .smooth-animation {<br>
+                                    &nbsp;&nbsp;transform: translateX(0);<br>
+                                    &nbsp;&nbsp;transition: transform 0.3s ease;<br>
+                                    }<br><br>
+                                    
+                                    .smooth-animation:hover {<br>
+                                    &nbsp;&nbsp;transform: translateX(10px);<br>
+                                    }<br><br>
+                                    
+                                    /* Use containment for performance */<br>
+                                    .card {<br>
+                                    &nbsp;&nbsp;contain: layout style paint;<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <h2>Browser Support and Progressive Enhancement</h2>
+                            <p>When using modern CSS features, always consider browser support and provide fallbacks:</p>
+                            
+                            <div class="bg-light p-3 rounded mb-3">
+                                <code>
+                                    /* Provide fallbacks */<br>
+                                    .layout {<br>
+                                    &nbsp;&nbsp;/* Fallback for older browsers */<br>
+                                    &nbsp;&nbsp;display: flex;<br>
+                                    &nbsp;&nbsp;flex-wrap: wrap;<br><br>
+                                    
+                                    &nbsp;&nbsp;/* Modern browsers */<br>
+                                    &nbsp;&nbsp;display: grid;<br>
+                                    &nbsp;&nbsp;grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));<br>
+                                    }<br><br>
+                                    
+                                    /* Feature queries */<br>
+                                    @supports (display: grid) {<br>
+                                    &nbsp;&nbsp;.layout {<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;display: grid;<br>
+                                    &nbsp;&nbsp;}<br>
+                                    }
+                                </code>
+                            </div>
+                            
+                            <h2>Conclusion</h2>
+                            <p>Modern CSS has transformed web design, making it easier to create complex, responsive, and beautiful layouts. From Grid and Flexbox to custom properties and container queries, these techniques provide powerful tools for modern web development.</p>
+                            
+                            <p>The key to mastering modern CSS is understanding when to use each technique. Grid excels at two-dimensional layouts, Flexbox is perfect for one-dimensional arrangements, and custom properties enable maintainable, themeable designs.</p>
+                            
+                            <p>As CSS continues to evolve, staying up-to-date with new features while maintaining browser compatibility will ensure your designs work for all users. Remember to always test across different browsers and devices, and provide appropriate fallbacks for newer features.</p>
+                            
+                            <p>Start incorporating these modern CSS techniques into your projects today, and you'll find that creating sophisticated designs becomes much more enjoyable and efficient!</p>
+                        </div>
+                        
+                        <!-- Author Info -->
+                        <div class="border-top pt-4 mt-5">
+                            <div class="d-flex align-items-center">
+                                <img src="https://via.placeholder.com/80" alt="Gary Mike" class="rounded-circle me-3">
+                                <div>
+                                    <h5 class="mb-1">Gary Mike</h5>
+                                    <p class="text-muted mb-0">Frontend Developer | CSS Specialist | UI/UX Enthusiast</p>
+                                    <div class="mt-2">
+                                        <a href="https://github.com/garymike07" class="text-decoration-none me-3" target="_blank">
+                                            <i class="fab fa-github"></i> GitHub
+                                        </a>
+                                        <a href="mailto:wrootmike@gmail.com" class="text-decoration-none">
+                                            <i class="fas fa-envelope"></i> Email
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Related Posts -->
+                    <div class="mt-5">
+                        <h3 class="mb-4">Related Posts</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card glass-card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">The Future of Web Development</h5>
+                                        <p class="card-text">Exploring emerging trends in web development and future technologies.</p>
+                                        <a href="future-web-dev.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card glass-card h-100">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Building Scalable APIs</h5>
+                                        <p class="card-text">Best practices for designing and implementing scalable REST APIs.</p>
+                                        <a href="scalable-apis.html" class="btn btn-outline-primary btn-sm">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark border-top">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 Gary Mike - All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="../scripts.js"></script>
+</body>
+</html>
+
