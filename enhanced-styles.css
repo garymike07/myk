@@ -177,10 +177,10 @@ body::before {
     width: 100%;
 }
 
-/* Enhanced Hero Section with Liquid Glass */
+/* Enhanced Hero Section with Liquid Glass - Fully Dark Mode */
 .hero-section {
     min-height: 100vh;
-    background: var(--hero-gradient);
+    background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 30%, #16213e 70%, #0f172a 100%);
     background-attachment: fixed;
     display: flex;
     align-items: center;
@@ -196,8 +196,8 @@ body::before {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 30% 70%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.06) 0%, transparent 50%);
     animation: float 20s ease-in-out infinite;
 }
 
@@ -208,8 +208,8 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.3" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="0.2" fill="rgba(255,255,255,0.08)"/><circle cx="50" cy="10" r="0.25" fill="rgba(255,255,255,0.06)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-    opacity: 0.4;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.3" fill="rgba%2899, 102, 241, 0.1%29"/><circle cx="75" cy="75" r="0.2" fill="rgba%28139, 92, 246, 0.08%29"/><circle cx="50" cy="10" r="0.25" fill="rgba%286, 182, 212, 0.06%29"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+    opacity: 0.3;
     animation: drift 30s linear infinite;
 }
 
@@ -253,7 +253,7 @@ body::before {
     right: -15px;
     bottom: -15px;
     border-radius: 50%;
-    background: var(--primary-gradient);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.6) 0%, rgba(139, 92, 246, 0.4) 100%);
     z-index: -1;
     opacity: 0.8;
     animation: pulse 3s ease-in-out infinite;
@@ -267,7 +267,7 @@ body::before {
     right: -25px;
     bottom: -25px;
     border-radius: 50%;
-    background: var(--accent-gradient);
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.4) 0%, rgba(168, 85, 247, 0.3) 100%);
     z-index: -2;
     opacity: 0.4;
     animation: pulse 3s ease-in-out infinite reverse;
