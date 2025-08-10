@@ -1167,6 +1167,24 @@ section:not(.hero-section)::before {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
 }
 
+/* Enhanced Back to Top Button */
+.back-to-top-glass {
+    background: var(--glass-bg-primary);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid var(--glass-border-primary);
+    color: var(--text-dark-primary);
+    box-shadow: var(--glass-shadow-primary);
+    transition: var(--transition-elastic);
+}
+
+.back-to-top-glass:hover {
+    background: var(--glass-bg-secondary);
+    border-color: var(--glass-border-secondary);
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: var(--glass-shadow-tertiary);
+}
+
 /* Enhanced Social Links */
 .social-links {
     margin-top: 3rem;
@@ -1702,19 +1720,28 @@ section:not(.hero-section)::before {
 
 /* Enhanced Footer */
 footer {
-    background: linear-gradient(135deg, #0a0a0f 0%, #16213e 100%);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--glass-bg-secondary);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-top: 1px solid var(--glass-border-primary);
+    box-shadow: var(--glass-shadow-secondary);
     position: relative;
+    overflow: hidden;
 }
 
 footer::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(99, 102, 241, 0.6), transparent);
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left 0.8s ease;
+}
+
+footer:hover::before {
+    left: 100%;
 }
 
 /* Enhanced Testimonials */
