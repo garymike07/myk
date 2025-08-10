@@ -1116,18 +1116,55 @@ section:not(.hero-section)::before {
 }
 
 .time-display {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--accent-color);
-    background: var(--glass-bg-primary);
-    backdrop-filter: blur(20px);
-    border: 1px solid var(--glass-border-primary);
-    border-radius: 20px;
-    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark-primary);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid transparent;
+    border-radius: 25px;
+    padding: 1.5rem 3rem;
     margin: 2rem auto;
     display: inline-block;
-    box-shadow: var(--glass-shadow-primary);
-    text-shadow: 0 0 10px rgba(6, 182, 212, 0.5);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.time-display::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 25px;
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color)) border-box;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) padding-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    animation: glow 2s linear infinite;
+}
+
+@keyframes glow {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+    100% {
+        filter: hue-rotate(360deg);
+    }
+}
+
+.time-display:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 40px rgba(31, 38, 135, 0.5);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.1));
 }
 
 /* Enhanced Social Links */
