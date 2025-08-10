@@ -23,8 +23,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="enhanced-styles.css">
-    <link rel="stylesheet" href="stylish.css">
+    <link rel="stylesheet" href="style.css">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -72,49 +71,51 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
-        <div class="container text-center">
-            <div class="hero-header fade-in">
-                <h1 class="site-title">Gary Mike - Software Developer</h1>
-            </div>
-            
-            <div class="hero-profile fade-in">
-                <div class="profile-image">
-                    <img src="assets/logo.jpg" alt="Gary Mike Profile" class="img-fluid">
+        <div class="container">
+            <div class="glass-card hero-card text-center">
+                <div class="hero-header fade-in">
+                    <h1 class="site-title">Gary Mike - Software Developer</h1>
                 </div>
-            </div>
-            
-            <div class="hero-time fade-in">
-                <div class="time-display" id="currentTime"></div>
-            </div>
-            
-            <div class="hero-greeting fade-in">
-                <h2>Welcome to my portfolio!</h2>
-                <p class="lead">Click on the sections to learn more about me.</p>
-            </div>
-            
-            <div class="hero-roles fade-in">
-                <p class="roles-text">Full-stack Developer | ICT Officer | Network Administrator | Web 3 Enthusiast</p>
-            </div>
-            
-            <div class="hero-tagline fade-in">
-                <p class="tagline-text">Transforming Challenges into Tech Solutions</p>
-            </div>
-            
-            <div class="hero-buttons fade-in">
-                <a href="#projects" class="btn btn-primary btn-lg me-3">View My Work</a>
-                <a href="#contact" class="btn btn-outline-primary btn-lg">Get In Touch</a>
-            </div>
-            
-            <div class="social-links fade-in">
-                <a href="https://github.com/garymike07" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="mailto:wrootmike@gmail.com" class="social-link">
-                    <i class="fas fa-envelope"></i>
-                </a>
-                <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
-                    <i class="fab fa-linkedin"></i>
-                </a>
+
+                <div class="hero-profile fade-in">
+                    <div class="profile-image">
+                        <img src="assets/logo.jpg" alt="Gary Mike Profile" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="hero-time fade-in">
+                    <div class="time-display" id="currentTime"></div>
+                </div>
+
+                <div class="hero-greeting fade-in">
+                    <h2>Welcome to my portfolio!</h2>
+                    <p class="lead">Click on the sections to learn more about me.</p>
+                </div>
+
+                <div class="hero-roles fade-in">
+                    <p class="roles-text">Full-stack Developer | ICT Officer | Network Administrator | Web 3 Enthusiast</p>
+                </div>
+
+                <div class="hero-tagline fade-in">
+                    <p class="tagline-text">Transforming Challenges into Tech Solutions</p>
+                </div>
+
+                <div class="hero-buttons fade-in">
+                    <a href="#projects" class="btn btn-primary btn-lg me-3">View My Work</a>
+                    <a href="#contact" class="btn btn-outline-primary btn-lg">Get In Touch</a>
+                </div>
+
+                <div class="social-links fade-in">
+                    <a href="https://github.com/garymike07" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:wrootmike@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -125,12 +126,13 @@
             <h2 class="section-title fade-in">About Me</h2>
             <div class="row align-items-center">
                 <div class="col-lg-6 fade-in">
-                    <div class="glass-card">
+                    <div class="glass-card p-4">
                         <p class="lead">A visionary IT Professional with a rich tapestry of expertise in full-stack development, ICT oversight, and network mastery. As a fervent Web 3 advocate, Mike weaves cutting-edge innovation into every project, crafting transformative digital experiences that propel organizations into the future.</p>
+                        <a href="assets/resume.pdf" class="btn btn-primary mt-3" target="_blank">View My Resume</a>
                     </div>
                 </div>
-                <div class="col-lg-6 fade-in">
-                    <img src="https://via.placeholder.com/500x400" alt="About Gary Mike" class="img-fluid rounded shadow">
+                <div class="col-lg-6 fade-in text-center">
+                    <img src="assets/avatar1.jpg" alt="About Gary Mike" class="img-fluid rounded shadow-lg" style="max-width: 80%;">
                 </div>
             </div>
         </div>
@@ -726,8 +728,8 @@
     
     <!-- Custom JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="enhanced-scripts.js"></script>
-    <script src="stylish.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
 
