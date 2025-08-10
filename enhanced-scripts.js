@@ -136,7 +136,7 @@ function initializeSmoothScrolling() {
 function initializeBackToTop() {
     const backToTop = document.createElement('button');
     backToTop.innerHTML = '<i class="fas fa-arrow-up"></i>';
-    backToTop.className = 'back-to-top';
+    backToTop.className = 'back-to-top back-to-top-glass';
     backToTop.style.cssText = `
         position: fixed;
         bottom: 30px;
@@ -144,15 +144,12 @@ function initializeBackToTop() {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
         border: none;
         cursor: pointer;
         opacity: 0;
         visibility: hidden;
         transition: all 0.3s ease;
         z-index: 1000;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     `;
     
     document.body.appendChild(backToTop);
@@ -172,16 +169,6 @@ function initializeBackToTop() {
             top: 0,
             behavior: 'smooth'
         });
-    });
-    
-    backToTop.addEventListener('mouseenter', () => {
-        backToTop.style.transform = 'scale(1.1)';
-        backToTop.style.boxShadow = '0 6px 20px rgba(0,0,0,0.4)';
-    });
-    
-    backToTop.addEventListener('mouseleave', () => {
-        backToTop.style.transform = 'scale(1)';
-        backToTop.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
     });
 }
 
