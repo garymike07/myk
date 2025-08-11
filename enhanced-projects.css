@@ -3,6 +3,7 @@
 /* Parallax hover effect for project cards */
 .project-card {
   perspective: 1000px;
+  position: relative;
 }
 
 .project-card .project-thumbnail,
@@ -12,4 +13,30 @@
 .project-card .project-description,
 .project-card .project-tech-tags {
   transition: transform 0.5s;
+}
+
+/* Info button styles */
+.project-card .info-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.project-card .info-btn:hover {
+    background: var(--primary-gradient);
+    color: #fff;
+    border-color: transparent;
 }
