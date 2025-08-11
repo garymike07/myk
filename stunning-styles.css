@@ -177,6 +177,21 @@ body::before {
   position: relative;
   overflow: hidden;
   background: var(--dark-gradient);
+  background-image: url('assets/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.7);
+  z-index: 1;
 }
 
 .hero-content {
@@ -413,9 +428,10 @@ body::before {
   border: 1px solid var(--border-glass);
   border-radius: 20px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   height: 100%;
+  transform: translateY(0);
 }
 
 .project-card::before {
@@ -427,32 +443,57 @@ body::before {
   height: 4px;
   background: var(--primary-gradient);
   transform: scaleX(0);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease;
+  z-index: 2;
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(0, 242, 254, 0.1) 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
 }
 
 .project-card:hover::before {
   transform: scaleX(1);
 }
 
+.project-card:hover::after {
+  opacity: 1;
+}
+
 .project-card:hover {
-  transform: translateY(-15px);
-  box-shadow: var(--shadow-intense);
-  border-color: rgba(102, 126, 234, 0.5);
+  transform: translateY(-20px) scale(1.02);
+  box-shadow: 
+    0 25px 80px rgba(0, 0, 0, 0.3),
+    0 0 50px rgba(102, 126, 234, 0.4);
+  border-color: rgba(102, 126, 234, 0.6);
 }
 
 .project-image {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
 }
 
 .project-card:hover .project-image {
   transform: scale(1.1);
+  filter: brightness(1.1) saturate(1.2);
 }
 
 .project-content {
-  padding: 1.5rem;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .project-title {
@@ -460,12 +501,25 @@ body::before {
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-title {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .project-description {
   color: var(--text-secondary);
   margin-bottom: 1.5rem;
   line-height: 1.6;
+  transition: color 0.3s ease;
+}
+
+.project-card:hover .project-description {
+  color: var(--text-primary);
 }
 
 .project-tech {
@@ -475,13 +529,44 @@ body::before {
   margin-bottom: 1.5rem;
 }
 
+.project-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .tech-tag {
   background: var(--primary-gradient);
   color: white;
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  padding: 0.4rem 1rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
   font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
+
+.tech-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.tech-tag:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.tech-tag:hover::before {
+  left: 100%;
 }
 
 /* Timeline Enhancement */

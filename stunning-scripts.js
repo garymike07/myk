@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all components
-    initializeLoading();
+    // initializeLoading();
     initializeNavigation();
     initializeScrollAnimations();
     initializeParticles();
