@@ -66,7 +66,7 @@ setInterval(createParticle, 2000);
 
 // Modal functionality
 function openModal(projectId) {
-    const modal = document.getElementById(projectId + '-modal');
+    const modal = document.getElementById(projectId);
     if (modal) {
         modal.style.display = 'block';
     }
