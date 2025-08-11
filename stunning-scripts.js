@@ -359,56 +359,56 @@ function showNotification(message, type = 'info') {
 }
 
 // Mouse Trail Effect
-function initializeMouseTrail() {
-    const trail = [];
-    const trailLength = 20;
+// function initializeMouseTrail() {
+//     const trail = [];
+//     const trailLength = 20;
     
-    document.addEventListener('mousemove', (e) => {
-        trail.push({ x: e.clientX, y: e.clientY });
+//     document.addEventListener('mousemove', (e) => {
+//         trail.push({ x: e.clientX, y: e.clientY });
         
-        if (trail.length > trailLength) {
-            trail.shift();
-        }
+//         if (trail.length > trailLength) {
+//             trail.shift();
+//         }
         
-        updateTrail();
-    });
+//         updateTrail();
+//     });
     
-    function updateTrail() {
-        // Remove existing trail elements
-        document.querySelectorAll('.mouse-trail').forEach(el => el.remove());
+//     function updateTrail() {
+//         // Remove existing trail elements
+//         document.querySelectorAll('.mouse-trail').forEach(el => el.remove());
         
-        trail.forEach((point, index) => {
-            const trailElement = document.createElement('div');
-            trailElement.className = 'mouse-trail';
-            trailElement.style.cssText = `
-                position: fixed;
-                left: ${point.x}px;
-                top: ${point.y}px;
-                width: ${(index + 1) * 2}px;
-                height: ${(index + 1) * 2}px;
-                background: radial-gradient(circle, rgba(102, 126, 234, ${(index + 1) / trailLength}) 0%, transparent 70%);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 9999;
-                transform: translate(-50%, -50%);
-            `;
+//         trail.forEach((point, index) => {
+//             const trailElement = document.createElement('div');
+//             trailElement.className = 'mouse-trail';
+//             trailElement.style.cssText = `
+//                 position: fixed;
+//                 left: ${point.x}px;
+//                 top: ${point.y}px;
+//                 width: ${(index + 1) * 2}px;
+//                 height: ${(index + 1) * 2}px;
+//                 background: radial-gradient(circle, rgba(102, 126, 234, ${(index + 1) / trailLength}) 0%, transparent 70%);
+//                 border-radius: 50%;
+//                 pointer-events: none;
+//                 z-index: 9999;
+//                 transform: translate(-50%, -50%);
+//             `;
             
-            document.body.appendChild(trailElement);
+//             document.body.appendChild(trailElement);
             
-            // Remove after animation
-            setTimeout(() => {
-                if (trailElement.parentNode) {
-                    trailElement.parentNode.removeChild(trailElement);
-                }
-            }, 1000);
-        });
-    }
-}
+//             // Remove after animation
+//             setTimeout(() => {
+//                 if (trailElement.parentNode) {
+//                     trailElement.parentNode.removeChild(trailElement);
+//                 }
+//             }, 1000);
+//         });
+//     }
+// }
 
-// Initialize mouse trail on desktop only
-if (window.innerWidth > 768) {
-    initializeMouseTrail();
-}
+// // Initialize mouse trail on desktop only
+// if (window.innerWidth > 768) {
+//     initializeMouseTrail();
+// }
 
 // Performance Optimization
 function optimizePerformance() {
