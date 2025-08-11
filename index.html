@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gary Mike - Software Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    </style>
+</head>
+<body>
+
+    <!-- Floating Particles -->
+    <div class="particles"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-logo">
+            <img src="assets/logo.jpg" alt="Gary Mike" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+            <div style="display:none; width:45px; height:45px; border-radius:50%; background:var(--primary-gradient); display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:1.2rem;">GM</div>
+            <span>Gary Mike</span>
+        </div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="mobile-menu-toggle" aria-label="Open navigation menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="hero-header">
+                <h1 class="site-title fade-in">Mike portfolio site</h1>
+            </div>
+            <div class="hero-profile">
+                <div class="profile-image">
+                    <img src="assets/logo.jpg" alt="Gary Mike" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="profile-placeholder" style="display:none;">
+                        <span>GM</span>
+                    </div>
+                </div>
+            </div>
+            
+           <div class="hero-time">
+            <div id="time-display" class="time-display"></div>
+        </div>
+        <div class="hero-greeting fade-in">
+            <h2 id="greeting-display"></h2>
+        </div>
+            
+            <div class="hero-roles fade-in">
+                <p>Full-stack Developer | ICT Officer | Network Administrator | Web 3 Enthusiast</p>
+            </div>
+            
+            <div class="hero-tagline fade-in">
+                <p>Transforming Challenges into Tech Solutions</p>
+            </div>
+            
+            <div class="hero-buttons fade-in">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">About Me</h2>
+            <div class="glass-card animate-on-scroll">
+                <p>A visionary IT Professional with a rich tapestry of expertise in full-stack development, ICT oversight, and network mastery. As a fervent Web 3 advocate, Mike weaves cutting-edge innovation into every project, crafting transformative digital experiences that propel organizations into the future.</p>
+                
+                <div class="social-links">
+                    <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <div style="text-align: center; margin-top: 30px;">
+                    <a href="assets/resume.pdf" download="Mike-Resume.pdf" class="btn">Download CV</a>
+                </div>
+            </div>
+
+            <div class="skills-matrix">
+                <div class="skill-item animate-on-scroll">
+                    <i class="fab fa-js-square" style="font-size: 2.5rem; color: #f7df1e; margin-bottom: 15px;"></i>
+                    <h3>JavaScript</h3>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <i class="fab fa-react" style="font-size: 2.5rem; color: #61dafb; margin-bottom: 15px;"></i>
+                    <h3>React</h3>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <i class="fab fa-node-js" style="font-size: 2.5rem; color: #339933; margin-bottom: 15px;"></i>
+                    <h3>Node.js</h3>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <i class="fab fa-python" style="font-size: 2.5rem; color: #3776ab; margin-bottom: 15px;"></i>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <i class="fas fa-database" style="font-size: 2.5rem; color: #336791; margin-bottom: 15px;"></i>
+                    <h3>Database</h3>
+                </div>
+                <div class="skill-item animate-on-scroll">
+                    <i class="fab fa-aws" style="font-size: 2.5rem; color: #ff9900; margin-bottom: 15px;"></i>
+                    <h3>AWS</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>ICT Officer Council of Legal Education</h3>
+                        <div class="timeline-date">January 2024 - Present</div>
+                        <p>Currently serving as an ICT Officer the Council of Legal Education, gaining hands-on experience in information technology support and system administration within the legal education sector.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>IT Intern - Gatundu Law Courts</h3>
+                        <div class="timeline-date">January 2023 - April 2023</div>
+                        <p>Helped troubleshoot technical issues reported by staff, resolving them quickly and effectively. Assisted with the maintenance and management of the court's computer systems and networks. Also assisted with website maintenance and updates.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>IEBC ICT Officer - Independent Electoral and Boundaries Commission</h3>
+                        <div class="timeline-date">August 2022</div>
+                        <p>Served as ICT Officer during the August 2022 polls, overseeing maintenance and troubleshooting of KEIMS kit and setting up network infrastructure in the tallying centre for Gatundu South constituency.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Junior Software Developer - Freelancer</h3>
+                        <div class="timeline-date">July 2021 - February 2022</div>
+                        <p>Worked as a freelance junior software developer, primarily focusing on website development for clients on a contract basis, delivering custom web solutions and applications.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Featured Projects</h2>
+            <div class="projects-grid">
+              <div class="project-card animate-on-scroll" data-tech="javascript html5 css3" onclick="window.open(\'https://garymike07.github.io/Mike-site/\', \'_blank\')">
+                    <img src="assets/thumbnails/myk_portfolio_thumbnail.png" alt="MYK Portfolio Platform Thumbnail" class="project-thumbnail">
+                            <span class="stat"><i class="fas fa-star"></i> 324</span>
+                            <span class="stat"><i class="fas fa-code-branch"></i> 145</span>
+                            <span class="project-time">8 months</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">MYK Portfolio Platform</h3>
+                    <div class="project-status">Live</div>
+                    <p class="project-description">A comprehensive portfolio platform showcasing full-stack development expertise with modern design, interactive features, and professional presentation.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">HTML5</span>
+                        <span class="tech-tag">CSS3</span>
+                        <span class="tech-tag">+2</span>
+                    </div>
+                </div>
+
+               <div class="project-card animate-on-scroll" data-tech="react nodejs mongodb" onclick="openModal(\'ecommerce-modal\')">
+                    <img src="assets/thumbnails/ecommerce_dashboard_thumbnail.png" alt="E-commerce Analytics Dashboard Thumbnail" class="project-thumbnail">
+                    <div class="project-header">                        <div class="project-stats">
+                            <span class="stat"><i class="fas fa-star"></i> 445</span>
+                            <span class="stat"><i class="fas fa-code-branch"></i> 234</span>
+                            <span class="project-time">7 months</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">E-commerce Analytics Dashboard</h3>
+                    <div class="project-status">In Development</div>
+                    <p class="project-description">Advanced analytics platform for e-commerce businesses with real-time sales tracking, customer insights, and inventory management.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">+3</span>
+                    </div>
+                </div>
+
+                <div class="project-card animate-on-scroll" data-tech="nextjs openai postgresql" onclick="openModal(\'ai-cms-modal\')">
+                    <img src="assets/thumbnails/ai_cms_thumbnail.png" alt="AI-Powered Content Management Thumbnail" class="project-thumbnail">
+                    <div class="project-header">                       <div class="project-stats">
+                            <span class="stat"><i class="fas fa-star"></i> 203</span>
+                            <span class="stat"><i class="fas fa-code-branch"></i> 89</span>
+                            <span class="project-time">5 months</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">AI-Powered Content Management</h3>
+                    <div class="project-status">In Development</div>
+                    <p class="project-description">Next-generation CMS with AI content generation, automated SEO optimization, and intelligent content recommendations.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">OpenAI</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">+2</span>
+                    </div>
+                </div>
+
+              <div class="project-card animate-on-scroll" data-tech="solidity web3js react" onclick="openModal(\'blockchain-modal\')">
+                    <img src="assets/thumbnails/blockchain_voting_thumbnail.png" alt="Blockchain Voting System Thumbnail" class="project-thumbnail">
+                    <div class="project-header">
+                        <div class="project-stats">
+                            <span class="stat"><i class="fas fa-star"></i> 156</span>
+                            <span class="stat"><i class="fas fa-code-branch"></i> 67</span>
+                            <span class="project-time">4 months</span>
+                        </div>
+                    </div>
+                    <h3 class="project-title">Blockchain Voting System</h3>
+                    <div class="project-status">In Development</div>
+                    <p class="project-description">Secure, transparent voting platform using blockchain technology for elections and organizational decision-making.</p>
+                    <div class="project-tech-tags">
+                        <span class="tech-tag">Solidity</span>
+                        <span class="tech-tag">Web3.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">+2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Latest Blog Posts</h2>
+            <div class="blog-grid">
+                <div class="blog-card animate-on-scroll">
+                    <img src="assets/thumbnails/web_dev_future_thumbnail.png" alt="The Future of Web Development Thumbnail" class="blog-thumbnail">
+                    <h3 class="blog-title">The Future of Web Development</h3>
+                    <div class="blog-date">January 15, 2024</div>
+                    <p class="blog-excerpt">Exploring emerging trends in web development, from WebAssembly to progressive web apps, and how they're shaping the future of digital experiences.</p>
+                    <a href="#" class="blog-read-more">Read More</a>
+                </div>
+
+                <div class="blog-card animate-on-scroll">
+                    <img src="assets/thumbnails/scalable_apis_thumbnail.png" alt="Building Scalable APIs Thumbnail" class="blog-thumbnail">
+                    <h3 class="blog-title">Building Scalable APIs</h3>
+                    <div class="blog-date">December 28, 2023</div>
+                    <p class="blog-excerpt">Best practices for designing and implementing scalable REST APIs, including caching strategies, rate limiting, and microservices architecture.</p>
+                    <a href="#" class="blog-read-more">Read More</a>
+                </div>
+
+                <div class="blog-card animate-on-scroll">
+                    <img src="assets/thumbnails/modern_css_thumbnail.png" alt="Modern CSS Techniques Thumbnail" class="blog-thumbnail">
+                    <h3 class="blog-title">Modern CSS Techniques</h3>
+                    <div class="blog-date">December 10, 2023</div>
+                    <p class="blog-excerpt">Advanced CSS techniques including Grid, Flexbox, custom properties, and modern layout methods that enhance user experience and developer productivity.</p>
+                    <a href="#" class="blog-read-more">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Contact</h2>
+            <div class="contact-content glass-card animate-on-scroll">
+                <p>I'm currently open to new opportunities and would love to hear from you. Whether you have a question or just want to say hi, I'll get back to you as soon as possible.</p>
+                <!--
+                    To make this form work, you need to create a form on formspree.io and replace the action URL with your own.
+                    For example: action="https://formspree.io/f/your_form_id"
+                -->
+                <form id="contact-form" action="#" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" class="form-control" placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-social-links">
+                    <a href="https://linkedin.com" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-link">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                <p>&copy; 2024 Gary Mike. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modals -->
+    <!-- Blockchain Analytics Platform Modal -->
+    <div id="blockchain-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Blockchain Analytics Platform</h2>
+                <div class="modal-status">Production</div>
+            </div>
+            <div class="modal-body">
+                <div class="project-image-gallery">
+                    <img src="assets/myk_portfolio_platform_thumbnail.png" alt="MYK Portfolio Platform" class="modal-main-image">
+                </div>
+                <div class="project-details">
+                    <div class="project-overview">
+                        <h3>Project Overview</h3>
+                        <p>A comprehensive real-time cryptocurrency tracking and analysis platform that provides advanced charting capabilities, portfolio management tools, and market insights. Built with modern web technologies to deliver a seamless user experience for crypto enthusiasts and professional traders.</p>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Real-time cryptocurrency price tracking</li>
+                            <li>Advanced charting with technical indicators</li>
+                            <li>Portfolio management and performance analytics</li>
+                            <li>Market sentiment analysis</li>
+                            <li>Custom alerts and notifications</li>
+                            <li>Multi-exchange data aggregation</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-item">Next.js</span>
+                            <span class="tech-item">TypeScript</span>
+                            <span class="tech-item">Web3.js</span>
+                            <span class="tech-item">Chart.js</span>
+                            <span class="tech-item">WebSocket</span>
+                            <span class="tech-item">Redis</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h3>Challenges & Solutions</h3>
+                        <p>The main challenge was handling real-time data from multiple cryptocurrency exchanges while maintaining optimal performance. We implemented WebSocket connections with Redis caching to ensure low-latency updates and implemented efficient data aggregation algorithms.</p>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="btn btn-primary">View Live Demo</a>
+                        <a href="#" class="btn btn-secondary">View Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Machine Learning API Modal -->
+    <div id="ml-api-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Machine Learning API</h2>
+                <div class="modal-status">Production</div>
+            </div>
+            <div class="modal-body">
+                <div class="project-image-gallery">
+                    <img src="assets/ecommerce_analytics_dashboard_thumbnail.png" alt="E-commerce Analytics Dashboard" class="modal-main-image">
+                </div>
+                <div class="project-details">
+                    <div class="project-overview">
+                        <h3>Project Overview</h3>
+                        <p>A scalable microservice architecture for machine learning operations, providing image recognition and natural language processing capabilities with auto-scaling features. Designed to handle high-volume requests with optimal performance and reliability.</p>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Image classification and object detection</li>
+                            <li>Natural language processing and sentiment analysis</li>
+                            <li>Auto-scaling based on demand</li>
+                            <li>RESTful API with comprehensive documentation</li>
+                            <li>Real-time model inference</li>
+                            <li>Model versioning and A/B testing</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">TensorFlow</span>
+                            <span class="tech-item">FastAPI</span>
+                            <span class="tech-item">Docker</span>
+                            <span class="tech-item">Kubernetes</span>
+                            <span class="tech-item">PostgreSQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h3>Challenges & Solutions</h3>
+                        <p>Managing model deployment and scaling was complex. We implemented containerized microservices with Kubernetes orchestration, enabling automatic scaling based on CPU and memory usage. Model versioning was handled through MLOps pipelines.</p>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="btn btn-primary">View API Documentation</a>
+                        <a href="#" class="btn btn-secondary">View Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- E-Commerce Platform Modal -->
+    <div id="ecommerce-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>E-Commerce Platform</h2>
+                <div class="modal-status">Production</div>
+            </div>
+            <div class="modal-body">
+                <div class="project-image-gallery">
+                    <img src="assets/ai_content_management_thumbnail.png" alt="AI-Powered Content Management" class="modal-main-image">
+                </div>
+                <div class="project-details">
+                    <div class="project-overview">
+                        <h3>Project Overview</h3>
+                        <p>A full-stack e-commerce solution featuring real-time inventory management, secure payment processing, and responsive design. Built to handle high-traffic scenarios with optimal user experience and robust security measures.</p>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Real-time inventory management</li>
+                            <li>Secure payment processing with Stripe</li>
+                            <li>User authentication and authorization</li>
+                            <li>Product catalog with search and filtering</li>
+                            <li>Shopping cart and wishlist functionality</li>
+                            <li>Order tracking and management</li>
+                            <li>Admin dashboard for store management</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-item">React</span>
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">Express.js</span>
+                            <span class="tech-item">Stripe API</span>
+                            <span class="tech-item">Redux</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h3>Challenges & Solutions</h3>
+                        <p>Implementing secure payment processing was crucial. We integrated Stripe API for PCI-compliant payment handling and implemented JWT-based authentication. Real-time inventory updates were achieved using WebSocket connections and optimistic UI updates.</p>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="btn btn-primary">View Live Demo</a>
+                        <a href="#" class="btn btn-secondary">View Source Code</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mental Health App Modal -->
+    <div id="mentalhealth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2>Mental Health App</h2>
+                <div class="modal-status">Development</div>
+            </div>
+            <div class="modal-body">
+                <div class="project-image-gallery">
+                    <img src="assets/blockchain_voting_system_thumbnail.png" alt="Blockchain Voting System" class="modal-main-image">
+                </div>
+                <div class="project-details">
+                    <div class="project-overview">
+                        <h3>Project Overview</h3>
+                        <p>A comprehensive mental health tracking and support application designed to help users monitor their emotional well-being, access meditation resources, and connect with mental health professionals. Built with privacy and user experience as top priorities.</p>
+                    </div>
+                    
+                    <div class="project-features">
+                        <h3>Key Features</h3>
+                        <ul>
+                            <li>Daily mood tracking and analytics</li>
+                            <li>Guided meditation and mindfulness exercises</li>
+                            <li>Professional consultation booking</li>
+                            <li>Personalized wellness recommendations</li>
+                            <li>Crisis support and emergency contacts</li>
+                            <li>Progress tracking and insights</li>
+                            <li>Community support forums</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="project-tech">
+                        <h3>Technologies Used</h3>
+                        <div class="tech-stack">
+                            <span class="tech-item">React Native</span>
+                            <span class="tech-item">Firebase</span>
+                            <span class="tech-item">Node.js</span>
+                            <span class="tech-item">Express.js</span>
+                            <span class="tech-item">MongoDB</span>
+                            <span class="tech-item">Socket.io</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-challenges">
+                        <h3>Challenges & Solutions</h3>
+                        <p>Privacy and data security were paramount concerns. We implemented end-to-end encryption for sensitive data and ensured HIPAA compliance. The app features offline functionality for mood tracking and includes AI-powered insights while maintaining user anonymity.</p>
+                    </div>
+                    
+                    <div class="project-links">
+                        <a href="#" class="btn btn-primary">View Prototype</a>
+                        <a href="#" class="btn btn-secondary">View Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
