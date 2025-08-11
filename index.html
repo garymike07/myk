@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gary Mike - Software Developer</title>
-    <meta name="description" content="Portfolio of Gary Mike: Full-stack developer specializing in Web3, ML, networking, and web tools from Mike Lab.">
-    <meta name="keywords" content="software developer, blockchain, full-stack, Web3, machine learning, web tools">
+    <title>Gary Mike - Visionary Software Developer & Tech Innovator</title>
+    <meta name="description" content="Gary Mike: Visionary full-stack developer, Web3 pioneer, and tech innovator crafting the future of digital experiences.">
+    <meta name="keywords" content="software developer, blockchain, full-stack, Web3, machine learning, web tools, innovation">
     <meta name="author" content="Gary Mike">
     
     <!-- Open Graph tags -->
-    <meta property="og:title" content="Gary Mike - Software Developer">
-    <meta property="og:description" content="Full-stack developer specializing in Web3, ML, networking, and web tools">
+    <meta property="og:title" content="Gary Mike - Visionary Software Developer">
+    <meta property="og:description" content="Visionary full-stack developer, Web3 pioneer, and tech innovator">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://garymike07.github.io/myk/">
     
@@ -18,12 +18,12 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     
     <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="enhanced-styles.css">
+    <link rel="stylesheet" href="stunning-styles.css">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
@@ -34,13 +34,28 @@
         gtag('config', 'GA_MEASUREMENT_ID');
     </script>
 </head>
-<body class="dark-mode">
+<body>
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Floating Geometric Shapes -->
+    <div class="geometric-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Particle Effect -->
+    <div class="particles" id="particles"></div>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top glass-nav">
+    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#hero">
-                <img src="assets/logo.jpg" alt="Gary Mike" class="profile-nav-img me-2">
-                <span class="brand-text">Gary Mike</span>
+                <i class="fas fa-code me-2"></i>
+                <span>Gary Mike</span>
             </a>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -52,11 +67,9 @@
                     <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Journey</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#tools">Tools</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
                 
@@ -71,50 +84,68 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
-        <div class="container text-center">
-            <div class="hero-profile fade-in">
-                <div class="profile-image">
-                    <img src="assets/logo.jpg" alt="Gary Mike Profile" class="img-fluid">
-                </div>
-            </div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-12">
+                    <div class="hero-content">
+                        <!-- Profile Image -->
+                        <div class="profile-container fade-in">
+                            <img src="assets/logo.jpg" alt="Gary Mike" class="profile-image">
+                        </div>
 
-            <div class="hero-content-wrapper glass-card fade-in">
-                <div class="hero-header">
-                    <h1 class="site-title">Gary Mike - Software Developer</h1>
-                </div>
+                        <!-- Main Title -->
+                        <h1 class="hero-title fade-in">Gary Mike</h1>
+                        
+                        <!-- Subtitle -->
+                        <h2 class="hero-subtitle fade-in">Visionary Software Developer</h2>
+                        
+                        <!-- Description -->
+                        <p class="hero-description fade-in">
+                            Crafting the future of digital experiences through innovative full-stack development, 
+                            Web3 technologies, and cutting-edge solutions that transform challenges into opportunities.
+                        </p>
 
-                <div class="hero-time fade-in">
-                    <div class="time-display" id="currentTime"></div>
-                </div>
+                        <!-- Role Tags -->
+                        <div class="role-tags fade-in mb-4">
+                            <span class="tech-tag me-2 mb-2">Full-Stack Developer</span>
+                            <span class="tech-tag me-2 mb-2">Web3 Pioneer</span>
+                            <span class="tech-tag me-2 mb-2">ICT Specialist</span>
+                            <span class="tech-tag me-2 mb-2">Tech Innovator</span>
+                        </div>
 
-                <div class="hero-greeting">
-                    <h2>Welcome to my portfolio!</h2>
-                    <p class="lead">Click on the sections to learn more about me.</p>
-                </div>
+                        <!-- CTA Buttons -->
+                        <div class="hero-buttons fade-in mb-4">
+                            <a href="#projects" class="btn btn-primary btn-lg me-3">
+                                <i class="fas fa-rocket me-2"></i>Explore My Work
+                            </a>
+                            <a href="#contact" class="btn btn-outline-primary btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i>Let's Connect
+                            </a>
+                        </div>
 
-                <div class="hero-roles">
-                    <p class="roles-text">Full-stack Developer | ICT Officer | Network Administrator | Web 3 Enthusiast</p>
-                </div>
+                        <!-- Social Links -->
+                        <div class="social-links fade-in">
+                            <a href="https://github.com/garymike07" class="social-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="mailto:wrootmike@gmail.com" class="social-link">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
 
-                <div class="hero-tagline">
-                    <p class="tagline-text">Transforming Challenges into Tech Solutions</p>
-                </div>
-
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary btn-lg me-3">View My Work</a>
-                    <a href="#contact" class="btn btn-outline-primary btn-lg">Get In Touch</a>
-                </div>
-
-                <div class="social-links fade-in">
-                    <a href="https://github.com/garymike07" class="social-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="mailto:wrootmike@gmail.com" class="social-link">
-                        <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
+                        <!-- Scroll Indicator -->
+                        <div class="scroll-indicator fade-in mt-5">
+                            <a href="#about" class="text-decoration-none">
+                                <i class="fas fa-chevron-down fa-2x text-gradient"></i>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -123,15 +154,43 @@
     <!-- About Section -->
     <section id="about" class="py-5">
         <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
+            <h2 class="section-title scroll-reveal">About Me</h2>
             <div class="row align-items-center">
-                <div class="col-lg-6 fade-in">
+                <div class="col-lg-6 scroll-reveal">
                     <div class="glass-card">
-                        <p class="lead">A visionary IT Professional with a rich tapestry of expertise in full-stack development, ICT oversight, and network mastery. As a fervent Web 3 advocate, Mike weaves cutting-edge innovation into every project, crafting transformative digital experiences that propel organizations into the future.</p>
+                        <h3 class="text-gradient mb-3">Transforming Ideas into Digital Reality</h3>
+                        <p class="lead mb-4">
+                            I'm a passionate software developer with a vision for the future of technology. 
+                            My journey spans across full-stack development, blockchain innovation, and 
+                            network administration, always pushing the boundaries of what's possible.
+                        </p>
+                        <p class="mb-4">
+                            As an ICT Officer and Web3 enthusiast, I bridge the gap between traditional 
+                            systems and emerging technologies, creating solutions that are not just 
+                            functional, but transformative.
+                        </p>
+                        <div class="stats-row">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <h4 class="text-gradient">50+</h4>
+                                    <p class="small">Projects Completed</p>
+                                </div>
+                                <div class="col-4">
+                                    <h4 class="text-gradient">3+</h4>
+                                    <p class="small">Years Experience</p>
+                                </div>
+                                <div class="col-4">
+                                    <h4 class="text-gradient">100%</h4>
+                                    <p class="small">Client Satisfaction</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6 fade-in">
-                    <img src="assets/about-developer.jpg" alt="Professional Developer Workspace" class="img-fluid rounded shadow">
+                <div class="col-lg-6 scroll-reveal">
+                    <div class="about-image-container">
+                        <img src="assets/about-developer.jpg" alt="Professional Developer Workspace" class="img-fluid rounded shadow-glow">
+                    </div>
                 </div>
             </div>
         </div>
@@ -140,135 +199,183 @@
     <!-- Skills Section -->
     <section id="skills" class="py-5 bg-dark">
         <div class="container">
-            <h2 class="section-title fade-in">Skills & Expertise</h2>
+            <h2 class="section-title scroll-reveal">Skills & Expertise</h2>
             <div class="row">
+                <!-- Frontend Development -->
                 <div class="col-lg-6 mb-4">
-                    <div class="skill-category glass-card fade-in">
-                        <h4 class="mb-3"><i class="fas fa-code me-2"></i>Front-End Development</h4>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>React</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>JavaScript</span>
-                                <span>95%</span>
+                    <div class="skill-category glass-card scroll-reveal">
+                        <h4 class="mb-4 text-gradient">
+                            <i class="fas fa-palette me-2"></i>Frontend Development
+                        </h4>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>React & Next.js</span>
+                                <span class="skill-percentage">95%</span>
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" style="width: 95%"></div>
                             </div>
                         </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>HTML/CSS</span>
-                                <span>92%</span>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>JavaScript & TypeScript</span>
+                                <span class="skill-percentage">92%</span>
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" style="width: 92%"></div>
                             </div>
                         </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>HTML5 & CSS3</span>
+                                <span class="skill-percentage">98%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 98%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Tailwind CSS</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
+                <!-- Backend Development -->
                 <div class="col-lg-6 mb-4">
-                    <div class="skill-category glass-card fade-in">
-                        <h4 class="mb-3"><i class="fas fa-server me-2"></i>Back-End Development</h4>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>Node.js</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>Express.js</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>Python</span>
-                                <span>88%</span>
+                    <div class="skill-category glass-card scroll-reveal">
+                        <h4 class="mb-4 text-gradient">
+                            <i class="fas fa-server me-2"></i>Backend Development
+                        </h4>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Node.js & Express</span>
+                                <span class="skill-percentage">88%</span>
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" style="width: 88%"></div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6 mb-4">
-                    <div class="skill-category glass-card fade-in">
-                        <h4 class="mb-3"><i class="fab fa-ethereum me-2"></i>Blockchain/Web3</h4>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>Solidity</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>Web3.js</span>
-                                <span>78%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 78%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>Ethereum</span>
-                                <span>72%</span>
-                            </div>
-                            <div class="progress">
-                                <div class="progress-bar" style="width: 72%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6 mb-4">
-                    <div class="skill-category glass-card fade-in">
-                        <h4 class="mb-3"><i class="fas fa-network-wired me-2"></i>Networking & Systems</h4>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>Network Administration</span>
-                                <span>85%</span>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Python & Django</span>
+                                <span class="skill-percentage">85%</span>
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" style="width: 85%"></div>
                             </div>
                         </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>System Administration</span>
-                                <span>82%</span>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Database Management</span>
+                                <span class="skill-percentage">82%</span>
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" style="width: 82%"></div>
                             </div>
                         </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between mb-1">
-                                <span>Firewall Management</span>
-                                <span>80%</span>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>API Development</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Blockchain & Web3 -->
+                <div class="col-lg-6 mb-4">
+                    <div class="skill-category glass-card scroll-reveal">
+                        <h4 class="mb-4 text-gradient">
+                            <i class="fab fa-ethereum me-2"></i>Blockchain & Web3
+                        </h4>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Solidity</span>
+                                <span class="skill-percentage">78%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 78%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Web3.js & Ethers.js</span>
+                                <span class="skill-percentage">80%</span>
                             </div>
                             <div class="progress">
                                 <div class="progress-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Smart Contracts</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>DeFi Protocols</span>
+                                <span class="skill-percentage">70%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 70%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Systems & Networking -->
+                <div class="col-lg-6 mb-4">
+                    <div class="skill-category glass-card scroll-reveal">
+                        <h4 class="mb-4 text-gradient">
+                            <i class="fas fa-network-wired me-2"></i>Systems & Networking
+                        </h4>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Network Administration</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>System Administration</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>Cloud Services (AWS)</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-name">
+                                <span>DevOps & CI/CD</span>
+                                <span class="skill-percentage">72%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 72%"></div>
                             </div>
                         </div>
                     </div>
@@ -280,365 +387,213 @@
     <!-- Experience Section -->
     <section id="experience" class="py-5">
         <div class="container">
-            <h2 class="section-title fade-in">Professional Experience</h2>
+            <h2 class="section-title scroll-reveal">Professional Journey</h2>
             <div class="timeline">
-                <div class="timeline-item fade-in">
+                <div class="timeline-item scroll-reveal">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <h3>ICT Officer</h3>
-                        <div class="timeline-date">January 2024 - Present</div>
-                        <div class="timeline-company">Council of Legal Education</div>
-                        <p>Gaining hands-on experience in IT support and system administration in legal education environment. Managing network infrastructure and providing technical support to staff and students.</p>
+                    <div class="timeline-content">
+                        <h3 class="text-gradient">ICT Officer</h3>
+                        <div class="timeline-date mb-2">
+                            <i class="fas fa-calendar me-2"></i>January 2024 - Present
+                        </div>
+                        <div class="timeline-company mb-3">
+                            <i class="fas fa-building me-2"></i>Council of Legal Education
+                        </div>
+                        <p>Leading digital transformation initiatives in legal education. Managing comprehensive IT infrastructure, implementing modern solutions, and providing technical leadership for educational technology systems.</p>
+                        <div class="mt-3">
+                            <span class="tech-tag me-2">System Administration</span>
+                            <span class="tech-tag me-2">Network Management</span>
+                            <span class="tech-tag me-2">IT Support</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="timeline-item fade-in">
+                <div class="timeline-item scroll-reveal">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <h3>IT Intern</h3>
-                        <div class="timeline-date">January 2023 - April 2023</div>
-                        <div class="timeline-company">Gatundu Law Courts</div>
-                        <p>Troubleshooting technical issues, maintaining systems and networks, and updating website content. Provided technical support for court operations and digital systems.</p>
+                    <div class="timeline-content">
+                        <h3 class="text-gradient">IT Intern</h3>
+                        <div class="timeline-date mb-2">
+                            <i class="fas fa-calendar me-2"></i>January 2023 - April 2023
+                        </div>
+                        <div class="timeline-company mb-3">
+                            <i class="fas fa-building me-2"></i>Gatundu Law Courts
+                        </div>
+                        <p>Gained valuable experience in judicial IT systems, troubleshooting complex technical issues, and maintaining critical court infrastructure. Contributed to digital modernization efforts in the legal sector.</p>
+                        <div class="mt-3">
+                            <span class="tech-tag me-2">Technical Support</span>
+                            <span class="tech-tag me-2">System Maintenance</span>
+                            <span class="tech-tag me-2">Web Development</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="timeline-item fade-in">
+                <div class="timeline-item scroll-reveal">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <h3>IEBC ICT Officer</h3>
-                        <div class="timeline-date">August 2022</div>
-                        <div class="timeline-company">Independent Electoral and Boundaries Commission</div>
-                        <p>Overseeing KEIMS kit maintenance, troubleshooting technical issues, and network setup for polling stations. Ensured smooth operation of electoral technology systems.</p>
+                    <div class="timeline-content">
+                        <h3 class="text-gradient">IEBC ICT Officer</h3>
+                        <div class="timeline-date mb-2">
+                            <i class="fas fa-calendar me-2"></i>August 2022
+                        </div>
+                        <div class="timeline-company mb-3">
+                            <i class="fas fa-building me-2"></i>Independent Electoral and Boundaries Commission
+                        </div>
+                        <p>Played a crucial role in Kenya's democratic process by managing electoral technology systems. Ensured seamless operation of KEIMS kits and network infrastructure during critical election periods.</p>
+                        <div class="mt-3">
+                            <span class="tech-tag me-2">Electoral Technology</span>
+                            <span class="tech-tag me-2">Network Setup</span>
+                            <span class="tech-tag me-2">Crisis Management</span>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="timeline-item fade-in">
+                <div class="timeline-item scroll-reveal">
                     <div class="timeline-dot"></div>
-                    <div class="timeline-content glass-card">
-                        <h3>Junior Software Developer</h3>
-                        <div class="timeline-date">July 2021 - February 2022</div>
-                        <div class="timeline-company">Freelancer</div>
-                        <p>Focusing on website development for various clients. Built responsive web applications and provided ongoing maintenance and support services.</p>
+                    <div class="timeline-content">
+                        <h3 class="text-gradient">Freelance Developer</h3>
+                        <div class="timeline-date mb-2">
+                            <i class="fas fa-calendar me-2"></i>July 2021 - February 2022
+                        </div>
+                        <div class="timeline-company mb-3">
+                            <i class="fas fa-building me-2"></i>Independent Contractor
+                        </div>
+                        <p>Built a diverse portfolio of web applications and digital solutions for various clients. Specialized in full-stack development, creating responsive and user-friendly applications that drive business growth.</p>
+                        <div class="mt-3">
+                            <span class="tech-tag me-2">Full-Stack Development</span>
+                            <span class="tech-tag me-2">Client Relations</span>
+                            <span class="tech-tag me-2">Project Management</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Featured Projects Section -->
+    <!-- Projects Section -->
     <section id="projects" class="py-5 bg-dark">
         <div class="container">
-            <h2 class="section-title fade-in">Featured Projects</h2>
+            <h2 class="section-title scroll-reveal">Featured Projects</h2>
             <div class="row">
-                <!-- Mike Lab Project -->
-                <div class="col-lg-6 col-xl-3 mb-4">
-                    <a href="https://garymike07.github.io/Mike-site/" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
-                        <div class="project-card glass-card h-100 fade-in">
-                            <div class="project-image">
-                                <img src="assets/logo.jpg" alt="Mike Lab" class="img-fluid rounded">
-                            </div>
-                            <div class="project-content">
-                                <div class="project-header d-flex justify-content-between align-items-center mb-2">
-                                    <h4 class="project-title mb-0">Mike Lab - Web Tools Hub</h4>
-                                    <span class="project-status badge bg-success">Production</span>
-                                </div>
-                                <p class="project-description">An interactive lab for premium web applications, custom-built systems, and developer tools. Features dynamic stats counters, template selectors, utility tools like Character & Word Counter, UUID/GUID Generator, and a comprehensive quote system for custom projects.</p>
-                                <div class="project-tech mb-3">
-                                    <span class="tech-tag">HTML5</span>
-                                    <span class="tech-tag">CSS3</span>
-                                    <span class="tech-tag">JavaScript</span>
-                                    <span class="tech-tag">GitHub Pages</span>
-                                </div>
-                                <div class="project-stats">
-                                    <small class="text-muted">
-                                        <i class="fas fa-eye me-1"></i>324 views •
-                                        <i class="fas fa-heart ms-2 me-1"></i>145 engagements •
-                                        <i class="fas fa-clock ms-2 me-1"></i>8 months active
-                                    </small>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                
-                <!-- Machine Learning API -->
-                <div class="col-lg-6 col-xl-3 mb-4">
-                    <div class="project-card glass-card h-100 fade-in">
-                        <div class="project-image">
-                            <img src="assets/ml-api-project.png" alt="ML API" class="img-fluid rounded">
-                        </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="project-card scroll-reveal">
+                        <img src="assets/blockchain-project.jpg" alt="Blockchain Project" class="project-image">
                         <div class="project-content">
-                            <div class="project-header d-flex justify-content-between align-items-center mb-2">
-                                <h4 class="project-title mb-0">Machine Learning API</h4>
-                                <span class="project-status badge bg-success">Production</span>
+                            <h3 class="project-title">DeFi Trading Platform</h3>
+                            <p class="project-description">
+                                A comprehensive decentralized finance platform enabling secure trading, 
+                                liquidity provision, and yield farming with advanced smart contract integration.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Solidity</span>
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Web3.js</span>
+                                <span class="tech-tag">Node.js</span>
                             </div>
-                            <p class="project-description">Scalable ML platform for image recognition and NLP processing with auto-scaling capabilities. Built with modern architecture for high-performance machine learning operations.</p>
-                            <div class="project-tech mb-3">
-                                <span class="tech-tag">Python</span>
-                                <span class="tech-tag">TensorFlow</span>
-                                <span class="tech-tag">FastAPI</span>
-                                <span class="tech-tag">Docker</span>
-                            </div>
-                            <div class="project-stats">
-                                <small class="text-muted">
-                                    <i class="fas fa-eye me-1"></i>445 views •
-                                    <i class="fas fa-heart ms-2 me-1"></i>234 engagements •
-                                    <i class="fas fa-clock ms-2 me-1"></i>7 months
-                                </small>
+                            <div class="project-links">
+                                <a href="blockchain-project.html" class="btn btn-primary btn-sm me-2">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </a>
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="fab fa-github me-1"></i>Code
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- E-Commerce Platform -->
-                <div class="col-lg-6 col-xl-3 mb-4">
-                    <div class="project-card glass-card h-100 fade-in">
-                        <div class="project-image">
-                            <img src="assets/ecommerce-project.png" alt="E-Commerce" class="img-fluid rounded">
-                        </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="project-card scroll-reveal">
+                        <img src="assets/ecommerce-project.jpg" alt="E-commerce Project" class="project-image">
                         <div class="project-content">
-                            <div class="project-header d-flex justify-content-between align-items-center mb-2">
-                                <h4 class="project-title mb-0">E-Commerce Platform</h4>
-                                <span class="project-status badge bg-success">Production</span>
-                            </div>
-                            <p class="project-description">Full-stack e-commerce solution with inventory management, payment processing, and responsive design. Complete shopping experience with admin dashboard.</p>
-                            <div class="project-tech mb-3">
+                            <h3 class="project-title">AI-Powered E-commerce</h3>
+                            <p class="project-description">
+                                Modern e-commerce platform with AI-driven recommendations, 
+                                real-time inventory management, and seamless payment integration.
+                            </p>
+                            <div class="project-tech">
                                 <span class="tech-tag">React</span>
                                 <span class="tech-tag">Node.js</span>
                                 <span class="tech-tag">MongoDB</span>
                                 <span class="tech-tag">Stripe</span>
                             </div>
-                            <div class="project-stats">
-                                <small class="text-muted">
-                                    <i class="fas fa-eye me-1"></i>203 views •
-                                    <i class="fas fa-heart ms-2 me-1"></i>89 engagements •
-                                    <i class="fas fa-clock ms-2 me-1"></i>5 months
-                                </small>
+                            <div class="project-links">
+                                <a href="ecommerce-project.html" class="btn btn-primary btn-sm me-2">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </a>
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="fab fa-github me-1"></i>Code
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                <!-- Mental Health App -->
-                <div class="col-lg-6 col-xl-3 mb-4">
-                    <div class="project-card glass-card h-100 fade-in">
-                        <div class="project-image">
-                            <img src="assets/mental-health-app.png" alt="Mental Health App" class="img-fluid rounded">
-                        </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="project-card scroll-reveal">
+                        <img src="assets/ml-project.jpg" alt="ML Project" class="project-image">
                         <div class="project-content">
-                            <div class="project-header d-flex justify-content-between align-items-center mb-2">
-                                <h4 class="project-title mb-0">Mental Health App</h4>
-                                <span class="project-status badge bg-warning">Development</span>
+                            <h3 class="project-title">Mental Health Analytics</h3>
+                            <p class="project-description">
+                                Machine learning platform for mental health assessment and 
+                                personalized treatment recommendations using advanced NLP algorithms.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">React</span>
                             </div>
-                            <p class="project-description">Comprehensive mental health tracking and support application with mood monitoring, meditation features, and appointment booking system.</p>
-                            <div class="project-tech mb-3">
-                                <span class="tech-tag">React Native</span>
-                                <span class="tech-tag">Firebase</span>
-                                <span class="tech-tag">Node.js</span>
-                                <span class="tech-tag">MongoDB</span>
-                            </div>
-                            <div class="project-stats">
-                                <small class="text-muted">
-                                    <i class="fas fa-eye me-1"></i>156 views •
-                                    <i class="fas fa-heart ms-2 me-1"></i>67 engagements •
-                                    <i class="fas fa-clock ms-2 me-1"></i>4 months
-                                </small>
+                            <div class="project-links">
+                                <a href="mentalhealth-project.html" class="btn btn-primary btn-sm me-2">
+                                    <i class="fas fa-eye me-1"></i>View Details
+                                </a>
+                                <a href="#" class="btn btn-outline-primary btn-sm">
+                                    <i class="fab fa-github me-1"></i>Code
+                                </a>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tools Demo Section -->
-    <section id="tools" class="py-5">
-        <div class="container">
-            <h2 class="section-title fade-in">Developer Tools Demo</h2>
-            <div class="row">
-                <div class="col-lg-6 mb-4">
-                    <div class="glass-card fade-in">
-                        <h4 class="mb-3"><i class="fas fa-calculator me-2"></i>Character & Word Counter</h4>
-                        <textarea id="textCounter" class="form-control mb-3" rows="4" placeholder="Type your text here to count words and characters..."></textarea>
-                        <div class="d-flex justify-content-between">
-                            <span>Words: <strong id="wordCount">0</strong></span>
-                            <span>Characters: <strong id="charCount">0</strong></span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-6 mb-4">
-                    <div class="glass-card fade-in">
-                        <h4 class="mb-3"><i class="fas fa-key me-2"></i>UUID/GUID Generator</h4>
-                        <p class="text-muted">Generate unique identifiers for your projects</p>
-                        <div class="input-group mb-3">
-                            <input type="text" id="generatedUUID" class="form-control" readonly>
-                            <button class="btn btn-primary" id="generateUUID">Generate</button>
-                        </div>
-                        <button class="btn btn-outline-secondary btn-sm" id="copyUUID">
-                            <i class="fas fa-copy me-1"></i>Copy to Clipboard
-                        </button>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center fade-in">
-                <a href="https://garymike07.github.io/Mike-site/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
-                    <i class="fas fa-external-link-alt me-2"></i>Explore More Tools at Mike Lab
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-plus me-2"></i>View All Projects
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-5 bg-dark">
+    <!-- Tools Section -->
+    <section id="tools" class="py-5">
         <div class="container">
-            <h2 class="section-title fade-in">Client Testimonials</h2>
-            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="testimonial-card glass-card text-center fade-in">
-                                    <div class="stars mb-3">
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                    </div>
-                                    <blockquote class="blockquote">
-                                        <p class="mb-4">"Gary's full-stack expertise transformed our e-commerce platform—highly recommend! His attention to detail and innovative solutions exceeded our expectations."</p>
-                                    </blockquote>
-                                    <footer class="blockquote-footer">
-                                        <strong>Client A</strong> at <cite title="Company">E-Shop Corp.</cite>
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="testimonial-card glass-card text-center fade-in">
-                                    <div class="stars mb-3">
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                    </div>
-                                    <blockquote class="blockquote">
-                                        <p class="mb-4">"Exceptional blockchain solutions that scaled our analytics effortlessly. Gary's Web3 expertise is truly impressive and delivered results beyond our expectations."</p>
-                                    </blockquote>
-                                    <footer class="blockquote-footer">
-                                        <strong>Client B</strong> at <cite title="Company">Crypto Analytics</cite>
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="testimonial-card glass-card text-center fade-in">
-                                    <div class="stars mb-3">
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                    </div>
-                                    <blockquote class="blockquote">
-                                        <p class="mb-4">"Reliable network administration that kept our systems running smoothly. Gary's technical expertise and proactive approach saved us countless hours."</p>
-                                    </blockquote>
-                                    <footer class="blockquote-footer">
-                                        <strong>Client C</strong> at <cite title="Company">Tech Solutions</cite>
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8">
-                                <div class="testimonial-card glass-card text-center fade-in">
-                                    <div class="stars mb-3">
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                        <i class="fas fa-star text-warning"></i>
-                                    </div>
-                                    <blockquote class="blockquote">
-                                        <p class="mb-4">"Innovative web tools from Mike Lab boosted our productivity! The custom solutions and developer tools have streamlined our workflow significantly."</p>
-                                    </blockquote>
-                                    <footer class="blockquote-footer">
-                                        <strong>Client D</strong> at <cite title="Company">Digital Innovations</cite>
-                                    </footer>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Blog Section -->
-    <section id="blog" class="py-5">
-        <div class="container">
-            <h2 class="section-title fade-in">Latest Blog Posts</h2>
+            <h2 class="section-title scroll-reveal">Development Tools & Technologies</h2>
             <div class="row">
-                <div class="col-lg-4 mb-4">
-                    <div class="blog-card glass-card h-100 fade-in">
-                        <div class="blog-image">
-                            <img src="https://via.placeholder.com/350x200" alt="Future of Web Development" class="img-fluid rounded">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">January 15, 2024</div>
-                            <h4 class="blog-title">The Future of Web Development</h4>
-                            <p class="blog-excerpt">Exploring emerging trends in web development, from WebAssembly to progressive web apps and the technologies shaping tomorrow's web.</p>
-                            <a href="blog/future-web-dev.html" class="btn btn-outline-primary">Read More</a>
-                        </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="glass-card text-center scroll-reveal">
+                        <i class="fab fa-react fa-3x text-gradient mb-3"></i>
+                        <h5>React Ecosystem</h5>
+                        <p class="small">Next.js, Redux, React Router</p>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 mb-4">
-                    <div class="blog-card glass-card h-100 fade-in">
-                        <div class="blog-image">
-                            <img src="https://via.placeholder.com/350x200" alt="Building Scalable APIs" class="img-fluid rounded">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">December 28, 2023</div>
-                            <h4 class="blog-title">Building Scalable APIs</h4>
-                            <p class="blog-excerpt">Best practices for designing and implementing scalable REST APIs, including caching strategies and microservices architecture.</p>
-                            <a href="blog/scalable-apis.html" class="btn btn-outline-primary">Read More</a>
-                        </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="glass-card text-center scroll-reveal">
+                        <i class="fab fa-node-js fa-3x text-gradient mb-3"></i>
+                        <h5>Node.js Stack</h5>
+                        <p class="small">Express, MongoDB, Socket.io</p>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 mb-4">
-                    <div class="blog-card glass-card h-100 fade-in">
-                        <div class="blog-image">
-                            <img src="https://via.placeholder.com/350x200" alt="Modern CSS Techniques" class="img-fluid rounded">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">December 10, 2023</div>
-                            <h4 class="blog-title">Modern CSS Techniques</h4>
-                            <p class="blog-excerpt">Advanced CSS techniques including Grid, Flexbox, and custom properties to create stunning and responsive web designs.</p>
-                            <a href="blog/modern-css.html" class="btn btn-outline-primary">Read More</a>
-                        </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="glass-card text-center scroll-reveal">
+                        <i class="fab fa-python fa-3x text-gradient mb-3"></i>
+                        <h5>Python Tools</h5>
+                        <p class="small">Django, Flask, TensorFlow</p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <div class="glass-card text-center scroll-reveal">
+                        <i class="fab fa-aws fa-3x text-gradient mb-3"></i>
+                        <h5>Cloud Platforms</h5>
+                        <p class="small">AWS, Vercel, Netlify</p>
                     </div>
                 </div>
             </div>
@@ -648,36 +603,28 @@
     <!-- Contact Section -->
     <section id="contact" class="py-5 bg-dark">
         <div class="container">
-            <h2 class="section-title fade-in">Get In Touch</h2>
+            <h2 class="section-title scroll-reveal">Let's Build Something Amazing</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="glass-card fade-in">
-                        <p class="lead text-center mb-4">I'm currently open to new opportunities and would love to hear from you. Whether you have a question or just want to say hi, I'll get back to you as soon as possible.</p>
+                    <div class="glass-card scroll-reveal">
+                        <div class="text-center mb-4">
+                            <p class="lead">Ready to transform your ideas into reality? Let's connect and create something extraordinary together.</p>
+                        </div>
                         
-                        <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <form class="contact-form">
                             <div class="row">
                                 <div class="col-md-6 mb-3">
-                                    <label for="name" class="form-label">Name *</label>
-                                    <input type="text" class="form-control" id="name" name="name" required>
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
                                 </div>
                                 <div class="col-md-6 mb-3">
-                                    <label for="email" class="form-label">Email *</label>
-                                    <input type="email" class="form-control" id="email" name="email" required>
+                                    <input type="email" class="form-control" placeholder="Your Email" required>
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="subject" class="form-label">Subject *</label>
-                                <select class="form-select" id="subject" name="subject" required>
-                                    <option value="">Select a subject</option>
-                                    <option value="general">General Inquiry</option>
-                                    <option value="project">Project Collaboration</option>
-                                    <option value="custom-quote">Custom Project Quote</option>
-                                    <option value="job">Job Opportunity</option>
-                                </select>
+                                <input type="text" class="form-control" placeholder="Subject" required>
                             </div>
-                            <div class="mb-3">
-                                <label for="message" class="form-label">Message *</label>
-                                <textarea class="form-control" id="message" name="message" rows="5" required placeholder="Tell me about your project or inquiry..."></textarea>
+                            <div class="mb-4">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
                             </div>
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary btn-lg">
@@ -686,7 +633,31 @@
                             </div>
                         </form>
                         
-                        <div id="formMessage" class="mt-3" style="display: none;"></div>
+                        <hr class="my-5">
+                        
+                        <div class="row text-center">
+                            <div class="col-md-4 mb-3">
+                                <div class="contact-info">
+                                    <i class="fas fa-envelope fa-2x text-gradient mb-2"></i>
+                                    <h6>Email</h6>
+                                    <p class="small">wrootmike@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="contact-info">
+                                    <i class="fas fa-map-marker-alt fa-2x text-gradient mb-2"></i>
+                                    <h6>Location</h6>
+                                    <p class="small">Nairobi, Kenya</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <div class="contact-info">
+                                    <i class="fas fa-clock fa-2x text-gradient mb-2"></i>
+                                    <h6>Availability</h6>
+                                    <p class="small">Open to opportunities</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -694,39 +665,40 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-4 bg-dark border-top">
+    <footer class="footer">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; 2025 Gary Mike - All Rights Reserved</p>
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="#hero" class="footer-link">Home</a>
+                    <a href="#about" class="footer-link">About</a>
+                    <a href="#projects" class="footer-link">Projects</a>
+                    <a href="#contact" class="footer-link">Contact</a>
+                    <a href="blog/" class="footer-link">Blog</a>
                 </div>
-                <div class="col-md-6 text-md-end">
-                    <div class="social-links-footer">
-                        <a href="https://github.com/garymike07" target="_blank" rel="noopener noreferrer" class="me-3">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:wrootmike@gmail.com" class="me-3">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="me-3">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                    </div>
+                
+                <div class="social-links mb-4">
+                    <a href="https://github.com/garymike07" class="social-link" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:wrootmike@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="#" class="social-link" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
                 </div>
+                
+                <p>&copy; 2024 Gary Mike. Crafted with <i class="fas fa-heart text-gradient"></i> and cutting-edge technology.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" class="btn btn-primary back-to-top" style="display: none;">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Bootstrap JS -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JavaScript -->
-    <script src="enhanced-scripts.js"></script>
+    <script src="stunning-scripts.js"></script>
 </body>
 </html>
 
