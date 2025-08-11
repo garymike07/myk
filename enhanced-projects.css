@@ -1,0 +1,15 @@
+/* Enhanced Project Card Styles */
+
+/* Parallax hover effect for project cards */
+.project-card {
+  perspective: 1000px;
+}
+
+.project-card .project-thumbnail,
+.project-card .project-header,
+.project-card .project-title,
+.project-card .project-status,
+.project-card .project-description,
+.project-card .project-tech-tags {
+  transition: transform 0.5s;
+}
