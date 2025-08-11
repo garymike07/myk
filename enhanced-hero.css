@@ -1,0 +1,71 @@
+/* Enhanced Hero Section Styles */
+
+/* Typing animation for hero roles */
+.hero-roles p {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid orange; /* Cursor effect */
+  animation: typing 4s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+  white-space: nowrap;
+  animation-iteration-count: 1;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+/* 3D tilt effect for the hero section */
+#hero .container {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+#hero .hero-profile,
+#hero .hero-greeting,
+#hero .hero-roles,
+#hero .hero-tagline,
+#hero .hero-buttons {
+  transition: transform 0.5s;
+}
+
+/* Particle effect styles */
+.particle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: float 20s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
