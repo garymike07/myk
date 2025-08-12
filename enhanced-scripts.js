@@ -438,3 +438,246 @@ function initializeTypingEffect() {
 // Initialize typing effect after DOM is loaded
 setTimeout(initializeTypingEffect, 1000);
 
+
+
+// Project Modal Functionality
+function initializeProjectModals() {
+    const projectModal = document.getElementById('projectModal');
+    const blogModal = document.getElementById('blogModal');
+    
+    // Project details modal
+    document.querySelectorAll('.view-details-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const projectCard = this.closest('.project-card');
+            const projectId = projectCard.getAttribute('data-project-id');
+            const projectTitle = projectCard.getAttribute('data-project-title');
+            const projectDescription = projectCard.getAttribute('data-project-description');
+            const projectTech = projectCard.getAttribute('data-project-tech');
+            const projectImage = projectCard.getAttribute('data-project-image');
+            
+            // Populate modal with project data
+            document.getElementById('projectModalLabel').textContent = projectTitle;
+            document.getElementById('modalProjectImage').src = projectImage;
+            document.getElementById('modalProjectDescription').textContent = projectDescription;
+            document.getElementById('modalProjectTech').textContent = projectTech;
+            
+            // Add detailed project information based on project ID
+            const detailedInfo = getProjectDetails(projectId);
+            if (detailedInfo) {
+                document.getElementById('modalProjectDescription').innerHTML = detailedInfo;
+            }
+        });
+    });
+    
+    // Blog post modal handlers
+    document.querySelectorAll('.blog-read-more').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            const blogPost = this.closest('.blog-post');
+            const blogTitle = blogPost.querySelector('.blog-title').textContent;
+            const blogContent = getBlogContent(blogTitle);
+            
+            document.getElementById('blogModalLabel').textContent = blogTitle;
+            document.getElementById('modalBlogContent').innerHTML = blogContent;
+        });
+    });
+}
+
+// Get detailed project information
+function getProjectDetails(projectId) {
+    const projectDetails = {
+        'ml-api': `
+            <h6>Project Overview</h6>
+            <p>A comprehensive machine learning API platform designed for scalable image recognition and natural language processing. This project demonstrates advanced ML engineering practices with production-ready architecture.</p>
+            
+            <h6>Key Features</h6>
+            <ul>
+                <li>Real-time image classification with 95% accuracy</li>
+                <li>Natural Language Processing for sentiment analysis</li>
+                <li>Auto-scaling infrastructure using Docker containers</li>
+                <li>RESTful API with comprehensive documentation</li>
+                <li>Real-time monitoring and logging</li>
+                <li>Rate limiting and authentication</li>
+            </ul>
+            
+            <h6>Technical Implementation</h6>
+            <p>Built using TensorFlow for model training and inference, FastAPI for high-performance API endpoints, and Docker for containerization. The system handles over 1000 requests per minute with sub-second response times.</p>
+            
+            <h6>Impact</h6>
+            <p>Successfully deployed to production serving 10,000+ daily users with 99.9% uptime. Reduced image processing time by 70% compared to previous solutions.</p>
+        `,
+        'ecommerce-platform': `
+            <h6>Project Overview</h6>
+            <p>A full-stack e-commerce solution featuring modern design, secure payment processing, and comprehensive inventory management. Built with scalability and user experience in mind.</p>
+            
+            <h6>Key Features</h6>
+            <ul>
+                <li>Responsive design optimized for all devices</li>
+                <li>Secure payment processing with Stripe integration</li>
+                <li>Real-time inventory management</li>
+                <li>Advanced search and filtering capabilities</li>
+                <li>Admin dashboard with analytics</li>
+                <li>Order tracking and management</li>
+            </ul>
+            
+            <h6>Technical Implementation</h6>
+            <p>Frontend built with React and modern CSS, backend powered by Node.js and Express, with MongoDB for data persistence. Implements JWT authentication and follows REST API best practices.</p>
+            
+            <h6>Impact</h6>
+            <p>Increased client's online sales by 150% within the first quarter. Improved user engagement with 40% reduction in cart abandonment rate.</p>
+        `,
+        'mental-health-app': `
+            <h6>Project Overview</h6>
+            <p>A comprehensive mental health tracking and support application designed to help users monitor their emotional well-being and connect with mental health resources.</p>
+            
+            <h6>Key Features</h6>
+            <ul>
+                <li>Daily mood tracking with visual analytics</li>
+                <li>Guided meditation and breathing exercises</li>
+                <li>Appointment booking with healthcare providers</li>
+                <li>Crisis support and emergency contacts</li>
+                <li>Progress tracking and insights</li>
+                <li>Secure data encryption and privacy protection</li>
+            </ul>
+            
+            <h6>Technical Implementation</h6>
+            <p>Cross-platform mobile app built with React Native, Firebase for real-time data synchronization, and Node.js backend with MongoDB. Implements end-to-end encryption for sensitive health data.</p>
+            
+            <h6>Impact</h6>
+            <p>Currently in beta testing with 500+ users. Preliminary results show 60% improvement in user-reported mental health awareness and 80% user retention rate.</p>
+        `
+    };
+    
+    return projectDetails[projectId] || null;
+}
+
+// Get blog post content
+function getBlogContent(title) {
+    const blogContents = {
+        'The Future of Web Development': `
+            <p>The web development landscape is evolving at an unprecedented pace, with new technologies and frameworks emerging regularly. As we look toward the future, several key trends are shaping how we build and interact with web applications.</p>
+            
+            <h6>WebAssembly Revolution</h6>
+            <p>WebAssembly (WASM) is transforming web performance by allowing near-native speed execution in browsers. This technology enables complex applications like video editors, games, and scientific simulations to run efficiently in web browsers.</p>
+            
+            <h6>Progressive Web Apps (PWAs)</h6>
+            <p>PWAs continue to bridge the gap between web and native applications, offering offline functionality, push notifications, and app-like experiences while maintaining the accessibility of web technologies.</p>
+            
+            <h6>AI-Powered Development</h6>
+            <p>Artificial intelligence is revolutionizing how we write code, with tools like GitHub Copilot and ChatGPT assisting developers in writing more efficient and bug-free code. AI-powered testing and optimization are becoming standard practices.</p>
+            
+            <h6>Edge Computing</h6>
+            <p>The shift toward edge computing is reducing latency and improving user experiences by processing data closer to users. This trend is particularly important for real-time applications and IoT devices.</p>
+            
+            <h6>Conclusion</h6>
+            <p>The future of web development is bright, with technologies that promise faster, more efficient, and more accessible web experiences. Staying current with these trends is essential for any web developer looking to remain competitive in this rapidly evolving field.</p>
+        `,
+        'Building Scalable APIs': `
+            <p>Creating scalable APIs is crucial for modern web applications that need to handle growing user bases and increasing data loads. This comprehensive guide covers best practices for designing and implementing APIs that can scale effectively.</p>
+            
+            <h6>RESTful Design Principles</h6>
+            <p>Following REST principles ensures your API is intuitive and maintainable. Use proper HTTP methods, status codes, and resource naming conventions to create APIs that developers love to use.</p>
+            
+            <h6>Caching Strategies</h6>
+            <p>Implement multiple layers of caching including browser caching, CDN caching, and server-side caching with Redis or Memcached. Proper caching can reduce server load by up to 90%.</p>
+            
+            <h6>Database Optimization</h6>
+            <p>Optimize database queries with proper indexing, query optimization, and consider using read replicas for read-heavy workloads. Database performance is often the bottleneck in API scalability.</p>
+            
+            <h6>Microservices Architecture</h6>
+            <p>Break down monolithic APIs into smaller, focused microservices that can be scaled independently. This approach improves maintainability and allows teams to work on different services simultaneously.</p>
+            
+            <h6>Monitoring and Analytics</h6>
+            <p>Implement comprehensive monitoring with tools like Prometheus, Grafana, and ELK stack to track API performance, identify bottlenecks, and ensure optimal user experience.</p>
+            
+            <h6>Security Considerations</h6>
+            <p>Secure your APIs with proper authentication, authorization, rate limiting, and input validation. Security should be built into the API design from the beginning, not added as an afterthought.</p>
+        `,
+        'Modern CSS Techniques': `
+            <p>CSS has evolved significantly in recent years, introducing powerful new features that enable developers to create stunning, responsive designs with less code and better performance.</p>
+            
+            <h6>CSS Grid Layout</h6>
+            <p>CSS Grid revolutionizes layout design by providing a two-dimensional grid system that makes complex layouts simple and intuitive. Grid is perfect for creating responsive designs that adapt to different screen sizes.</p>
+            
+            <h6>Flexbox Mastery</h6>
+            <p>Flexbox excels at one-dimensional layouts and is perfect for component-level design. Understanding when to use Grid vs. Flexbox is key to efficient CSS architecture.</p>
+            
+            <h6>Custom Properties (CSS Variables)</h6>
+            <p>CSS custom properties enable dynamic theming, easier maintenance, and more flexible designs. They're particularly powerful when combined with JavaScript for interactive themes.</p>
+            
+            <h6>Container Queries</h6>
+            <p>Container queries allow components to respond to their container's size rather than the viewport size, enabling truly modular and reusable components.</p>
+            
+            <h6>Advanced Animations</h6>
+            <p>Modern CSS animations using @keyframes, transforms, and the Web Animations API create smooth, performant animations that enhance user experience without compromising performance.</p>
+            
+            <h6>CSS-in-JS and Styled Components</h6>
+            <p>Explore modern approaches to styling with CSS-in-JS libraries that provide component-scoped styles, dynamic styling, and better developer experience in component-based frameworks.</p>
+            
+            <h6>Performance Optimization</h6>
+            <p>Learn techniques for optimizing CSS performance including critical CSS, CSS containment, and efficient selector strategies that keep your websites fast and responsive.</p>
+        `
+    };
+    
+    return blogContents[title] || '<p>Blog content coming soon...</p>';
+}
+
+// Character and word counter functionality
+function initializeDeveloperToolsEnhanced() {
+    const textInput = document.getElementById('textInput');
+    const wordCount = document.getElementById('wordCount');
+    const charCount = document.getElementById('charCount');
+    
+    if (textInput && wordCount && charCount) {
+        textInput.addEventListener('input', function() {
+            const text = this.value;
+            const words = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
+            const characters = text.length;
+            
+            wordCount.textContent = words;
+            charCount.textContent = characters;
+        });
+    }
+    
+    // UUID Generator functionality
+    const generateUuidBtn = document.getElementById('generateUuid');
+    const uuidOutput = document.getElementById('uuidOutput');
+    const copyUuidBtn = document.getElementById('copyUuid');
+    
+    if (generateUuidBtn && uuidOutput) {
+        generateUuidBtn.addEventListener('click', function() {
+            const uuid = generateUUID();
+            uuidOutput.value = uuid;
+        });
+    }
+    
+    if (copyUuidBtn && uuidOutput) {
+        copyUuidBtn.addEventListener('click', function() {
+            uuidOutput.select();
+            document.execCommand('copy');
+            
+            // Visual feedback
+            const originalText = this.textContent;
+            this.textContent = 'Copied!';
+            setTimeout(() => {
+                this.textContent = originalText;
+            }, 2000);
+        });
+    }
+}
+
+// Generate UUID function
+function generateUUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        const r = Math.random() * 16 | 0;
+        const v = c == 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
+// Initialize modal functionality when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    initializeProjectModals();
+    initializeDeveloperToolsEnhanced();
+});
+
