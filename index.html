@@ -39,7 +39,7 @@
     <nav class="navbar navbar-expand-lg fixed-top glass-nav">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="#hero">
-                <img src="assets/logo.jpg" alt="Gary Mike" class="profile-nav-img me-2">
+                <img loading="lazy" src="assets/logo.jpg" alt="Gary Mike" class="profile-nav-img me-2">
                 <span class="brand-text">Gary Mike</span>
             </a>
             
@@ -75,7 +75,7 @@
         <div class="container text-center">
             <div class="hero-profile fade-in">
                 <div class="profile-image">
-                    <img src="assets/logo.jpg" alt="Gary Mike Profile" class="img-fluid">
+                    <img loading="lazy" src="assets/logo.jpg" alt="Gary Mike Profile" class="img-fluid">
                 </div>
             </div>
 
@@ -121,10 +121,13 @@
                 <div class="col-lg-6 fade-in">
                     <div class="glass-card">
                         <p class="lead">A visionary IT Professional with a rich tapestry of expertise in full-stack development, ICT oversight, and network mastery. As a fervent Web 3 advocate, Mike weaves cutting-edge innovation into every project, crafting transformative digital experiences that propel organizations into the future.</p>
+                        <a href="assets/resume.pdf" class="btn btn-primary mt-3" download>
+                            <i class="fas fa-download me-2"></i>Download Resume
+                        </a>
                     </div>
                 </div>
                 <div class="col-lg-6 fade-in">
-                    <img src="https://via.placeholder.com/500x400" alt="About Gary Mike" class="img-fluid rounded shadow">
+                    <img loading="lazy" src="assets/avatar1.jpg" alt="About Gary Mike" class="img-fluid rounded shadow">
                 </div>
             </div>
         </div>
@@ -318,17 +321,51 @@
         </div>
     </section>
 
+    <!-- Certifications Section -->
+    <section id="certifications" class="py-5">
+        <div class="container">
+            <h2 class="section-title fade-in">Certifications & Badges</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-2 col-md-4 col-6 text-center mb-4">
+                    <img loading="lazy" src="assets/logo.png" alt="Certification 1" class="img-fluid" style="max-height: 100px;">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 text-center mb-4">
+                    <img loading="lazy" src="assets/logo.png" alt="Certification 2" class="img-fluid" style="max-height: 100px;">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 text-center mb-4">
+                    <img loading="lazy" src="assets/logo.png" alt="Certification 3" class="img-fluid" style="max-height: 100px;">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 text-center mb-4">
+                    <img loading="lazy" src="assets/logo.png" alt="Certification 4" class="img-fluid" style="max-height: 100px;">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 text-center mb-4">
+                    <img loading="lazy" src="assets/logo.png" alt="Certification 5" class="img-fluid" style="max-height: 100px;">
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 text-center mb-4">
+                    <img loading="lazy" src="assets/logo.png" alt="Certification 6" class="img-fluid" style="max-height: 100px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Featured Projects Section -->
     <section id="projects" class="py-5 bg-dark">
         <div class="container">
             <h2 class="section-title fade-in">Featured Projects</h2>
+            <div class="text-center mb-4">
+                <button class="btn btn-outline-primary filter-btn active" data-filter="all">All</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="react">React</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="node.js">Node.js</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="python">Python</button>
+                <button class="btn btn-outline-primary filter-btn" data-filter="javascript">JavaScript</button>
+            </div>
             <div class="row">
                 <!-- Mike Lab Project -->
-                <div class="col-lg-6 col-xl-3 mb-4">
+                <div class="col-lg-6 col-xl-3 mb-4 project-item" data-tech="javascript html5 css3">
                     <a href="https://garymike07.github.io/Mike-site/" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
                         <div class="project-card glass-card h-100 fade-in">
                             <div class="project-image">
-                                <img src="https://via.placeholder.com/300x200" alt="Mike Lab" class="img-fluid rounded">
+                                <img loading="lazy" src="assets/thumbnails.png" alt="Mike Lab" class="img-fluid rounded">
                             </div>
                             <div class="project-content">
                                 <div class="project-header d-flex justify-content-between align-items-center mb-2">
@@ -355,10 +392,10 @@
                 </div>
                 
                 <!-- Machine Learning API -->
-                <div class="col-lg-6 col-xl-3 mb-4">
-                    <div class="project-card glass-card h-100 fade-in" data-project-id="ml-api" data-project-title="Machine Learning API" data-project-description="Scalable ML platform for image recognition and NLP processing with auto-scaling capabilities. Built with modern architecture for high-performance machine learning operations." data-project-tech="Python, TensorFlow, FastAPI, Docker" data-project-image="https://via.placeholder.com/300x200">
+                <div class="col-lg-6 col-xl-3 mb-4 project-item" data-tech="python tensorflow fastapi docker">
+                    <div class="project-card glass-card h-100 fade-in" data-project-id="ml-api" data-project-title="Machine Learning API" data-project-description="Scalable ML platform for image recognition and NLP processing with auto-scaling capabilities. Built with modern architecture for high-performance machine learning operations." data-project-tech="Python, TensorFlow, FastAPI, Docker" data-project-image="assets/thumbnails.png">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/300x200" alt="ML API" class="img-fluid rounded">
+                            <img loading="lazy" src="assets/thumbnails.png" alt="ML API" class="img-fluid rounded">
                         </div>
                         <div class="project-content">
                             <div class="project-header d-flex justify-content-between align-items-center mb-2">
@@ -385,10 +422,10 @@
                 </div>
                 
                 <!-- E-Commerce Platform -->
-<div class="col-lg-6 col-xl-3 mb-4">
-                    <div class="project-card glass-card h-100 fade-in" data-project-id="ecommerce-platform" data-project-title="E-Commerce Platform" data-project-description="Full-stack e-commerce solution with inventory management, payment processing, and responsive design. Complete shopping experience with admin dashboard." data-project-tech="React, Node.js, MongoDB, Stripe" data-project-image="https://via.placeholder.com/300x200">
+<div class="col-lg-6 col-xl-3 mb-4 project-item" data-tech="react node.js mongodb stripe">
+                    <div class="project-card glass-card h-100 fade-in" data-project-id="ecommerce-platform" data-project-title="E-Commerce Platform" data-project-description="Full-stack e-commerce solution with inventory management, payment processing, and responsive design. Complete shopping experience with admin dashboard." data-project-tech="React, Node.js, MongoDB, Stripe" data-project-image="assets/thumbnails.png">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/300x200" alt="E-Commerce Platform" class="img-fluid rounded">
+                            <img loading="lazy" src="assets/thumbnails.png" alt="E-Commerce Platform" class="img-fluid rounded">
                         </div>
                         <div class="project-content">
                             <div class="project-header d-flex justify-content-between align-items-center mb-2">
@@ -415,10 +452,10 @@
                 </div>
                 
                 <!-- Mental Health App -->
-                <div class="col-lg-6 col-xl-3 mb-4">
-                    <div class="project-card glass-card h-100 fade-in" data-project-id="mental-health-app" data-project-title="Mental Health App" data-project-description="Comprehensive mental health tracking and support application with mood monitoring, meditation features, and appointment booking system." data-project-tech="React Native, Firebase, Node.js, MongoDB" data-project-image="https://via.placeholder.com/300x200">
+                <div class="col-lg-6 col-xl-3 mb-4 project-item" data-tech="react native firebase node.js mongodb">
+                    <div class="project-card glass-card h-100 fade-in" data-project-id="mental-health-app" data-project-title="Mental Health App" data-project-description="Comprehensive mental health tracking and support application with mood monitoring, meditation features, and appointment booking system." data-project-tech="React Native, Firebase, Node.js, MongoDB" data-project-image="assets/thumbnails.png">
                         <div class="project-image">
-                            <img src="https://via.placeholder.com/300x200" alt="Mental Health App" class="img-fluid rounded">
+                            <img loading="lazy" src="assets/thumbnails.png" alt="Mental Health App" class="img-fluid rounded">
                         </div>
                         <div class="project-content">
                             <div class="project-header d-flex justify-content-between align-items-center mb-2">
@@ -599,7 +636,7 @@
                 <div class="col-lg-4 mb-4">
                     <div class="blog-card glass-card h-100 fade-in">
                         <div class="blog-image">
-                            <img src="https://via.placeholder.com/350x200" al                        <div class="blog-post glass-card fade-in">
+                            <img loading="lazy" src="assets/thumbnails.png" al                        <div class="blog-post glass-card fade-in">
                             <div class="blog-meta">
                                 <span class="blog-date">January 15, 2024</span>
                             </div>
@@ -612,7 +649,7 @@
                 <div class="col-lg-4 mb-4">
                     <div class="blog-card glass-card h-100 fade-in">
                         <div class="blog-image">
-                            <img src="https://via.placeholder.com/350x200" alt="Building                        <div class="blog-post glass-card fade-in">
+                            <img loading="lazy" src="assets/thumbnails.png" alt="Building                        <div class="blog-post glass-card fade-in">
                             <div class="blog-meta">
                                 <span class="blog-date">December 28, 2023</span>
                             </div>
@@ -625,7 +662,7 @@
                 <div class="col-lg-4 mb-4">
                     <div class="blog-card glass-card h-100 fade-in">
                         <div class="blog-image">
-                            <img src="https://via.placeholder.com/350x200" alt="Modern CSS Techniques" class="img-fluid rounded">
+                            <img loading="lazy" src="assets/thumbnails.png" alt="Modern CSS Techniques" class="img-fluid rounded">
                         </div>
                         <div class="blog-content">
                             <div class="blog-date">December 10, 2023</div>
