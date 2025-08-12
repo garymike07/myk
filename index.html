@@ -34,6 +34,7 @@
     <link rel="stylesheet" href="enhanced-styles-v2.css">
     <link rel="stylesheet" href="enhanced-styles-additions.css">
     <link rel="stylesheet" href="glassmorphism-enhanced.css">
+    <link rel="stylesheet" href="theme-switcher.css">
     
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -90,7 +91,10 @@
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
                 
-                <div class="ms-3">
+                <div class="ms-3 d-flex">
+                    <button id="themeSwitcher" class="btn btn-outline-light btn-sm me-2" aria-label="Switch theme">
+                        <i class="fas fa-palette"></i>
+                    </button>
                     <button id="darkModeToggle" class="btn btn-outline-light btn-sm" aria-label="Toggle dark mode">
                         <i class="fas fa-moon"></i>
                     </button>
@@ -125,7 +129,7 @@
                 <p class="tagline-text">Transforming Challenges into Tech Solutions</p>
 
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary btn-lg me-3">View My Work</a>
+                    <a href="#projects" class="btn btn-primary btn-lg me-3 pulse">View My Work</a>
                     <a href="#contact" class="btn btn-outline-primary btn-lg">Get In Touch</a>
                 </div>
 

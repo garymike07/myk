@@ -1,0 +1,64 @@
+/* Theme Switcher Styles */
+
+/* Ember Theme */
+.ember-theme {
+  --primary-blue: #FF4500; /* Orangered */
+  --secondary-teal: #FF8C00; /* DarkOrange */
+  --accent-purple: #FFD700; /* Gold */
+  --dark-bg: #1A1A1A;
+  --darker-bg: #101010;
+  --light-text: #FFFFFF;
+  --gray-text: #A9A9A9;
+  --gray-accent: #696969;
+  --border-color: #444444;
+  --glass-bg: rgba(26, 26, 26, 0.8);
+  --glass-border: rgba(255, 255, 255, 0.1);
+
+  --gradient-primary: linear-gradient(135deg, var(--primary-blue), var(--secondary-teal));
+  --gradient-accent: linear-gradient(135deg, var(--accent-purple), var(--primary-blue));
+  --shadow-glow: 0 0 20px rgba(255, 69, 0, 0.3);
+
+  /* Aurora Background Animation */
+  background:
+    radial-gradient(ellipse at center, rgba(255, 69, 0, 0.1) 0%, transparent 70%),
+    var(--dark-bg);
+  animation: aurora 20s ease-in-out infinite alternate;
+}
+
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Pulsing Button Animation */
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 20px rgba(255, 69, 0, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 69, 0, 0);
+  }
+}
+
+/* New Font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+.ember-theme h1,
+.ember-theme h2,
+.ember-theme h3 {
+  font-family: 'Playfair Display', serif;
+}
