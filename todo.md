@@ -46,3 +46,25 @@
 - [ ] Configure GitHub Pages deployment
 - [ ] Verify live site functionality
 
+
+
+
+# Website Design Enhancements Todo
+
+## Phase 1: Clone repository and analyze current structure
+- [x] Clone the repository.
+- [x] Analyze existing `index.html`, `style.css`, and `script.js` files.
+
+## Phase 2: Design and implement modern styling
+- [x] Implement glassmorphism and liquid glass effects in `glassmorphism-enhanced.css`.
+- [x] Add animations to elements.
+- [x] Update `index.html` to incorporate new styles and potentially new elements for effects.
+- [x] Create `liquid-glass-animations.js` for liquid glass animations and other dynamic effects.
+
+## Phase 3: Test the enhanced website locally
+- [x] Test locally.
+
+## Phase 4: Commit changes and deploy
+- [ ] Commit and push changes.
+- [ ] Deploy to GitHub Pages.
+
