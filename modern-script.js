@@ -15,6 +15,8 @@ function initializePortfolio() {
     initializeSkillBars();
     initializeThemeSwitcher();
     initializeMobileMenu();
+    initializeParticleBackground();
+    initializeTypingAnimation();
 }
 
 // Navigation functionality
@@ -397,6 +399,77 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeSearch();
     initializePerformanceMonitoring();
 });
+
+// Particle background functionality
+function initializeParticleBackground() {
+    const particleContainer = document.querySelector('.floating-particles');
+    if (!particleContainer) return;
+
+    const particleCount = 50; // Number of particles
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+
+        // Random size
+        const size = Math.random() * 5 + 1;
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+
+        // Random position
+        particle.style.left = `${Math.random() * 100}%`;
+
+        // Random animation delay and duration
+        particle.style.animationDelay = `${Math.random() * 20}s`;
+        particle.style.animationDuration = `${10 + Math.random() * 10}s`;
+
+        particleContainer.appendChild(particle);
+    }
+}
+
+// Typing animation functionality
+function initializeTypingAnimation() {
+    const rolesTextElement = document.querySelector('.roles-text');
+    if (!rolesTextElement) return;
+
+    const roles = ["Full-stack Developer", "ICT Officer", "Network Administrator", "Web3 Enthusiast"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function type() {
+        const currentRole = roles[roleIndex];
+        let displayText = '';
+
+        if (isDeleting) {
+            displayText = currentRole.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            displayText = currentRole.substring(0, charIndex + 1);
+            charIndex++;
+        }
+
+        rolesTextElement.innerHTML = `${displayText}<span class="cursor"></span>`;
+
+        let typeSpeed = 200;
+        if (isDeleting) {
+            typeSpeed /= 2;
+        }
+
+        if (!isDeleting && charIndex === currentRole.length) {
+            typeSpeed = 2000; // Pause at the end of the word
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typeSpeed = 500; // Pause before typing new word
+        }
+
+        setTimeout(type, typeSpeed);
+    }
+
+    type();
+}
 
 // Export functions for testing
 if (typeof module !== 'undefined' && module.exports) {
