@@ -1,4 +1,4 @@
-// Enhanced Portfolio Scripts v2.0
+// Modern Portfolio Script - Clean Version without Animations
 
 // DOM Content Loaded
 document.addEventListener('DOMContentLoaded', function() {
@@ -11,12 +11,10 @@ function initializePortfolio() {
     initializeProjectFilters();
     initializeContactForm();
     initializeDarkModeToggle();
-    // initializeAnimations();
-    // initializeScrollEffects();
-    // initializeParticles();
+    initializeTimeDisplay();
     initializeSkillBars();
-    initializeTypingEffect();
     initializeThemeSwitcher();
+    initializeMobileMenu();
 }
 
 // Navigation functionality
@@ -84,7 +82,25 @@ function updateActiveNavOnScroll() {
     });
 }
 
-
+// Mobile menu functionality
+function initializeMobileMenu() {
+    const mobileToggle = document.querySelector('.mobile-menu-toggle');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (mobileToggle && navMenu) {
+        mobileToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on nav links
+        const navLinks = document.querySelectorAll('.nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+            });
+        });
+    }
+}
 
 // Project filtering functionality
 function initializeProjectFilters() {
@@ -105,7 +121,6 @@ function initializeProjectFilters() {
                 
                 if (filter === 'all' || techStack.includes(filter)) {
                     item.style.display = 'block';
-                    item.classList.add('fade-in');
                 } else {
                     item.style.display = 'none';
                 }
@@ -212,76 +227,17 @@ function initializeTimeDisplay() {
     }
 }
 
-
-'%';
-
+// Skill bars functionality (without animation)
+function initializeSkillBars() {
     const skillBars = document.querySelectorAll('.progress-bar');
     
-    const skillObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const progressBar = entry.target;
-                const width = progressBar.style.width;
-                progressBar.style.width = '0%';
-                
-                setTimeout(() => {
-                    progressBar.style.width = width;
-                }, 200);
-                
-                skillObserver.unobserve(progressBar);
-            }
-        });
-    }, { threshold: 0.5 });
-    
+    // Simply set the width immediately without animation
     skillBars.forEach(bar => {
-        skillObserver.observe(bar);
-    });
-}
-
-// Typing effect for hero section
-function initializeTypingEffect() {
-    const typingElement = document.querySelector('.typing-effect');
-    
-    if (typingElement) {
-        const texts = [
-            'Full-stack Developer',
-            'ICT Officer',
-            'Network Administrator',
-            'Web3 Enthusiast',
-            'Problem Solver'
-        ];
-        
-        let textIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        
-        function typeText() {
-            const currentText = texts[textIndex];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentText.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentText.substring(0, charIndex + 1);
-                charIndex++;
-            }
-            
-            let typeSpeed = isDeleting ? 50 : 100;
-            
-            if (!isDeleting && charIndex === currentText.length) {
-                typeSpeed = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                textIndex = (textIndex + 1) % texts.length;
-                typeSpeed = 500;
-            }
-            
-            setTimeout(typeText, typeSpeed);
+        const width = bar.getAttribute('data-width') || bar.style.width;
+        if (width) {
+            bar.style.width = width;
         }
-        
-        typeText();
-    }
+    });
 }
 
 // Theme switcher functionality
@@ -292,16 +248,16 @@ function initializeThemeSwitcher() {
     // Check for saved theme preference
     const savedTheme = localStorage.getItem('colorTheme');
     if (savedTheme) {
-        body.classList.toggle('ember-theme', savedTheme === 'ember');
+        body.classList.toggle('modern-theme', savedTheme === 'modern');
     }
 
     if (themeSwitcher) {
         themeSwitcher.addEventListener('click', function() {
-            body.classList.toggle('ember-theme');
-            const isEmberTheme = body.classList.contains('ember-theme');
+            body.classList.toggle('modern-theme');
+            const isModernTheme = body.classList.contains('modern-theme');
 
             // Save theme preference
-            localStorage.setItem('colorTheme', isEmberTheme ? 'ember' : 'ocean');
+            localStorage.setItem('colorTheme', isModernTheme ? 'modern' : 'default');
         });
     }
 }
@@ -320,6 +276,22 @@ function showNotification(message, type = 'info') {
         </button>
     `;
     
+    // Add notification styles
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--bg-glass);
+        backdrop-filter: blur(20px);
+        border: 1px solid var(--border-primary);
+        border-radius: var(--radius-md);
+        padding: var(--spacing-md);
+        color: var(--text-primary);
+        z-index: 9999;
+        max-width: 400px;
+        box-shadow: var(--shadow-primary);
+    `;
+    
     document.body.appendChild(notification);
     
     // Auto remove after 5 seconds
@@ -328,27 +300,6 @@ function showNotification(message, type = 'info') {
             notification.remove();
         }
     }, 5000);
-}
-
-// Lazy loading for images
-function initializeLazyLoading() {
-    const images = document.querySelectorAll('img[loading="lazy"]');
-    
-    const imageObserver = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src || img.src;
-                img.classList.remove('lazy');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-    
-    images.forEach(img => {
-        img.classList.add('lazy');
-        imageObserver.observe(img);
-    });
 }
 
 // Project modal functionality
@@ -440,22 +391,8 @@ window.addEventListener('error', function(e) {
     showNotification('Something went wrong. Please refresh the page.', 'error');
 });
 
-// Service Worker registration
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('ServiceWorker registration successful');
-            })
-            .catch(function(err) {
-                console.log('ServiceWorker registration failed');
-            });
-    });
-}
-
 // Initialize additional features when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
-    initializeLazyLoading();
     initializeProjectModal();
     initializeSearch();
     initializePerformanceMonitoring();

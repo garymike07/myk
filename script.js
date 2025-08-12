@@ -20,23 +20,7 @@ document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Scroll animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
 
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('animated');
-        }
-    });
-}, observerOptions);
-
-document.querySelectorAll('.animate-on-scroll').forEach(el => {
-    observer.observe(el);
-});
 
 // Fade in animations for hero section
 window.addEventListener('load', function() {
@@ -47,22 +31,7 @@ window.addEventListener('load', function() {
     });
 });
 
-// Floating particles
-function createParticle() {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    particle.style.left = Math.random() * 100 + 'vw';
-    particle.style.width = particle.style.height = Math.random() * 10 + 5 + 'px';
-    particle.style.animationDuration = Math.random() * 15 + 10 + 's';
-    document.querySelector('.particles').appendChild(particle);
 
-    setTimeout(() => {
-        particle.remove();
-    }, 25000);
-}
-
-// Create particles periodically
-setInterval(createParticle, 2000);
 
 // Modal functionality
 function openModal(projectId) {

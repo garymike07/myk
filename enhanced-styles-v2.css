@@ -678,17 +678,7 @@ section {
   to { opacity: 1; }
 }
 
-/* Scroll Animations */
-.scroll-reveal {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease-out;
-}
 
-.scroll-reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
