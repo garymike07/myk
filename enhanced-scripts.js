@@ -11,9 +11,36 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeProgressBars();
     initializeParticles();
     initializeProjectCards();
+    initializeProjectFilters();
     
     console.log('Enhanced Portfolio initialized successfully!');
 });
+
+// Project Filter Functionality
+function initializeProjectFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.getAttribute('data-filter');
+
+            // Set active button
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            // Filter projects
+            projectItems.forEach(item => {
+                const tech = item.getAttribute('data-tech');
+                if (filter === 'all' || tech.includes(filter)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+}
 
 // Enhanced Dark Mode Toggle with Smooth Transitions
 function initializeTheme() {
