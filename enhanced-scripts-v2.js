@@ -17,6 +17,7 @@ function initializePortfolio() {
     initializeParticles();
     initializeSkillBars();
     initializeTypingEffect();
+    initializeThemeSwitcher();
 }
 
 // Navigation functionality
@@ -361,6 +362,28 @@ function initializeTypingEffect() {
         }
         
         typeText();
+    }
+}
+
+// Theme switcher functionality
+function initializeThemeSwitcher() {
+    const themeSwitcher = document.getElementById('themeSwitcher');
+    const body = document.body;
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('colorTheme');
+    if (savedTheme) {
+        body.classList.toggle('ember-theme', savedTheme === 'ember');
+    }
+
+    if (themeSwitcher) {
+        themeSwitcher.addEventListener('click', function() {
+            body.classList.toggle('ember-theme');
+            const isEmberTheme = body.classList.contains('ember-theme');
+
+            // Save theme preference
+            localStorage.setItem('colorTheme', isEmberTheme ? 'ember' : 'ocean');
+        });
     }
 }
 
